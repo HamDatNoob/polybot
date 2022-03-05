@@ -1,0 +1,25 @@
+{
+  "name": "polybot",
+  "version": "1.0.0",
+  "description": "discord bot for the poly bridge discord server",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HamDatNoob/polybot.git"
+  },
+  "author": "hamdatnoob",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HamDatNoob/polybot/issues"
+  },
+  "homepage": "https://github.com/HamDatNoob/polybot#readme",
+  "dependencies": {
+    "@discordjs/rest": "^0.3.0",
+    "@folder/readdir": "^3.1.0",
+    "discord-api-types": "^0.27.3",
+    "discord.js": "^13.6.0"
+  }
+}
