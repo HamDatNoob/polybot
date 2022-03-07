@@ -1,0 +1,882 @@
+[
+  {
+    "short_name": "1-1",
+    "name": "Ten Meter Simple Bridge",
+    "detail": ""
+  },
+  {
+    "short_name": "1-2",
+    "name": "A New Slope",
+    "detail": ""
+  },
+  {
+    "short_name": "1-3",
+    "name": "Bridge of Steel",
+    "detail": ""
+  },
+  {
+    "short_name": "1-4",
+    "name": "Fourteen Meter Overpass",
+    "detail": ""
+  },
+  {
+    "short_name": "1-5",
+    "name": "Checkpoints",
+    "detail": ""
+  },
+  {
+    "short_name": "1-6",
+    "name": "First Drawbridge",
+    "detail": ""
+  },
+  {
+    "short_name": "1-7",
+    "name": "Taxi Task",
+    "detail": ""
+  },
+  {
+    "short_name": "1-8",
+    "name": "Rope Support",
+    "detail": ""
+  },
+  {
+    "short_name": "1-9",
+    "name": "Budget Cuts",
+    "detail": ""
+  },
+  {
+    "short_name": "1-10",
+    "name": "First Jump",
+    "detail": ""
+  },
+  {
+    "short_name": "1-11",
+    "name": "Stop n' Go",
+    "detail": ""
+  },
+  {
+    "short_name": "1-12",
+    "name": "Rock Rest",
+    "detail": ""
+  },
+  {
+    "short_name": "1-13",
+    "name": "Redraw",
+    "detail": ""
+  },
+  {
+    "short_name": "1-14",
+    "name": "Land Brace",
+    "detail": ""
+  },
+  {
+    "short_name": "1-15",
+    "name": "Hydraulic Management",
+    "detail": ""
+  },
+  {
+    "short_name": "1-16",
+    "name": "Large Bridge",
+    "detail": ""
+  },
+  {
+    "short_name": "2-1",
+    "name": "Unity",
+    "detail": ""
+  },
+  {
+    "short_name": "2-2",
+    "name": "Long Drawbridge",
+    "detail": ""
+  },
+  {
+    "short_name": "2-3",
+    "name": "Low Rider",
+    "detail": ""
+  },
+  {
+    "short_name": "2-4",
+    "name": "Buggy Bouncer",
+    "detail": ""
+  },
+  {
+    "short_name": "2-5",
+    "name": "Rockin'",
+    "detail": ""
+  },
+  {
+    "short_name": "2-6",
+    "name": "Roundabout",
+    "detail": ""
+  },
+  {
+    "short_name": "2-7",
+    "name": "Double Decker Highway",
+    "detail": ""
+  },
+  {
+    "short_name": "2-8",
+    "name": "Split Level",
+    "detail": ""
+  },
+  {
+    "short_name": "2-9",
+    "name": "Anchors Away",
+    "detail": ""
+  },
+  {
+    "short_name": "2-10",
+    "name": "Fork in the Road",
+    "detail": ""
+  },
+  {
+    "short_name": "2-11",
+    "name": "Air Show",
+    "detail": ""
+  },
+  {
+    "short_name": "2-12",
+    "name": "Momentum",
+    "detail": ""
+  },
+  {
+    "short_name": "2-13",
+    "name": "Compression",
+    "detail": ""
+  },
+  {
+    "short_name": "2-14",
+    "name": "Dip n' Draw",
+    "detail": ""
+  },
+  {
+    "short_name": "2-15",
+    "name": "Weight Distribution",
+    "detail": ""
+  },
+  {
+    "short_name": "2-16",
+    "name": "Stow Away",
+    "detail": ""
+  },
+  {
+    "short_name": "3-1",
+    "name": "Loop Hole",
+    "detail": ""
+  },
+  {
+    "short_name": "3-2",
+    "name": "Big Dipper",
+    "detail": ""
+  },
+  {
+    "short_name": "3-3",
+    "name": "String Theory",
+    "detail": ""
+  },
+  {
+    "short_name": "3-4",
+    "name": "Doubling Down",
+    "detail": ""
+  },
+  {
+    "short_name": "3-5",
+    "name": "Semi Slope",
+    "detail": ""
+  },
+  {
+    "short_name": "3-6",
+    "name": "Rock Skipping",
+    "detail": ""
+  },
+  {
+    "short_name": "3-7",
+    "name": "Support Cable",
+    "detail": ""
+  },
+  {
+    "short_name": "3-8",
+    "name": "Crossed Paths",
+    "detail": ""
+  },
+  {
+    "short_name": "3-9",
+    "name": "Wibbly Wobbly",
+    "detail": ""
+  },
+  {
+    "short_name": "3-10",
+    "name": "Shafted",
+    "detail": ""
+  },
+  {
+    "short_name": "3-11",
+    "name": "Cross Jump",
+    "detail": ""
+  },
+  {
+    "short_name": "3-12",
+    "name": "Emergency Interference",
+    "detail": ""
+  },
+  {
+    "short_name": "3-13",
+    "name": "Diagonal Elevator",
+    "detail": ""
+  },
+  {
+    "short_name": "3-14",
+    "name": "Low Flyer",
+    "detail": ""
+  },
+  {
+    "short_name": "3-15",
+    "name": "Looper's Revenge",
+    "detail": ""
+  },
+  {
+    "short_name": "3-16",
+    "name": "Monster Truck Rally",
+    "detail": ""
+  },
+  {
+    "short_name": "4-1",
+    "name": "Edgy",
+    "detail": ""
+  },
+  {
+    "short_name": "4-2",
+    "name": "Collision Warning",
+    "detail": ""
+  },
+  {
+    "short_name": "4-3",
+    "name": "Sloped Drawbridge",
+    "detail": ""
+  },
+  {
+    "short_name": "4-4",
+    "name": "Trap Door",
+    "detail": ""
+  },
+  {
+    "short_name": "4-5",
+    "name": "Triple Decker Drawbridge",
+    "detail": ""
+  },
+  {
+    "short_name": "4-6",
+    "name": "Safety Gap",
+    "detail": ""
+  },
+  {
+    "short_name": "4-7",
+    "name": "Big Spender",
+    "detail": ""
+  },
+  {
+    "short_name": "4-8",
+    "name": "Thread the Needle",
+    "detail": ""
+  },
+  {
+    "short_name": "4-9",
+    "name": "Tipping Tower",
+    "detail": ""
+  },
+  {
+    "short_name": "4-10",
+    "name": "Drawbridge In Disguise",
+    "detail": ""
+  },
+  {
+    "short_name": "4-11",
+    "name": "Lean on Me",
+    "detail": ""
+  },
+  {
+    "short_name": "4-12",
+    "name": "Trailblazer",
+    "detail": ""
+  },
+  {
+    "short_name": "4-13",
+    "name": "Diagonal Drawbridge",
+    "detail": ""
+  },
+  {
+    "short_name": "4-14",
+    "name": "Big Rigs",
+    "detail": ""
+  },
+  {
+    "short_name": "4-15",
+    "name": "Twists and Turns",
+    "detail": ""
+  },
+  {
+    "short_name": "4-16",
+    "name": "Don't Leave Me",
+    "detail": ""
+  },
+  {
+    "short_name": "5-1",
+    "name": "Brake Pad",
+    "detail": ""
+  },
+  {
+    "short_name": "5-2",
+    "name": "Sorting",
+    "detail": ""
+  },
+  {
+    "short_name": "5-3",
+    "name": "Springboard",
+    "detail": ""
+  },
+  {
+    "short_name": "5-4",
+    "name": "Leverage",
+    "detail": ""
+  },
+  {
+    "short_name": "5-5",
+    "name": "Truck Way In",
+    "detail": ""
+  },
+  {
+    "short_name": "5-6",
+    "name": "Spring and a Miss",
+    "detail": ""
+  },
+  {
+    "short_name": "5-7",
+    "name": "Trading Places",
+    "detail": ""
+  },
+  {
+    "short_name": "5-8",
+    "name": "Passing By",
+    "detail": ""
+  },
+  {
+    "short_name": "5-9",
+    "name": "Falling Into Place",
+    "detail": ""
+  },
+  {
+    "short_name": "5-10",
+    "name": "In Suspense",
+    "detail": ""
+  },
+  {
+    "short_name": "5-11",
+    "name": "All Together Now",
+    "detail": ""
+  },
+  {
+    "short_name": "5-12",
+    "name": "Gettin' Loopy",
+    "detail": ""
+  },
+  {
+    "short_name": "5-13",
+    "name": "Crash Course",
+    "detail": ""
+  },
+  {
+    "short_name": "5-14",
+    "name": "Bus Routes",
+    "detail": ""
+  },
+  {
+    "short_name": "5-15",
+    "name": "Acceleration",
+    "detail": ""
+  },
+  {
+    "short_name": "5-16",
+    "name": "Double Duty",
+    "detail": ""
+  },
+  {
+    "short_name": "6-1",
+    "name": "Earthquake!",
+    "detail": ""
+  },
+  {
+    "short_name": "6-2",
+    "name": "Canyon Carriage",
+    "detail": ""
+  },
+  {
+    "short_name": "6-3",
+    "name": "Parkade Elevator",
+    "detail": ""
+  },
+  {
+    "short_name": "6-4",
+    "name": "Bridgelike Motion",
+    "detail": ""
+  },
+  {
+    "short_name": "6-5",
+    "name": "Edgeworks",
+    "detail": ""
+  },
+  {
+    "short_name": "6-6",
+    "name": "Spring Loaded",
+    "detail": ""
+  },
+  {
+    "short_name": "6-7",
+    "name": "Get a Grip",
+    "detail": ""
+  },
+  {
+    "short_name": "6-8",
+    "name": "How The Turntables",
+    "detail": ""
+  },
+  {
+    "short_name": "6-9",
+    "name": "Squeeze Through",
+    "detail": ""
+  },
+  {
+    "short_name": "6-10",
+    "name": "Bridge-in-a-Box",
+    "detail": ""
+  },
+  {
+    "short_name": "6-11",
+    "name": "Wall Jumpin'",
+    "detail": ""
+  },
+  {
+    "short_name": "6-12",
+    "name": "Mind the Gap",
+    "detail": ""
+  },
+  {
+    "short_name": "6-13",
+    "name": "Pinball",
+    "detail": ""
+  },
+  {
+    "short_name": "6-14",
+    "name": "Spin Cycle",
+    "detail": ""
+  },
+  {
+    "short_name": "6-15",
+    "name": "Special Delivery",
+    "detail": ""
+  },
+  {
+    "short_name": "6-16",
+    "name": "Rube Goldbridge",
+    "detail": ""
+  },
+  {
+    "short_name": "1-1c",
+    "name": "Ten Meter Simple Bridge",
+    "detail": "Springs instead of wood and limit on road."
+  },
+  {
+    "short_name": "1-2c",
+    "name": "A New Slope",
+    "detail": "Tanker Truck instead of Van."
+  },
+  {
+    "short_name": "1-3c",
+    "name": "Bridge of Steel",
+    "detail": "Road only."
+  },
+  {
+    "short_name": "1-4c",
+    "name": "Fourteen Meter Overpass",
+    "detail": "Very large boat."
+  },
+  {
+    "short_name": "1-5c",
+    "name": "Checkpoints",
+    "detail": "Fewer static joints"
+  },
+  {
+    "short_name": "1-6c",
+    "name": "First Drawbridge",
+    "detail": "Only 1 Hydraulic & only 8 Roads"
+  },
+  {
+    "short_name": "1-7c",
+    "name": "Taxi Task",
+    "detail": "Half budget and only 7 roads."
+  },
+  {
+    "short_name": "1-8c",
+    "name": "Rope Support",
+    "detail": "Missing balloon."
+  },
+  {
+    "short_name": "1-9c",
+    "name": "Budget Cuts",
+    "detail": "No static joint on rock."
+  },
+  {
+    "short_name": "1-10c",
+    "name": "First Jump",
+    "detail": "No Steel."
+  },
+  {
+    "short_name": "1-11c",
+    "name": "Stop n' Go",
+    "detail": "Extra boat, only 8 Road."
+  },
+  {
+    "short_name": "1-12c",
+    "name": "Rock Rest",
+    "detail": "Short 1 Road."
+  },
+  {
+    "short_name": "1-13c",
+    "name": "Redraw",
+    "detail": "Large Boat."
+  },
+  {
+    "short_name": "1-14c",
+    "name": "Land Brace",
+    "detail": "Platform on left side too."
+  },
+  {
+    "short_name": "1-15c",
+    "name": "Hydraulic Management",
+    "detail": "No Hydraulics"
+  },
+  {
+    "short_name": "1-16c",
+    "name": "Large Bridge",
+    "detail": "No Steel."
+  },
+  {
+    "short_name": "2-1c",
+    "name": "Unity",
+    "detail": "Model T must come back."
+  },
+  {
+    "short_name": "2-2c",
+    "name": "Long Drawbridge",
+    "detail": "Low checkpoints added."
+  },
+  {
+    "short_name": "2-3c",
+    "name": "Low Rider",
+    "detail": "No rock in middle."
+  },
+  {
+    "short_name": "2-4c",
+    "name": "Buggy Bouncer",
+    "detail": "No springs and no anchor on balloon."
+  },
+  {
+    "short_name": "2-5c",
+    "name": "Rockin'",
+    "detail": "Much larger rock."
+  },
+  {
+    "short_name": "2-6c",
+    "name": "Roundabout",
+    "detail": "Must collect bottom checkpoint first."
+  },
+  {
+    "short_name": "2-7c",
+    "name": "Double Decker Highway",
+    "detail": "Missing island."
+  },
+  {
+    "short_name": "2-8c",
+    "name": "Split Level",
+    "detail": "Only 10 Road."
+  },
+  {
+    "short_name": "2-9c",
+    "name": "Anchors Away",
+    "detail": "No static joint on bottom."
+  },
+  {
+    "short_name": "2-10c",
+    "name": "Fork in the Road",
+    "detail": "Added checkpoint."
+  },
+  {
+    "short_name": "2-11c",
+    "name": "Air Show",
+    "detail": "Stop checkpoint in the middle."
+  },
+  {
+    "short_name": "2-12c",
+    "name": "Momentum",
+    "detail": "Only 7 Roads."
+  },
+  {
+    "short_name": "2-13c",
+    "name": "Compression",
+    "detail": "Added boat, Increased budget."
+  },
+  {
+    "short_name": "2-14c",
+    "name": "Dip n' Draw",
+    "detail": "Only 1 Hydraulic and a larger boat."
+  },
+  {
+    "short_name": "2-15c",
+    "name": "Weight Distribution",
+    "detail": "No rock or balloon and only one static joint."
+  },
+  {
+    "short_name": "2-16c",
+    "name": "Stow Away",
+    "detail": "No rock on right."
+  },
+  {
+    "short_name": "3-1c",
+    "name": "Loop Hole",
+    "detail": "Additional plane."
+  },
+  {
+    "short_name": "3-2c",
+    "name": "Big Dipper",
+    "detail": "Checkpoint moved left."
+  },
+  {
+    "short_name": "3-3c",
+    "name": "String Theory",
+    "detail": "Only 8 Wood and fewer static joints."
+  },
+  {
+    "short_name": "3-4c",
+    "name": "Doubling Down",
+    "detail": "Additional boats."
+  },
+  {
+    "short_name": "3-5c",
+    "name": "Semi Slope",
+    "detail": "No Steel or Cable."
+  },
+  {
+    "short_name": "3-6c",
+    "name": "Rock Skipping",
+    "detail": "No static joints on rocks, fewer Road."
+  },
+  {
+    "short_name": "3-7c",
+    "name": "Support Cable",
+    "detail": "Added checkpoint."
+  },
+  {
+    "short_name": "3-8c",
+    "name": "Crossed Paths",
+    "detail": "No Hydraulics."
+  },
+  {
+    "short_name": "3-9c",
+    "name": "Wibbly Wobbly",
+    "detail": "Only 2 Springs."
+  },
+  {
+    "short_name": "3-10c",
+    "name": "Shafted",
+    "detail": "Extra fire truck."
+  },
+  {
+    "short_name": "3-11c",
+    "name": "Cross Jump",
+    "detail": "Only one platform in the middle."
+  },
+  {
+    "short_name": "3-12c",
+    "name": "Emergency Interference",
+    "detail": "Additional boats and plane."
+  },
+  {
+    "short_name": "3-13c",
+    "name": "Diagonal Elevator",
+    "detail": "Only one hydraulic."
+  },
+  {
+    "short_name": "3-14c",
+    "name": "Low Flyer",
+    "detail": "No static joints."
+  },
+  {
+    "short_name": "3-15c",
+    "name": "Looper's Revenge",
+    "detail": "Another car goes backwards."
+  },
+  {
+    "short_name": "3-16c",
+    "name": "Monster Truck Rally",
+    "detail": "No Steel & 3 monster trucks."
+  },
+  {
+    "short_name": "4-1c",
+    "name": "Edgy",
+    "detail": "Extra boat and only 2 Hydraulics."
+  },
+  {
+    "short_name": "4-2c",
+    "name": "Collision Warning",
+    "detail": "2 more dune buggies."
+  },
+  {
+    "short_name": "4-3c",
+    "name": "Sloped Drawbridge",
+    "detail": "Second Hydraulic phase is removed."
+  },
+  {
+    "short_name": "4-4c",
+    "name": "Trap Door",
+    "detail": "Return cars to start."
+  },
+  {
+    "short_name": "4-5c",
+    "name": "Triple Decker Drawbridge",
+    "detail": "Only 1 Hydraulic."
+  },
+  {
+    "short_name": "4-6c",
+    "name": "Safety Gap",
+    "detail": "Planes added, limited road, and no Springs."
+  },
+  {
+    "short_name": "4-7c",
+    "name": "Big Spender",
+    "detail": "2 Meters longer with same budget."
+  },
+  {
+    "short_name": "4-8c",
+    "name": "Thread the Needle",
+    "detail": "No Springs."
+  },
+  {
+    "short_name": "4-9c",
+    "name": "Tipping Tower",
+    "detail": "Return school bus to start."
+  },
+  {
+    "short_name": "4-10c",
+    "name": "Drawbridge In Disguise",
+    "detail": "Extra car, only 1 Hydraulic, and no hydraulic controller."
+  },
+  {
+    "short_name": "4-11c",
+    "name": "Lean on Me",
+    "detail": "Removed rock in the middle, Increased budget."
+  },
+  {
+    "short_name": "4-12c",
+    "name": "Trailblazer",
+    "detail": "No Springs."
+  },
+  {
+    "short_name": "4-13c",
+    "name": "Diagonal Drawbridge",
+    "detail": "No Hydraulics and budget limited to 60K."
+  },
+  {
+    "short_name": "4-14c",
+    "name": "Big Rigs",
+    "detail": "No Steel."
+  },
+  {
+    "short_name": "4-15c",
+    "name": "Twists and Turns",
+    "detail": "Only 1 Hydraulic."
+  },
+  {
+    "short_name": "4-16c",
+    "name": "Don't Leave Me",
+    "detail": "Only 1 Hydraulic, extra Hydraulic Phase."
+  },
+  {
+    "short_name": "5-1c",
+    "name": "Brake Pad",
+    "detail": "Stopping area is sloped"
+  },
+  {
+    "short_name": "5-2c",
+    "name": "Sorting",
+    "detail": "Added Plane"
+  },
+  {
+    "short_name": "5-3c",
+    "name": "Springboard",
+    "detail": "Checkpoint and Flag are higher"
+  },
+  {
+    "short_name": "5-4c",
+    "name": "Leverage",
+    "detail": "Added second Plane"
+  },
+  {
+    "short_name": "5-5c",
+    "name": "Truck Way In",
+    "detail": "Larger gap"
+  },
+  {
+    "short_name": "5-6c",
+    "name": "Spring and a Miss",
+    "detail": "Swapped Vans and City Cars"
+  },
+  {
+    "short_name": "5-7c",
+    "name": "Trading Places",
+    "detail": "Sports Cars are slower"
+  },
+  {
+    "short_name": "5-8c",
+    "name": "Passing By",
+    "detail": "Added City Car"
+  },
+  {
+    "short_name": "5-9c",
+    "name": "Falling Into Place",
+    "detail": "Vehicle order is reversed"
+  },
+  {
+    "short_name": "5-10c",
+    "name": "In Suspense",
+    "detail": "Shorter pillars"
+  },
+  {
+    "short_name": "5-11c",
+    "name": "All Together Now",
+    "detail": "Platforms are sloped"
+  },
+  {
+    "short_name": "5-12c",
+    "name": "Gettin' Loopy",
+    "detail": "Changed Checkpoint positions"
+  },
+  {
+    "short_name": "5-13c",
+    "name": "Crash Course",
+    "detail": "A1 Flag moved below platform"
+  },
+  {
+    "short_name": "5-14c",
+    "name": "Bus Routes",
+    "detail": "Added Van"
+  },
+  {
+    "short_name": "5-15c",
+    "name": "Acceleration",
+    "detail": "Added centred static joint and a Checkpoint to Dune Buggy A1"
+  },
+  {
+    "short_name": "5-16c",
+    "name": "Double Duty",
+    "detail": "Added Vespa"
+  }
+]

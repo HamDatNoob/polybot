@@ -8,11 +8,14 @@ module.exports = {
         .addStringOption(option =>
             option.setName('input')
                 .setDescription('The name of the command you need help with')
-                .addChoice('name', 'nameChoice')
-                .addChoice('guide', 'guideChoice')
+                .addChoices([
+                    [ 'guide', 'guideChoice' ],
+                    [ 'name', 'nameChoice' ]
+                ])
                 .setRequired(false)),
 	async execute(interaction){
         const icon = new MessageAttachment('./images/icon.png');
+
         if(interaction.options.getString('input')){
             const option = interaction.options.getString('input')
             const text = require('../json/helpMenu.json')

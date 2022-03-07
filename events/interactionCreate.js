@@ -1,4 +1,3 @@
-const { sleep } = require("../scripts/sleep");
 const fs = require('fs');
 
 module.exports = {
