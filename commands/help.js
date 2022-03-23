@@ -12,7 +12,8 @@ module.exports = {
                     [ 'guide', 'guideChoice' ],
                     [ 'name', 'nameChoice' ]
                 ])
-                .setRequired(false)),
+                .setRequired(false)
+        ),
 	async execute(interaction){
         const icon = new MessageAttachment('./images/icon.png');
 
@@ -55,7 +56,6 @@ module.exports = {
                         ]),
                 );
             
-
             await interaction.reply({ embeds: [startEmbed], files: [icon], components: [helpMenu], ephemeral: true });
         }
 	},

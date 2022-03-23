@@ -6,7 +6,7 @@ module.exports = {
         await interaction.deferUpdate();
         
         const option = interaction.values;
-        const text = require("../json/helpMenu.json");
+        const text = require("../../json/helpMenu.json");
 
 		const icon = new MessageAttachment('./images/icon.png');
         const helpEmbedEdit = new MessageEmbed()
