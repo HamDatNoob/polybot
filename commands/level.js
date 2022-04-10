@@ -1,60 +1,84 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
+const pb1Levels = require('../json/pb1Levels.json');
+const pb2Levels = require('../json/pb2Levels.json');
+const db = require('quick.db');
+const { sleep } = require('../scripts/sleep');
 
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('level')
-		.setDescription('Displays the complete name of a level')
+		.setDescription('Displays the complete name of a level.')
 		.addStringOption(option =>
 			option.setName('code')
-				.setDescription('Input a level code. Ex: 1-1')
-				.setRequired(true)
+			.setDescription('Input a level code. Ex: 1-1')
+			.setRequired(true)
 		),
 	async execute(interaction, message){
-		const pb1Levels = require('../json/pb1Levels.json');
-		const pb2Levels = require('../json/pb2Levels.json');
-
 		let msg;
 		if(interaction){
 			msg = interaction.options.getString('code').match(/[1-8]-\d[\dc]?c?/gmi);
-			interaction.deferReply();
 		}else if(message){
 			msg = message.content.match(/[1-8]-\d[\dc]?c?/gmi);
 		}else{
 			console.error(error);
 		}
-		
-		console.log(msg)
 
-		for(let i in msg){
+		function levelName(i){
 			let c = msg[i].toLowerCase();
-			
+
 			const pb1Worlds = ["Alpine Meadows", "Desert Winds", "Snow Drift", "Ancient Ruins", "80s Fun Land", "Zen Gardens", "Tropical Paradise", "Area 52"];
 			const pb2Worlds = ["Pine Mountains", "Glowing Gorge", "Tranquil Oasis", "Sanguine Gulch", "Serenity Valley", "Steamtown"];
 
-			if(c.match(/[1-8]-0\dc?/gmi) != null){ //removes extra 0
+			if(c.match(/[1-8]-[01]\dc?/gmi) == null){ // adds extra 0
 				let codeSplit = c.split('');
-				codeSplit.splice(2, 1);
+				codeSplit.splice(2, 0, 0);
 				c = codeSplit.join('');
 			}
 
 			const w = c.slice(0, 1) - 1;
+			const l = parseInt(c.slice(2, 4), 10) - 1;
 
-			const li1 = 'bruh'
-			const li2 = 'am dum'
-			
-			console.log(li1, li2)
-
-			
-
-			if(c.match(/[1-6]-\d\d?c{0}/gmi) != null){
-				message.reply(`Level Names for \`${c}\`:\nPB1: ${pb1Worlds[w]} - ${pb1Levels[li1].name}\nPB2: ${pb2Worlds[world]} - ${pb2Levels[li2].name}`);
-			}else if(c.match(/[78]-\d\d?/gmi) != null){
-				message.reply(`Level Names for \`${c}\`:\nPB1: ${pb1Worlds[w]} - ${pb1Levels[li1].name}`);
-			}else if(c.match(/[1-6]-16c?/) != null){
-				message.reply(`Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li1].name}`);
+			const li1 = w * 15 + l;
+			let li2;
+			if(!c.match(/[1-5]-[01]\dc/gmi)){
+			 	li2 = w * 16 + l;
 			}else{
-				message.reply(`Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}\nChallenge: ${pb2Levels[li2].detail}`)
+				li2 = w * 16 + l + 96;
+			}
+
+			if(message){
+				if(db.get(`paused.${message.channelId}`) == false && db.has(`cooldown.${message.channelId}.${c}`) == false){				
+					db.push(`cooldown.${message.channelId}.${c}`, c);
+
+					if(c.match(/[1-5]-16c/gmi)){
+						message.channel.send(`Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}\nChallenge: ${pb2Levels[li2].detail}`);
+					}else if(c.match(/[1-5]-[01]\dc/gmi)){
+						message.channel.send(`Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}\nChallenge: ${pb2Levels[li2].detail}`);
+					}else if(c.match(/[1-6]-16/gmi)){
+						message.channel.send(`Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}`);
+					}else if(c.match(/[1-6]-[01]\d/gmi)){
+						message.channel.send(`Level Names for \`${c}\`:\nPB1: ${pb1Worlds[w]} - ${pb1Levels[li1].name}\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}`);
+					}else if(c.match(/[78]-[01]\d/gmi)){
+						message.channel.send(`Level Names for \`${c}\`:\nPB1: ${pb1Worlds[w]} - ${pb1Levels[li1].name}`);
+					}
+
+					sleep(300000).then(db.delete(`cooldown.${message.channelId}.${c}`));
+				}
+			}else{
+				if(c.match(/[1-5]-16c/gmi)){
+					interaction.reply({ content: `Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}\nChallenge: ${pb2Levels[li2].detail}`, ephemeral: true });
+				}else if(c.match(/[1-5]-[01]\dc/gmi)){
+					interaction.reply({ content: `Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}\nChallenge: ${pb2Levels[li2].detail}`, ephemeral: true });
+				}else if(c.match(/[1-6]-16/gmi)){
+					interaction.reply({ content: `Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}`, ephemeral: true });
+				}else if(c.match(/[1-6]-[01]\d/gmi)){
+					interaction.reply({ content: `Level Names for \`${c}\`:\nPB1: ${pb1Worlds[w]} - ${pb1Levels[li1].name}\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}`, ephemeral: true });
+				}else if(c.match(/[78]-[01]\d/gmi)){
+					interaction.reply({ content: `Level Names for \`${c}\`:\nPB1: ${pb1Worlds[w]} - ${pb1Levels[li1].name}`, ephemeral: true });
+				}
 			}
 		}
+
+		levelName(0);
 	}
 }

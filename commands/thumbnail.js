@@ -1,7 +1,51 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
+const { MessageEmbed, MessageAttachment } = require('discord.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('thumbnail')
-		.setDescription('Displays information about the bot')
+		.setDescription('Displays the level thumbnail for the code inputted.')
+		.addStringOption(option =>
+			option.setName('code')
+			.setDescription('Input a level code. Ex: 1-1')
+			.setRequired(true)
+		)
+		.addStringOption(option =>
+			option.setName('type')
+			.setDescription('Input a level type. Defaults to PB2 levels.')
+			.addChoices([
+                [ 'pb1', 'pb1Choice' ],
+				[ 'pb2', 'pb2Choice' ]
+			])
+			.setRequired(false)
+		),
+	async execute(interaction){
+		let code = interaction.options.getString('code').toLowerCase();
+		
+		//if(!code.match(/[1-8]-\d[[1-6]c]?c?/gmi)) await interaction.reply({ content: 'Input a valid level code!', ephemeral: true }); for some reason this doesnt work
+
+		let type;
+		if(interaction.options.getString('type')){
+			type = interaction.options.getString('type');
+		}else{
+			type = 'pb2Choice';
+		}
+
+		if(code.match(/[1-8]-[01]\dc?/gmi) == null){ // adds extra 0
+			let codeSplit = code.split('');
+			codeSplit.splice(2, 0, 0);
+			code = codeSplit.join('');
+		}
+
+		//pb1 thumbnails to be implemented later when i get the images
+
+		const thumbnail = new MessageAttachment(`./images/thumbnails/${code}.png`)
+
+		const thumbnailEmbed = new MessageEmbed()
+		.setColor('#f9db44')
+		.setTitle(`Thumbnail for ${code}`)
+		.setImage(`attachment://${code}.png`)
+
+		await interaction.reply({ embeds: [thumbnailEmbed], files: [thumbnail], ephemeral: true })
+	}
 }

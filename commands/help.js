@@ -4,15 +4,15 @@ const { MessageEmbed, MessageAttachment, MessageActionRow, MessageSelectMenu } =
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('help')
-		.setDescription('Displays information about the bot')
+		.setDescription('Displays information about the bot.')
         .addStringOption(option =>
             option.setName('input')
-                .setDescription('The name of the command you need help with')
-                .addChoices([
-                    [ 'guide', 'guideChoice' ],
-                    [ 'name', 'nameChoice' ]
-                ])
-                .setRequired(false)
+            .setDescription('The name of the command you need help with')
+            .addChoices([
+                [ 'guide', 'guideChoice' ],
+                [ 'name', 'nameChoice' ]
+            ])
+            .setRequired(false)
         ),
 	async execute(interaction){
         const icon = new MessageAttachment('./images/icon.png');
@@ -33,28 +33,29 @@ module.exports = {
             await interaction.reply({ embeds: [helpEmbed], files: [icon], ephemeral: true });
         }else{
             const startEmbed = new MessageEmbed()
-                .setColor('#f9db44')
-                .setTitle('Help')
-                .setThumbnail('attachment://icon.png')
-                .setDescription('To get help on specific parts of the bot,\nuse the select menu below to choose a section.')
+            .setColor('#f9db44')
+            .setTitle('Help')
+            .setThumbnail('attachment://icon.png')
+            .setDescription('To get help on specific parts of the bot,\nuse the select menu below to choose a section.')
+            
             const helpMenu = new MessageActionRow()
-                .addComponents(
-                    new MessageSelectMenu()
-                        .setCustomId('helpMenu')
-                        .setPlaceholder('Nothing selected')
-                        .addOptions([
-                            {
-                                label: 'guide',
-                                description: 'Displays help about the guide command',
-                                value: 'guideChoice',
-                            },
-                            {
-                                label: 'name',
-                                description: 'Displays help about the name command',
-                                value: 'nameChoice',
-                            },
-                        ]),
-                );
+            .addComponents(
+                new MessageSelectMenu()
+                .setCustomId('helpMenu')
+                .setPlaceholder('Nothing selected')
+                .addOptions([
+                    {
+                        label: 'guide',
+                        description: 'Displays help about the guide command',
+                        value: 'guideChoice',
+                    },
+                    {
+                        label: 'name',
+                        description: 'Displays help about the name command',
+                        value: 'nameChoice',
+                    },
+                ]),
+            );
             
             await interaction.reply({ embeds: [startEmbed], files: [icon], components: [helpMenu], ephemeral: true });
         }
