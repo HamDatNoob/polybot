@@ -47,8 +47,8 @@ module.exports = {
 			}
 
 			if(message){
-				if(db.get(`paused.${message.channelId}`) == false && db.has(`cooldown.${message.channelId}.${c}`) == false){				
-					db.push(`cooldown.${message.channelId}.${c}`, c);
+				if(db.get(`${message.channelId}.paused`) == false && db.has(`${message.channelId}.cooldown.${c}`) == false){				
+					db.push(`${message.channelId}.cooldown.${c}`, c);
 
 					if(c.match(/[1-5]-16c/gmi)){
 						message.channel.send(`Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}\nChallenge: ${pb2Levels[li2].detail}`);
@@ -62,7 +62,12 @@ module.exports = {
 						message.channel.send(`Level Names for \`${c}\`:\nPB1: ${pb1Worlds[w]} - ${pb1Levels[li1].name}`);
 					}
 
-					sleep(300000).then(db.delete(`cooldown.${message.channelId}.${c}`));
+					async function del(){
+						await sleep(300);
+						db.delete(`${message.channelId}.cooldown.${c}`);
+					};
+
+					del();
 				}
 			}else{
 				if(c.match(/[1-5]-16c/gmi)){

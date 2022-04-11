@@ -8,11 +8,11 @@ module.exports = {
 	async execute(interaction){
 		const channel = interaction.channelId;
 		
-		if(await db.get(`paused.${channel}`) == false){
-			await db.set(`paused.${channel}`, true);
+		if(await db.get(`${channel}.paused`) == false){
+			await db.set(`${channel}.paused`, true);
 			await interaction.reply('Paused resposnses to the level command in this channel. Responses are still accessible via the /level command');
 		}else{
-			await db.set(`paused.${channel}`, false);
+			await db.set(`${channel}.paused`, false);
 			await interaction.reply('Unpaused responses to the level command in this channel.');
 		}
 	}
