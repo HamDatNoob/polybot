@@ -43,7 +43,7 @@ module.exports = {
             );
             
 
-            await interaction.reply({ embeds: [startEmbed], files: [icon], components: [helpMenu], ephemeral: true });
+            await interaction.reply({ embeds: [startEmbed], files: [icon], components: [guideMenu], ephemeral: true });
         }
 	},
 };

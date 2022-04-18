@@ -23,6 +23,6 @@ module.exports = {
 			db.set(`${channels[i]}.paused`, state[i]);
 		}
 
-		await interaction.reply({ content: 'Clearned all level command cooldowns in all channels', ephemeral: true });
+		await interaction.reply({ content: 'Cleared all level command cooldowns in all channels', ephemeral: true });
 	}
 }
