@@ -13,41 +13,32 @@ module.exports = {
         const icon = new MessageAttachment('./images/icon.png');
         
         if(interaction.options.getString('input')){
-            const option = interaction.options.getString('input')
-            const text = require('../json/helpMenu.json')
+            const option = interaction.options.getString('input');
+            const text = require('../json/guideEmbeds.json');
 
-            const helpEmbed = new MessageEmbed()
+            const guideEmbed = new MessageEmbed()
             .setColor('#f9db44')
-            .setTitle('Help')
+            .setTitle('Guide')
             .setThumbnail('attachment://icon.png')
             .setDescription(`${text[option].title}`)
             .addFields(
                 { name: text[option].fields.heading1, value: text[option].fields.body1 }
             )
 
-            await interaction.reply({ embeds: [helpEmbed], files: [icon], ephemeral: true });
+            await interaction.reply({ embeds: [guideEmbed], files: [icon], ephemeral: true });
         }else{
             const startEmbed = new MessageEmbed()
             .setColor('#f9db44')
-            .setTitle('Help')
+            .setTitle('Guide')
             .setThumbnail('attachment://icon.png')
-            .setDescription('To get help on specific parts of the bot,\nuse the select menu below to choose a section.')
-            const helpMenu = new MessageActionRow()
+            .setDescription('To get help on specific concepts in the game,\nuse the select menu below to choose a section.')
+            const guideMenu = new MessageActionRow()
             .addComponents(
                 new MessageSelectMenu()
-                .setCustomId('helpMenu')
+                .setCustomId('guideMenu')
                 .setPlaceholder('Nothing selected')
                 .addOptions([
-                    {
-                        label: 'guide',
-                        description: 'Displays help about the guide command',
-                        value: 'guideChoice',
-                    },
-                    {
-                        label: 'name',
-                        description: 'Displays help about the name command',
-                        value: 'nameChoice',
-                    },
+                    { label: text[0].name, value: text[0].name },
                 ]),
             );
             
