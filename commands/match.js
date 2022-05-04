@@ -6,13 +6,14 @@ const pb2Levels = require('../json/pb2Levels.json');
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('match')
-		.setDescription('Searches for the level with the most similarity to the inputted string.')
-        .addStringOption(option =>
-            option.setName('input')
-            .setDescription('The string to match to level names')
-            .setRequired(true)
-        ),
+    .setName('match')
+    .setDescription('Searches for the level with the most similarity to the inputted string')
+    .addStringOption(option =>
+        option
+        .setName('input')
+        .setDescription('The string to match to level names')
+        .setRequired(true)
+    ),
     async execute(interaction){
         const input = interaction.options.getString('input');
 

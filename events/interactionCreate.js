@@ -42,6 +42,20 @@ module.exports = {
                     await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
                 }
             }
+        }else if(interaction.isAutocomplete()){ //autocompletes
+            const autocompleteFiles = fs.readdirSync('./components/autocompletes').filter(file => file.endsWith('.js'));
+            for(const file of autocompleteFiles){
+	            const component = require(`../components/autocompletes/${file}`);
+                
+                if(component.name != interaction.commandName.concat('Autocomplete')) return;
+                
+                try{
+                    await component.execute(interaction);
+                }catch(error){
+                    console.error(error);
+                    await interaction.reply({ content: 'There was an error while finding autocompletions for this command!', ephemeral: true });
+                }
+            }
         }else{ //nothing found
             return await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
         }

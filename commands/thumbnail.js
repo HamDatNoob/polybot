@@ -3,22 +3,24 @@ const { MessageEmbed, MessageAttachment } = require('discord.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('thumbnail')
-		.setDescription('Displays the level thumbnail for the code inputted.')
-		.addStringOption(option =>
-			option.setName('code')
-			.setDescription('Input a level code. Ex: 1-1')
-			.setRequired(true)
-		)
-		.addStringOption(option =>
-			option.setName('type')
-			.setDescription('Input a level type. Defaults to PB2 levels.')
-			.addChoices([
-                [ 'pb1', 'pb1Choice' ],
-				[ 'pb2', 'pb2Choice' ]
-			])
-			.setRequired(false)
-		),
+	.setName('thumbnail')
+	.setDescription('Displays the level thumbnail for the code inputted')
+	.addStringOption(option =>
+		option
+		.setName('code')
+		.setDescription('Input a level code. Ex: 1-1')
+		.setRequired(true)
+	)
+	.addStringOption(option =>
+		option
+		.setName('type')
+		.setDescription('Input a level type, defaults to PB2 levels')
+		.addChoices([
+			[ 'pb1', 'pb1Choice' ],
+			[ 'pb2', 'pb2Choice' ]
+		])
+		.setRequired(false)
+	),
 	async execute(interaction){
 		let code = interaction.options.getString('code').toLowerCase();
 		
@@ -31,11 +33,7 @@ module.exports = {
 			type = 'pb2Choice';
 		}
 
-		if(code.match(/[1-8]-[01]\dc?/gmi) == null){ // adds extra 0
-			let codeSplit = code.split('');
-			codeSplit.splice(2, 0, 0);
-			code = codeSplit.join('');
-		}
+		code = code.replace(/^([1-8]-)([1-9]c?)$/gmi, `$10$2`);  //adds extra 0
 
 		//pb1 thumbnails to be implemented later when i get the images
 

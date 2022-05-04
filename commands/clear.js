@@ -4,7 +4,7 @@ const db = require('quick.db');
 module.exports = {
 	data: new SlashCommandBuilder()
 	.setName('clear')
-	.setDescription('Clears all current cooldowns. Useful if the bot goes down.'),
+	.setDescription('Clears all current cooldowns, useful if the bot goes down'),
 	async execute(interaction){
 		let channels = Array.from(interaction.guild.channels.cache.keys());
 
@@ -13,7 +13,7 @@ module.exports = {
 				channels.splice(i, 1);
 			}
 		}
-
+	
 		channels.shift();
 
 		let state = [];

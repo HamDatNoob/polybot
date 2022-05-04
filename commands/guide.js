@@ -1,14 +1,17 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed, MessageAttachment, MessageActionRow, MessageSelectMenu } = require('discord.js');
+const text = require('../json/guideEmbeds.json');
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('guide')
-		.setDescription('Displays information and help on concepts in the game.')
-        .addStringOption(option =>
-            option.setName('input')
-            .setDescription('The name of the concept you need assistance with')
-            .setRequired(false)),
+    .setName('guide')
+    .setDescription('Displays information and help on concepts in the game')
+    .addStringOption(option =>
+        option
+        .setName('input')
+        .setDescription('The name of the concept you need assistance with')
+        .setRequired(false)
+    ),
 	async execute(interaction){
         const icon = new MessageAttachment('./images/icon.png');
         
@@ -21,9 +24,9 @@ module.exports = {
             .setTitle('Guide')
             .setThumbnail('attachment://icon.png')
             .setDescription(`${text[option].title}`)
-            .addFields(
-                { name: text[option].fields.heading1, value: text[option].fields.body1 }
-            )
+            //.addFields(
+            //    { name: text[option].fields.heading1, value: text[option].fields.body1 }
+            //)
 
             await interaction.reply({ embeds: [guideEmbed], files: [icon], ephemeral: true });
         }else{
@@ -38,7 +41,9 @@ module.exports = {
                 .setCustomId('guideMenu')
                 .setPlaceholder('Nothing selected')
                 .addOptions([
-                    { label: text[0].name, value: text[0].name },
+                    { label: 'a', value: '0' },
+                    { label: 'b', value: '1' },
+                    { label: 'c', value: '2' }
                 ]),
             );
             

@@ -6,13 +6,14 @@ const { sleep } = require('../scripts/sleep');
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('level')
-		.setDescription('Displays the complete name of a level.')
-		.addStringOption(option =>
-			option.setName('code')
-			.setDescription('Input a level code. Ex: 1-1')
-			.setRequired(true)
-		),
+	.setName('level')
+	.setDescription('Displays the complete name of a level')
+	.addStringOption(option =>
+		option
+		.setName('code')
+		.setDescription('Input a level code, ex: 1-1')
+		.setRequired(true)
+	),
 	async execute(interaction, message){
 		let msg;
 		if(interaction){
@@ -29,11 +30,7 @@ module.exports = {
 			const pb1Worlds = ["Alpine Meadows", "Desert Winds", "Snow Drift", "Ancient Ruins", "80s Fun Land", "Zen Gardens", "Tropical Paradise", "Area 52"];
 			const pb2Worlds = ["Pine Mountains", "Glowing Gorge", "Tranquil Oasis", "Sanguine Gulch", "Serenity Valley", "Steamtown"];
 
-			if(c.match(/[1-8]-[01]\dc?/gmi) == null){ // adds extra 0
-				let codeSplit = c.split('');
-				codeSplit.splice(2, 0, 0);
-				c = codeSplit.join('');
-			}
+			c = c.replace(/^([1-8]-)([1-9]c?)$/gmi, `$10$2`);  //adds extra 0
 
 			const w = c.slice(0, 1) - 1;
 			const l = parseInt(c.slice(2, 4), 10) - 1;

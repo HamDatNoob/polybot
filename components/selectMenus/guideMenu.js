@@ -1,7 +1,7 @@
 const { MessageEmbed, MessageAttachment } = require("discord.js");
 
 module.exports = {
-    name: 'helpMenu',
+    name: 'guideMenu',
     async execute(interaction){
         const option = interaction.values;
         const text = require("../../json/helpMenu.json");

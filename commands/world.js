@@ -4,23 +4,24 @@ const pb2Levels = require('../json/pb2Levels.json');
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('world')
-		.setDescription('Displays the entire world of the number inputted.')
-		.addIntegerOption(option =>
-            option.setName('input')
-            .setDescription('The name of the command you need help with')
-            .addChoices([
-                [ '1', 1 ],
-                [ '2', 2 ],
-				[ '3', 3 ],
-				[ '4', 4 ],
-				[ '5', 5 ],
-				[ '6', 6 ],
-				[ '7', 7 ],
-				[ '8', 8 ]
-            ])
-            .setRequired(true)
-        ),
+	.setName('world')
+	.setDescription('Displays the entire world of the number inputted')
+	.addIntegerOption(option =>
+		option
+		.setName('input')
+		.setDescription('The world to return data of')
+		.addChoices([
+			[ '1', 1 ],
+			[ '2', 2 ],
+			[ '3', 3 ],
+			[ '4', 4 ],
+			[ '5', 5 ],
+			[ '6', 6 ],
+			[ '7', 7 ],
+			[ '8', 8 ]
+		])
+		.setRequired(true)
+	),
 	async execute(interaction){		
 		const option = interaction.options.getInteger('input');
 		

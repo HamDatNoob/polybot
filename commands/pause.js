@@ -4,7 +4,7 @@ const db = require('quick.db');
 module.exports = {
 	data: new SlashCommandBuilder()
 	.setName('pause')
-	.setDescription('Pauses public chat responses to the level command in the current channel.'),
+	.setDescription('Pauses public chat responses to the level command in the current channel'),
 	async execute(interaction){
 		const channel = interaction.channelId;
 		
