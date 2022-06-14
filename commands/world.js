@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageEmbed, MessageAttachment, MessageActionRow, MessageButton } = require('discord.js');
+const { MessageEmbed, MessageActionRow, MessageButton } = require('discord.js');
 const pb2Levels = require('../json/pb2Levels.json');
 
 module.exports = {
@@ -65,11 +65,10 @@ module.exports = {
 			levels.push({ code: pb2Levels[(option - 1) * 16 + i].code, name: pb2Levels[(option - 1) * 16 + i].name });
 		}
 
-		const file = new MessageAttachment('./images/icon.png');
 		const worldEmbed = new MessageEmbed()
 		.setColor(color)
 		.setTitle(title)
-		.setThumbnail('attachment://icon.png')
+		.setThumbnail('https://cdn.discordapp.com/attachments/965424891786563654/975932690639511572/icon.png')
 		.setFields(
 			{ name: '\u200b', value: `\`${levels[0].code}\`: ${levels[0].name}\n\`${levels[1].code}\`: ${levels[1].name}\n\`${levels[2].code}\`: ${levels[2].name}\n\`${levels[3].code}\`: ${levels[3].name}\n\`${levels[4].code}\`: ${levels[4].name}\n\`${levels[5].code}\`: ${levels[5].name}\n\`${levels[6].code}\`: ${levels[6].name}\n\`${levels[7].code}\`: ${levels[7].name}\n\`${levels[8].code}\`: ${levels[8].name}\n\`${levels[9].code}\`: ${levels[9].name}\n\`${levels[10].code}\`: ${levels[10].name}\n\`${levels[11].code}\`: ${levels[11].name}\n\`${levels[12].code}\`: ${levels[12].name}\n\`${levels[13].code}\`: ${levels[13].name}\n\`${levels[14].code}\`: ${levels[14].name}\n\`${levels[15].code}\`: ${levels[15].name}` }
 		)
@@ -82,6 +81,6 @@ module.exports = {
 			.setStyle('PRIMARY')
 		)
 
-		await interaction.reply({ embeds: [worldEmbed], files: [file], components: [worldButton], ephemeral: true });
+		await interaction.reply({ embeds: [worldEmbed], components: [worldButton], ephemeral: true });
 	}
 }

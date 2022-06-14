@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageEmbed, MessageAttachment, MessageActionRow, MessageButton } = require('discord.js');
+const { MessageEmbed, MessageActionRow, MessageButton } = require('discord.js');
 const api = require('../json/api.json');
 
 module.exports = {
@@ -75,7 +75,7 @@ module.exports = {
         if(res1.ok) data1 = await res1.json();
         data1 = data1?.data;
 
-        if(data1.runs[0] == undefined) return interaction.reply({ content: 'There was an error while executing this command! (Most likely no run exists for this category)', ephemeral: true })
+        if(data1.runs[0] == undefined) return interaction.reply({ content: 'There was an error while executing this command! (Most likely no run exists for this category)', ephemeral: true });
 
         let data2;
         const res2 = await fetch(data1.runs[0].run.players[0].uri);
@@ -95,11 +95,10 @@ module.exports = {
         if(user == undefined) user = 'Guest';
         if(submitted == undefined) submitted = '';
 
-        const icon = new MessageAttachment('./images/icon.png')
         const recordDataEmbed = new MessageEmbed()
         .setTitle(`World record for ${name}, ${typeNames[type]}, ${modeNames[mode]}`)
         .setColor('#f9db44')
-        .setThumbnail('attachment://icon.png')
+        .setThumbnail('https://cdn.discordapp.com/attachments/965424891786563654/975932690639511572/icon.png')
         .setFields(
             { name: 'Time', value: time },
             { name: 'Comment', value: comment },
@@ -136,6 +135,6 @@ module.exports = {
             )
         }
 
-        return interaction.reply({ embeds: [recordDataEmbed], files: [icon], components: [videoLinkButton], ephemeral: false })
+        return interaction.reply({ embeds: [recordDataEmbed], components: [videoLinkButton], ephemeral: true });
 	}
 }

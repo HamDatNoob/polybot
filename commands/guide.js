@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageEmbed, MessageAttachment, MessageActionRow, MessageSelectMenu } = require('discord.js');
-const text = require('../json/guideEmbeds.json');
+const { MessageEmbed, MessageActionRow} = require('discord.js');
+const guide = require('../json/guide.json');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -8,47 +8,55 @@ module.exports = {
     .setDescription('Displays information and help on concepts in the game')
     .addStringOption(option =>
         option
-        .setName('input')
-        .setDescription('The name of the concept you need assistance with')
-        .setRequired(false)
+        .setName('category')
+        .setDescription('Category for the thing help is needed with')
+        .setRequired(true)
+        .addChoices([
+            [ 'Basics', 'basics' ],
+            [ 'Hydraulics', 'hydraulics' ],
+            [ 'Sandbox', 'sandbox' ],
+            [ 'Shortcuts', 'shortcuts' ],
+            [ 'Budgeting', 'budgeting' ]
+        ])
+    )
+    .addStringOption(option =>
+        option
+        .setName('group')
+        .setDescription('The specific thing help is needed with')
+        .setRequired(true)
+        .setAutocomplete(true)
     ),
 	async execute(interaction){
-        const icon = new MessageAttachment('./images/icon.png');
+        const category = interaction.options._hoistedOptions[0].value;
+        const group = interaction.options._hoistedOptions[1].value;
         
-        if(interaction.options.getString('input')){
-            const option = interaction.options.getString('input');
-            const text = require('../json/guideEmbeds.json');
+        const data = guide[category][group];
 
-            const guideEmbed = new MessageEmbed()
+        let guideEmbed;
+        if(category != 'budgeting'){
+            guideEmbed = new MessageEmbed()
+            .setTitle(data.name)
             .setColor('#f9db44')
-            .setTitle('Guide')
-            .setThumbnail('attachment://icon.png')
-            .setDescription(`${text[option].title}`)
-            //.addFields(
-            //    { name: text[option].fields.heading1, value: text[option].fields.body1 }
-            //)
+            .setThumbnail('https://cdn.discordapp.com/attachments/965424891786563654/975932690639511572/icon.png')
+            .setDescription(data.description)
+            .setImage(data.image)
 
-            await interaction.reply({ embeds: [guideEmbed], files: [icon], ephemeral: true });
+            return interaction.reply({ embeds: [guideEmbed] })
         }else{
-            const startEmbed = new MessageEmbed()
+            guideEmbed = new MessageEmbed()
+            .setTitle(data.name)
             .setColor('#f9db44')
-            .setTitle('Guide')
-            .setThumbnail('attachment://icon.png')
-            .setDescription('To get help on specific concepts in the game,\nuse the select menu below to choose a section.')
-            const guideMenu = new MessageActionRow()
-            .addComponents(
-                new MessageSelectMenu()
-                .setCustomId('guideMenu')
-                .setPlaceholder('Nothing selected')
-                .addOptions([
-                    { label: 'a', value: '0' },
-                    { label: 'b', value: '1' },
-                    { label: 'c', value: '2' }
-                ]),
-            );
-            
+            .setThumbnail('https://cdn.discordapp.com/attachments/965424891786563654/975932690639511572/icon.png')
+            .setDescription(data.description)
 
-            await interaction.reply({ embeds: [startEmbed], files: [icon], components: [guideMenu], ephemeral: true });
+            const link = new MessageActionRow()
+            .addComponents(
+                new MessageButton()
+                .setLabel('Video')
+                .setStyle('LINK')
+                .setURL('https://docs.google.com/document/d/1NmuRDXXJFX5ayPbg6WuFwQYK7uYn8Aajpt2dA1rDnt8/edit?usp=sharing')
+            )
+            return interaction.reply({ embeds: [guideEmbed], components: [link] })
         }
-	},
+	}
 };
