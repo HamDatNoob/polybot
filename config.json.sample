@@ -1,0 +1,6 @@
+{
+  "token": "YOUR_DISCORD_BOT_TOKEN",
+  "pb2_token": "YOUR_PB2_ACCOUNT_TOKEN",
+  "clientID": "BOT'S_CLIENT_ID_HERE",
+  "guildID": "ID_OF_GUILD_BOT_IS_IN"
+}
