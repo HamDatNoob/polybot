@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageEmbed, MessageActionRow} = require('discord.js');
+const { MessageEmbed, MessageActionRow, MessageButton } = require('discord.js');
 const guide = require('../json/guide.json');
 
 module.exports = {
@@ -52,7 +52,7 @@ module.exports = {
             const link = new MessageActionRow()
             .addComponents(
                 new MessageButton()
-                .setLabel('Video')
+                .setLabel('Handbook')
                 .setStyle('LINK')
                 .setURL('https://docs.google.com/document/d/1NmuRDXXJFX5ayPbg6WuFwQYK7uYn8Aajpt2dA1rDnt8/edit?usp=sharing')
             )
