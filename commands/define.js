@@ -4,12 +4,12 @@ const terms = require('../json/terms.json');
 
 module.exports = {
 	data: new SlashCommandBuilder()
-    .setName('term')
-    .setDescription('Translates poly bridge jargon to layman\'s terms')
+    .setName('define')
+    .setDescription('Translates Poly Bridge jargon to layman\'s terms')
     .addStringOption(option =>
         option
         .setName('term')
-        .setDescription('The specific term you don\'t understand')
+        .setDescription('The specific term you don\'t understand (start typing to find the term you want)')
         .setRequired(true)
         .setAutocomplete(true)
     ),
@@ -19,7 +19,7 @@ module.exports = {
         const embed = new MessageEmbed()
         .setTitle(terms[option].name)
         .setDescription(terms[option].description)
-        .setImage(terms[option].image)
+        .setImage(terms[option]?.image)
         .setColor('#f9db44')
         .setThumbnail('https://cdn.discordapp.com/attachments/965424891786563654/975932690639511572/icon.png')
 

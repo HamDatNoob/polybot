@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed, MessageActionRow, MessageButton } = require('discord.js');
-const guide = require('../json/guide.json');
+const { getGuide } = require('../scripts/guideEmbeds.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -30,7 +30,7 @@ module.exports = {
         const category = interaction.options._hoistedOptions[0].value;
         const group = interaction.options._hoistedOptions[1].value;
         
-        const data = guide[category][group];
+        const data = getGuide(category, group);
 
         let guideEmbed;
         if(category != 'budgeting'){
