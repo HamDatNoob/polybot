@@ -6,22 +6,11 @@ module.exports = {
 	.setName('clear')
 	.setDescription('Clears all current cooldowns, useful if the bot goes down'),
 	async execute(interaction){
-		let channels = Array.from(interaction.guild.channels.cache.keys());
+		let channel = interaction.channelId;
 
-		for(let i in channels){
-			if(!interaction.guild.channels.resolve(channels[i]).isText()){
-				channels.splice(i, 1);
-			}
-		}
-	
-		channels.shift();
-
-		let state = [];
-		for(let i in channels){
-			state.push(db.get(`${channels[i]}.paused`));
-			db.delete(channels[i]);
-			db.set(`${channels[i]}.paused`, state[i]);
-		}
+		let state = db.get(`${channel}.paused`);
+		db.delete(channel);
+		db.set(`${channel}.paused`, state);
 
 		await interaction.reply({ content: 'Cleared all level command cooldowns in all channels', ephemeral: true });
 	}

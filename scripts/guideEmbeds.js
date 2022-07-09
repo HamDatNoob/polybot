@@ -101,8 +101,3 @@ const categories = {
     }
 };
 
-function getGuide(category, group){
-    return categories[category][group];
-}
-
-module.exports = { getGuide };

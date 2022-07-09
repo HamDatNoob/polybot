@@ -14,7 +14,7 @@ module.exports = {
 		.setDescription('Input a level code, ex: 1-1')
 		.setRequired(true)
 	),
-	async execute(interaction, message){
+	async execute(interaction, message, client){
 		let msg;
 		if(interaction){
 			msg = interaction.options.getString('code').match(/[1-8]-\d[\dc]?c?/gmi);
@@ -47,17 +47,34 @@ module.exports = {
 				if(db.get(`${message.channelId}.paused`) == false && db.has(`${message.channelId}.cooldown.${c}`) == false){				
 					db.push(`${message.channelId}.cooldown.${c}`, c);
 
+					let sm;
 					if(c.match(/[1-5]-16c/gmi)){
-						message.channel.send(`Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}\nChallenge: ${pb2Levels[li2].detail}`);
+						sm = message.channel.send(`Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}\nChallenge: ${pb2Levels[li2].detail}`);
 					}else if(c.match(/[1-5]-[01]\dc/gmi)){
-						message.channel.send(`Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}\nChallenge: ${pb2Levels[li2].detail}`);
+						sm = message.channel.send(`Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}\nChallenge: ${pb2Levels[li2].detail}`);
 					}else if(c.match(/[1-6]-16/gmi)){
-						message.channel.send(`Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}`);
+						sm = message.channel.send(`Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}`);
 					}else if(c.match(/[1-6]-[01]\d/gmi)){
-						message.channel.send(`Level Names for \`${c}\`:\nPB1: ${pb1Worlds[w]} - ${pb1Levels[li1].name}\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}`);
+						sm = message.channel.send(`Level Names for \`${c}\`:\nPB1: ${pb1Worlds[w]} - ${pb1Levels[li1].name}\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}`);
 					}else if(c.match(/[78]-[01]\d/gmi)){
-						message.channel.send(`Level Names for \`${c}\`:\nPB1: ${pb1Worlds[w]} - ${pb1Levels[li1].name}`);
+						sm = message.channel.send(`Level Names for \`${c}\`:\nPB1: ${pb1Worlds[w]} - ${pb1Levels[li1].name}`);
 					}
+
+					sm.then(async botMessage => {
+						await botMessage.react('❌');
+
+						const filter = (reaction, user) => {
+							return ['❌'].includes(reaction.emoji.name);
+						};
+
+						botMessage.awaitReactions({ filter, max: 1, time: 60000, errors: ['time'] }).then(collected => {
+							const reaction = collected.first();
+
+							if(reaction.emoji.name === '❌'){
+								botMessage.delete(1);
+							}
+						}).catch(collected => {});
+					});
 
 					async function del(){
 						await sleep(300);

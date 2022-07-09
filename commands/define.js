@@ -1,28 +1,43 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageEmbed } = require('discord.js');
-const terms = require('../json/terms.json');
+const { MessageEmbed, MessageActionRow, MessageButton } = require('discord.js');
+const { getTerm } = require('../scripts/termEmbeds.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
     .setName('define')
-    .setDescription('Translates Poly Bridge jargon to layman\'s terms')
+    .setDescription('Displays information and help on concepts in the game')
+    .addStringOption(option =>
+        option
+        .setName('category')
+        .setDescription('Category for the thing help is needed with')
+        .setRequired(true)
+        .addChoices([
+            [ 'Exploits', 'exploits' ],
+            [ 'Bugs', 'bugs' ],
+            [ 'Budgeting Techniques', 'bt' ],
+            [ 'Challenges', 'challenges' ]
+        ])
+    )
     .addStringOption(option =>
         option
         .setName('term')
-        .setDescription('The specific term you don\'t understand (start typing to find the term you want)')
+        .setDescription('The specific thing help is needed with')
         .setRequired(true)
         .setAutocomplete(true)
     ),
 	async execute(interaction){
-        const option = interaction.options._hoistedOptions[0].value;
+        const category = interaction.options._hoistedOptions[0].value;
+        const group = interaction.options._hoistedOptions[1].value;
+        
+        const data = getTerm(category, group);
 
-        const embed = new MessageEmbed()
-        .setTitle(terms[option].name)
-        .setDescription(terms[option].description)
-        .setImage(terms[option]?.image)
+        let guideEmbed = new MessageEmbed()
+        .setTitle(data.name)
         .setColor('#f9db44')
         .setThumbnail('https://cdn.discordapp.com/attachments/965424891786563654/975932690639511572/icon.png')
+        .setDescription(data.description)
+        .setImage(data.image)
 
-        return interaction.reply({ embeds: [embed] });
-	},
-};
+        return interaction.reply({ embeds: [guideEmbed] });
+    }
+}

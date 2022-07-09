@@ -1,5 +1,3 @@
-const { findBestMatch } = require("string-similarity");
-
 module.exports = {
     name: 'guideAutocomplete',
     async execute(interaction){
