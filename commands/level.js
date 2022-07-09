@@ -7,7 +7,7 @@ const { sleep } = require('../scripts/sleep');
 module.exports = {
 	data: new SlashCommandBuilder()
 	.setName('level')
-	.setDescription('Displays the complete name of a level')
+	.setDescription('Translates Poly Bridge jargon into layman\'s terms')
 	.addStringOption(option =>
 		option
 		.setName('code')
