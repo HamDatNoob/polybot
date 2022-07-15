@@ -2,8 +2,8 @@ const { MessageEmbed } = require("discord.js");
 const pb1Levels = require('../../json/pb1Levels.json');
 
 module.exports = {
-    name: 'worldButton',
-    async execute(interaction){
+	name: 'worldButton',
+	async execute(interaction){
 		let option;
 		if(interaction.message){
 			option = interaction.message.embeds[0].title;
@@ -11,7 +11,7 @@ module.exports = {
 			option = interaction.options.getInteger('input');
 		}
 
-        let title;
+		let title;
 		let color;
 		let num;
 		switch(option){
@@ -46,10 +46,10 @@ module.exports = {
 				num = 6;
 				break;
 			case 7:
-                title = 'Tropical Paradise';
-                color = '#e5e892';
+				title = 'Tropical Paradise';
+				color = '#e5e892';
 				num = 7;
-                break;
+				break;
 			case 8:
 				let levels = [];
 				for(let i = 0; i < 10; i++){
@@ -67,7 +67,7 @@ module.exports = {
 				return interaction.reply({ embeds: [w8Embed], ephemeral: true });
 		}
 
-        let levels = [];
+		let levels = [];
 		for(let i = 0; i < 15; i++){
 			levels.push({ code: pb1Levels[(num - 1) * 15 + i].code, name: pb1Levels[(num - 1) * 15 + i].name });
 		}
@@ -83,7 +83,7 @@ module.exports = {
 		if(option == 7){
 			await interaction.reply({ embeds: [worldEmbedEdit], ephemeral: true });
 		}else{
-        	await interaction.update({ embeds: [worldEmbedEdit], components: [] });
+			await interaction.update({ embeds: [worldEmbedEdit], components: [] });
 		}
-    }
+	}
 }

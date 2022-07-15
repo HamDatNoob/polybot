@@ -1,882 +1,882 @@
 [
   {
-    "code": "1-01",
-    "name": "Ten Meter Simple Bridge",
-    "detail": ""
+	"code": "1-01",
+	"name": "Ten Meter Simple Bridge",
+	"detail": ""
   },
   {
-    "code": "1-02",
-    "name": "A New Slope",
-    "detail": ""
+	"code": "1-02",
+	"name": "A New Slope",
+	"detail": ""
   },
   {
-    "code": "1-03",
-    "name": "Bridge of Steel",
-    "detail": ""
+	"code": "1-03",
+	"name": "Bridge of Steel",
+	"detail": ""
   },
   {
-    "code": "1-04",
-    "name": "Fourteen Meter Overpass",
-    "detail": ""
+	"code": "1-04",
+	"name": "Fourteen Meter Overpass",
+	"detail": ""
   },
   {
-    "code": "1-05",
-    "name": "Checkpoints",
-    "detail": ""
+	"code": "1-05",
+	"name": "Checkpoints",
+	"detail": ""
   },
   {
-    "code": "1-06",
-    "name": "First Drawbridge",
-    "detail": ""
+	"code": "1-06",
+	"name": "First Drawbridge",
+	"detail": ""
   },
   {
-    "code": "1-07",
-    "name": "Taxi Task",
-    "detail": ""
+	"code": "1-07",
+	"name": "Taxi Task",
+	"detail": ""
   },
   {
-    "code": "1-08",
-    "name": "Rope Support",
-    "detail": ""
+	"code": "1-08",
+	"name": "Rope Support",
+	"detail": ""
   },
   {
-    "code": "1-09",
-    "name": "Budget Cuts",
-    "detail": ""
+	"code": "1-09",
+	"name": "Budget Cuts",
+	"detail": ""
   },
   {
-    "code": "1-10",
-    "name": "First Jump",
-    "detail": ""
+	"code": "1-10",
+	"name": "First Jump",
+	"detail": ""
   },
   {
-    "code": "1-11",
-    "name": "Stop n' Go",
-    "detail": ""
+	"code": "1-11",
+	"name": "Stop n' Go",
+	"detail": ""
   },
   {
-    "code": "1-12",
-    "name": "Rock Rest",
-    "detail": ""
+	"code": "1-12",
+	"name": "Rock Rest",
+	"detail": ""
   },
   {
-    "code": "1-13",
-    "name": "Redraw",
-    "detail": ""
+	"code": "1-13",
+	"name": "Redraw",
+	"detail": ""
   },
   {
-    "code": "1-14",
-    "name": "Land Brace",
-    "detail": ""
+	"code": "1-14",
+	"name": "Land Brace",
+	"detail": ""
   },
   {
-    "code": "1-15",
-    "name": "Hydraulic Management",
-    "detail": ""
+	"code": "1-15",
+	"name": "Hydraulic Management",
+	"detail": ""
   },
   {
-    "code": "1-16",
-    "name": "Large Bridge",
-    "detail": ""
+	"code": "1-16",
+	"name": "Large Bridge",
+	"detail": ""
   },
   {
-    "code": "2-01",
-    "name": "Unity",
-    "detail": ""
+	"code": "2-01",
+	"name": "Unity",
+	"detail": ""
   },
   {
-    "code": "2-02",
-    "name": "Long Drawbridge",
-    "detail": ""
+	"code": "2-02",
+	"name": "Long Drawbridge",
+	"detail": ""
   },
   {
-    "code": "2-03",
-    "name": "Low Rider",
-    "detail": ""
+	"code": "2-03",
+	"name": "Low Rider",
+	"detail": ""
   },
   {
-    "code": "2-04",
-    "name": "Buggy Bouncer",
-    "detail": ""
+	"code": "2-04",
+	"name": "Buggy Bouncer",
+	"detail": ""
   },
   {
-    "code": "2-05",
-    "name": "Rockin'",
-    "detail": ""
+	"code": "2-05",
+	"name": "Rockin'",
+	"detail": ""
   },
   {
-    "code": "2-06",
-    "name": "Roundabout",
-    "detail": ""
+	"code": "2-06",
+	"name": "Roundabout",
+	"detail": ""
   },
   {
-    "code": "2-07",
-    "name": "Double Decker Highway",
-    "detail": ""
+	"code": "2-07",
+	"name": "Double Decker Highway",
+	"detail": ""
   },
   {
-    "code": "2-08",
-    "name": "Split Level",
-    "detail": ""
+	"code": "2-08",
+	"name": "Split Level",
+	"detail": ""
   },
   {
-    "code": "2-09",
-    "name": "Anchors Away",
-    "detail": ""
+	"code": "2-09",
+	"name": "Anchors Away",
+	"detail": ""
   },
   {
-    "code": "2-10",
-    "name": "Fork in the Road",
-    "detail": ""
+	"code": "2-10",
+	"name": "Fork in the Road",
+	"detail": ""
   },
   {
-    "code": "2-11",
-    "name": "Air Show",
-    "detail": ""
+	"code": "2-11",
+	"name": "Air Show",
+	"detail": ""
   },
   {
-    "code": "2-12",
-    "name": "Momentum",
-    "detail": ""
+	"code": "2-12",
+	"name": "Momentum",
+	"detail": ""
   },
   {
-    "code": "2-13",
-    "name": "Compression",
-    "detail": ""
+	"code": "2-13",
+	"name": "Compression",
+	"detail": ""
   },
   {
-    "code": "2-14",
-    "name": "Dip n' Draw",
-    "detail": ""
+	"code": "2-14",
+	"name": "Dip n' Draw",
+	"detail": ""
   },
   {
-    "code": "2-15",
-    "name": "Weight Distribution",
-    "detail": ""
+	"code": "2-15",
+	"name": "Weight Distribution",
+	"detail": ""
   },
   {
-    "code": "2-16",
-    "name": "Stow Away",
-    "detail": ""
+	"code": "2-16",
+	"name": "Stow Away",
+	"detail": ""
   },
   {
-    "code": "3-01",
-    "name": "Loop Hole",
-    "detail": ""
+	"code": "3-01",
+	"name": "Loop Hole",
+	"detail": ""
   },
   {
-    "code": "3-02",
-    "name": "Big Dipper",
-    "detail": ""
+	"code": "3-02",
+	"name": "Big Dipper",
+	"detail": ""
   },
   {
-    "code": "3-03",
-    "name": "String Theory",
-    "detail": ""
+	"code": "3-03",
+	"name": "String Theory",
+	"detail": ""
   },
   {
-    "code": "3-04",
-    "name": "Doubling Down",
-    "detail": ""
+	"code": "3-04",
+	"name": "Doubling Down",
+	"detail": ""
   },
   {
-    "code": "3-05",
-    "name": "Semi Slope",
-    "detail": ""
+	"code": "3-05",
+	"name": "Semi Slope",
+	"detail": ""
   },
   {
-    "code": "3-06",
-    "name": "Rock Skipping",
-    "detail": ""
+	"code": "3-06",
+	"name": "Rock Skipping",
+	"detail": ""
   },
   {
-    "code": "3-07",
-    "name": "Support Cable",
-    "detail": ""
+	"code": "3-07",
+	"name": "Support Cable",
+	"detail": ""
   },
   {
-    "code": "3-08",
-    "name": "Crossed Paths",
-    "detail": ""
+	"code": "3-08",
+	"name": "Crossed Paths",
+	"detail": ""
   },
   {
-    "code": "3-09",
-    "name": "Wibbly Wobbly",
-    "detail": ""
+	"code": "3-09",
+	"name": "Wibbly Wobbly",
+	"detail": ""
   },
   {
-    "code": "3-10",
-    "name": "Shafted",
-    "detail": ""
+	"code": "3-10",
+	"name": "Shafted",
+	"detail": ""
   },
   {
-    "code": "3-11",
-    "name": "Cross Jump",
-    "detail": ""
+	"code": "3-11",
+	"name": "Cross Jump",
+	"detail": ""
   },
   {
-    "code": "3-12",
-    "name": "Emergency Interference",
-    "detail": ""
+	"code": "3-12",
+	"name": "Emergency Interference",
+	"detail": ""
   },
   {
-    "code": "3-13",
-    "name": "Diagonal Elevator",
-    "detail": ""
+	"code": "3-13",
+	"name": "Diagonal Elevator",
+	"detail": ""
   },
   {
-    "code": "3-14",
-    "name": "Low Flyer",
-    "detail": ""
+	"code": "3-14",
+	"name": "Low Flyer",
+	"detail": ""
   },
   {
-    "code": "3-15",
-    "name": "Looper's Revenge",
-    "detail": ""
+	"code": "3-15",
+	"name": "Looper's Revenge",
+	"detail": ""
   },
   {
-    "code": "3-16",
-    "name": "Monster Truck Rally",
-    "detail": ""
+	"code": "3-16",
+	"name": "Monster Truck Rally",
+	"detail": ""
   },
   {
-    "code": "4-01",
-    "name": "Edgy",
-    "detail": ""
+	"code": "4-01",
+	"name": "Edgy",
+	"detail": ""
   },
   {
-    "code": "4-02",
-    "name": "Collision Warning",
-    "detail": ""
+	"code": "4-02",
+	"name": "Collision Warning",
+	"detail": ""
   },
   {
-    "code": "4-03",
-    "name": "Sloped Drawbridge",
-    "detail": ""
+	"code": "4-03",
+	"name": "Sloped Drawbridge",
+	"detail": ""
   },
   {
-    "code": "4-04",
-    "name": "Trap Door",
-    "detail": ""
+	"code": "4-04",
+	"name": "Trap Door",
+	"detail": ""
   },
   {
-    "code": "4-05",
-    "name": "Triple Decker Drawbridge",
-    "detail": ""
+	"code": "4-05",
+	"name": "Triple Decker Drawbridge",
+	"detail": ""
   },
   {
-    "code": "4-06",
-    "name": "Safety Gap",
-    "detail": ""
+	"code": "4-06",
+	"name": "Safety Gap",
+	"detail": ""
   },
   {
-    "code": "4-07",
-    "name": "Big Spender",
-    "detail": ""
+	"code": "4-07",
+	"name": "Big Spender",
+	"detail": ""
   },
   {
-    "code": "4-08",
-    "name": "Thread the Needle",
-    "detail": ""
+	"code": "4-08",
+	"name": "Thread the Needle",
+	"detail": ""
   },
   {
-    "code": "4-09",
-    "name": "Tipping Tower",
-    "detail": ""
+	"code": "4-09",
+	"name": "Tipping Tower",
+	"detail": ""
   },
   {
-    "code": "4-10",
-    "name": "Drawbridge In Disguise",
-    "detail": ""
+	"code": "4-10",
+	"name": "Drawbridge In Disguise",
+	"detail": ""
   },
   {
-    "code": "4-11",
-    "name": "Lean on Me",
-    "detail": ""
+	"code": "4-11",
+	"name": "Lean on Me",
+	"detail": ""
   },
   {
-    "code": "4-12",
-    "name": "Trailblazer",
-    "detail": ""
+	"code": "4-12",
+	"name": "Trailblazer",
+	"detail": ""
   },
   {
-    "code": "4-13",
-    "name": "Diagonal Drawbridge",
-    "detail": ""
+	"code": "4-13",
+	"name": "Diagonal Drawbridge",
+	"detail": ""
   },
   {
-    "code": "4-14",
-    "name": "Big Rigs",
-    "detail": ""
+	"code": "4-14",
+	"name": "Big Rigs",
+	"detail": ""
   },
   {
-    "code": "4-15",
-    "name": "Twists and Turns",
-    "detail": ""
+	"code": "4-15",
+	"name": "Twists and Turns",
+	"detail": ""
   },
   {
-    "code": "4-16",
-    "name": "Don't Leave Me",
-    "detail": ""
+	"code": "4-16",
+	"name": "Don't Leave Me",
+	"detail": ""
   },
   {
-    "code": "5-01",
-    "name": "Brake Pad",
-    "detail": ""
+	"code": "5-01",
+	"name": "Brake Pad",
+	"detail": ""
   },
   {
-    "code": "5-02",
-    "name": "Sorting",
-    "detail": ""
+	"code": "5-02",
+	"name": "Sorting",
+	"detail": ""
   },
   {
-    "code": "5-03",
-    "name": "Springboard",
-    "detail": ""
+	"code": "5-03",
+	"name": "Springboard",
+	"detail": ""
   },
   {
-    "code": "5-04",
-    "name": "Leverage",
-    "detail": ""
+	"code": "5-04",
+	"name": "Leverage",
+	"detail": ""
   },
   {
-    "code": "5-05",
-    "name": "Truck Way In",
-    "detail": ""
+	"code": "5-05",
+	"name": "Truck Way In",
+	"detail": ""
   },
   {
-    "code": "5-06",
-    "name": "Spring and a Miss",
-    "detail": ""
+	"code": "5-06",
+	"name": "Spring and a Miss",
+	"detail": ""
   },
   {
-    "code": "5-07",
-    "name": "Trading Places",
-    "detail": ""
+	"code": "5-07",
+	"name": "Trading Places",
+	"detail": ""
   },
   {
-    "code": "5-08",
-    "name": "Passing By",
-    "detail": ""
+	"code": "5-08",
+	"name": "Passing By",
+	"detail": ""
   },
   {
-    "code": "5-09",
-    "name": "Falling Into Place",
-    "detail": ""
+	"code": "5-09",
+	"name": "Falling Into Place",
+	"detail": ""
   },
   {
-    "code": "5-10",
-    "name": "In Suspense",
-    "detail": ""
+	"code": "5-10",
+	"name": "In Suspense",
+	"detail": ""
   },
   {
-    "code": "5-11",
-    "name": "All Together Now",
-    "detail": ""
+	"code": "5-11",
+	"name": "All Together Now",
+	"detail": ""
   },
   {
-    "code": "5-12",
-    "name": "Gettin' Loopy",
-    "detail": ""
+	"code": "5-12",
+	"name": "Gettin' Loopy",
+	"detail": ""
   },
   {
-    "code": "5-13",
-    "name": "Crash Course",
-    "detail": ""
+	"code": "5-13",
+	"name": "Crash Course",
+	"detail": ""
   },
   {
-    "code": "5-14",
-    "name": "Bus Routes",
-    "detail": ""
+	"code": "5-14",
+	"name": "Bus Routes",
+	"detail": ""
   },
   {
-    "code": "5-15",
-    "name": "Acceleration",
-    "detail": ""
+	"code": "5-15",
+	"name": "Acceleration",
+	"detail": ""
   },
   {
-    "code": "5-16",
-    "name": "Double Duty",
-    "detail": ""
+	"code": "5-16",
+	"name": "Double Duty",
+	"detail": ""
   },
   {
-    "code": "6-01",
-    "name": "Earthquake!",
-    "detail": ""
+	"code": "6-01",
+	"name": "Earthquake!",
+	"detail": ""
   },
   {
-    "code": "6-02",
-    "name": "Canyon Carriage",
-    "detail": ""
+	"code": "6-02",
+	"name": "Canyon Carriage",
+	"detail": ""
   },
   {
-    "code": "6-03",
-    "name": "Parkade Elevator",
-    "detail": ""
+	"code": "6-03",
+	"name": "Parkade Elevator",
+	"detail": ""
   },
   {
-    "code": "6-04",
-    "name": "Bridgelike Motion",
-    "detail": ""
+	"code": "6-04",
+	"name": "Bridgelike Motion",
+	"detail": ""
   },
   {
-    "code": "6-05",
-    "name": "Edgeworks",
-    "detail": ""
+	"code": "6-05",
+	"name": "Edgeworks",
+	"detail": ""
   },
   {
-    "code": "6-06",
-    "name": "Spring Loaded",
-    "detail": ""
+	"code": "6-06",
+	"name": "Spring Loaded",
+	"detail": ""
   },
   {
-    "code": "6-07",
-    "name": "Get a Grip",
-    "detail": ""
+	"code": "6-07",
+	"name": "Get a Grip",
+	"detail": ""
   },
   {
-    "code": "6-08",
-    "name": "How The Turntables",
-    "detail": ""
+	"code": "6-08",
+	"name": "How The Turntables",
+	"detail": ""
   },
   {
-    "code": "6-09",
-    "name": "Squeeze Through",
-    "detail": ""
+	"code": "6-09",
+	"name": "Squeeze Through",
+	"detail": ""
   },
   {
-    "code": "6-10",
-    "name": "Bridge-in-a-Box",
-    "detail": ""
+	"code": "6-10",
+	"name": "Bridge-in-a-Box",
+	"detail": ""
   },
   {
-    "code": "6-11",
-    "name": "Wall Jumpin'",
-    "detail": ""
+	"code": "6-11",
+	"name": "Wall Jumpin'",
+	"detail": ""
   },
   {
-    "code": "6-12",
-    "name": "Mind the Gap",
-    "detail": ""
+	"code": "6-12",
+	"name": "Mind the Gap",
+	"detail": ""
   },
   {
-    "code": "6-13",
-    "name": "Pinball",
-    "detail": ""
+	"code": "6-13",
+	"name": "Pinball",
+	"detail": ""
   },
   {
-    "code": "6-14",
-    "name": "Spin Cycle",
-    "detail": ""
+	"code": "6-14",
+	"name": "Spin Cycle",
+	"detail": ""
   },
   {
-    "code": "6-15",
-    "name": "Special Delivery",
-    "detail": ""
+	"code": "6-15",
+	"name": "Special Delivery",
+	"detail": ""
   },
   {
-    "code": "6-16",
-    "name": "Rube Goldbridge",
-    "detail": ""
+	"code": "6-16",
+	"name": "Rube Goldbridge",
+	"detail": ""
   },
   {
-    "code": "1-1c",
-    "name": "Ten Meter Simple Bridge",
-    "detail": "Springs instead of wood and limit on road."
+	"code": "1-1c",
+	"name": "Ten Meter Simple Bridge",
+	"detail": "Springs instead of wood and limit on road."
   },
   {
-    "code": "1-02c",
-    "name": "A New Slope",
-    "detail": "Tanker Truck instead of Van."
+	"code": "1-02c",
+	"name": "A New Slope",
+	"detail": "Tanker Truck instead of Van."
   },
   {
-    "code": "1-03c",
-    "name": "Bridge of Steel",
-    "detail": "Road only."
+	"code": "1-03c",
+	"name": "Bridge of Steel",
+	"detail": "Road only."
   },
   {
-    "code": "1-04c",
-    "name": "Fourteen Meter Overpass",
-    "detail": "Very large boat."
+	"code": "1-04c",
+	"name": "Fourteen Meter Overpass",
+	"detail": "Very large boat."
   },
   {
-    "code": "1-05c",
-    "name": "Checkpoints",
-    "detail": "Fewer static joints"
+	"code": "1-05c",
+	"name": "Checkpoints",
+	"detail": "Fewer static joints"
   },
   {
-    "code": "1-06c",
-    "name": "First Drawbridge",
-    "detail": "Only 1 Hydraulic & only 8 Roads"
+	"code": "1-06c",
+	"name": "First Drawbridge",
+	"detail": "Only 1 Hydraulic & only 8 Roads"
   },
   {
-    "code": "1-07c",
-    "name": "Taxi Task",
-    "detail": "Half budget and only 7 roads."
+	"code": "1-07c",
+	"name": "Taxi Task",
+	"detail": "Half budget and only 7 roads."
   },
   {
-    "code": "1-08c",
-    "name": "Rope Support",
-    "detail": "Missing balloon."
+	"code": "1-08c",
+	"name": "Rope Support",
+	"detail": "Missing balloon."
   },
   {
-    "code": "1-09c",
-    "name": "Budget Cuts",
-    "detail": "No static joint on rock."
+	"code": "1-09c",
+	"name": "Budget Cuts",
+	"detail": "No static joint on rock."
   },
   {
-    "code": "1-10c",
-    "name": "First Jump",
-    "detail": "No Steel."
+	"code": "1-10c",
+	"name": "First Jump",
+	"detail": "No Steel."
   },
   {
-    "code": "1-11c",
-    "name": "Stop n' Go",
-    "detail": "Extra boat, only 8 Road."
+	"code": "1-11c",
+	"name": "Stop n' Go",
+	"detail": "Extra boat, only 8 Road."
   },
   {
-    "code": "1-12c",
-    "name": "Rock Rest",
-    "detail": "Short 1 Road."
+	"code": "1-12c",
+	"name": "Rock Rest",
+	"detail": "Short 1 Road."
   },
   {
-    "code": "1-13c",
-    "name": "Redraw",
-    "detail": "Large Boat."
+	"code": "1-13c",
+	"name": "Redraw",
+	"detail": "Large Boat."
   },
   {
-    "code": "1-14c",
-    "name": "Land Brace",
-    "detail": "Platform on left side too."
+	"code": "1-14c",
+	"name": "Land Brace",
+	"detail": "Platform on left side too."
   },
   {
-    "code": "1-15c",
-    "name": "Hydraulic Management",
-    "detail": "No Hydraulics"
+	"code": "1-15c",
+	"name": "Hydraulic Management",
+	"detail": "No Hydraulics"
   },
   {
-    "code": "1-16c",
-    "name": "Large Bridge",
-    "detail": "No Steel."
+	"code": "1-16c",
+	"name": "Large Bridge",
+	"detail": "No Steel."
   },
   {
-    "code": "2-1c",
-    "name": "Unity",
-    "detail": "Model T must come back."
+	"code": "2-1c",
+	"name": "Unity",
+	"detail": "Model T must come back."
   },
   {
-    "code": "2-02c",
-    "name": "Long Drawbridge",
-    "detail": "Low checkpoints added."
+	"code": "2-02c",
+	"name": "Long Drawbridge",
+	"detail": "Low checkpoints added."
   },
   {
-    "code": "2-03c",
-    "name": "Low Rider",
-    "detail": "No rock in middle."
+	"code": "2-03c",
+	"name": "Low Rider",
+	"detail": "No rock in middle."
   },
   {
-    "code": "2-04c",
-    "name": "Buggy Bouncer",
-    "detail": "No springs and no anchor on balloon."
+	"code": "2-04c",
+	"name": "Buggy Bouncer",
+	"detail": "No springs and no anchor on balloon."
   },
   {
-    "code": "2-05c",
-    "name": "Rockin'",
-    "detail": "Much larger rock."
+	"code": "2-05c",
+	"name": "Rockin'",
+	"detail": "Much larger rock."
   },
   {
-    "code": "2-06c",
-    "name": "Roundabout",
-    "detail": "Must collect bottom checkpoint first."
+	"code": "2-06c",
+	"name": "Roundabout",
+	"detail": "Must collect bottom checkpoint first."
   },
   {
-    "code": "2-07c",
-    "name": "Double Decker Highway",
-    "detail": "Missing island."
+	"code": "2-07c",
+	"name": "Double Decker Highway",
+	"detail": "Missing island."
   },
   {
-    "code": "2-08c",
-    "name": "Split Level",
-    "detail": "Only 10 Road."
+	"code": "2-08c",
+	"name": "Split Level",
+	"detail": "Only 10 Road."
   },
   {
-    "code": "2-09c",
-    "name": "Anchors Away",
-    "detail": "No static joint on bottom."
+	"code": "2-09c",
+	"name": "Anchors Away",
+	"detail": "No static joint on bottom."
   },
   {
-    "code": "2-10c",
-    "name": "Fork in the Road",
-    "detail": "Added checkpoint."
+	"code": "2-10c",
+	"name": "Fork in the Road",
+	"detail": "Added checkpoint."
   },
   {
-    "code": "2-11c",
-    "name": "Air Show",
-    "detail": "Stop checkpoint in the middle."
+	"code": "2-11c",
+	"name": "Air Show",
+	"detail": "Stop checkpoint in the middle."
   },
   {
-    "code": "2-12c",
-    "name": "Momentum",
-    "detail": "Only 7 Roads."
+	"code": "2-12c",
+	"name": "Momentum",
+	"detail": "Only 7 Roads."
   },
   {
-    "code": "2-13c",
-    "name": "Compression",
-    "detail": "Added boat, Increased budget."
+	"code": "2-13c",
+	"name": "Compression",
+	"detail": "Added boat, Increased budget."
   },
   {
-    "code": "2-14c",
-    "name": "Dip n' Draw",
-    "detail": "Only 1 Hydraulic and a larger boat."
+	"code": "2-14c",
+	"name": "Dip n' Draw",
+	"detail": "Only 1 Hydraulic and a larger boat."
   },
   {
-    "code": "2-15c",
-    "name": "Weight Distribution",
-    "detail": "No rock or balloon and only one static joint."
+	"code": "2-15c",
+	"name": "Weight Distribution",
+	"detail": "No rock or balloon and only one static joint."
   },
   {
-    "code": "2-16c",
-    "name": "Stow Away",
-    "detail": "No rock on right."
+	"code": "2-16c",
+	"name": "Stow Away",
+	"detail": "No rock on right."
   },
   {
-    "code": "3-1c",
-    "name": "Loop Hole",
-    "detail": "Additional plane."
+	"code": "3-1c",
+	"name": "Loop Hole",
+	"detail": "Additional plane."
   },
   {
-    "code": "3-02c",
-    "name": "Big Dipper",
-    "detail": "Checkpoint moved left."
+	"code": "3-02c",
+	"name": "Big Dipper",
+	"detail": "Checkpoint moved left."
   },
   {
-    "code": "3-03c",
-    "name": "String Theory",
-    "detail": "Only 8 Wood and fewer static joints."
+	"code": "3-03c",
+	"name": "String Theory",
+	"detail": "Only 8 Wood and fewer static joints."
   },
   {
-    "code": "3-04c",
-    "name": "Doubling Down",
-    "detail": "Additional boats."
+	"code": "3-04c",
+	"name": "Doubling Down",
+	"detail": "Additional boats."
   },
   {
-    "code": "3-05c",
-    "name": "Semi Slope",
-    "detail": "No Steel or Cable."
+	"code": "3-05c",
+	"name": "Semi Slope",
+	"detail": "No Steel or Cable."
   },
   {
-    "code": "3-06c",
-    "name": "Rock Skipping",
-    "detail": "No static joints on rocks, fewer Road."
+	"code": "3-06c",
+	"name": "Rock Skipping",
+	"detail": "No static joints on rocks, fewer Road."
   },
   {
-    "code": "3-07c",
-    "name": "Support Cable",
-    "detail": "Added checkpoint."
+	"code": "3-07c",
+	"name": "Support Cable",
+	"detail": "Added checkpoint."
   },
   {
-    "code": "3-08c",
-    "name": "Crossed Paths",
-    "detail": "No Hydraulics."
+	"code": "3-08c",
+	"name": "Crossed Paths",
+	"detail": "No Hydraulics."
   },
   {
-    "code": "3-09c",
-    "name": "Wibbly Wobbly",
-    "detail": "Only 2 Springs."
+	"code": "3-09c",
+	"name": "Wibbly Wobbly",
+	"detail": "Only 2 Springs."
   },
   {
-    "code": "3-10c",
-    "name": "Shafted",
-    "detail": "Extra fire truck."
+	"code": "3-10c",
+	"name": "Shafted",
+	"detail": "Extra fire truck."
   },
   {
-    "code": "3-11c",
-    "name": "Cross Jump",
-    "detail": "Only one platform in the middle."
+	"code": "3-11c",
+	"name": "Cross Jump",
+	"detail": "Only one platform in the middle."
   },
   {
-    "code": "3-12c",
-    "name": "Emergency Interference",
-    "detail": "Additional boats and plane."
+	"code": "3-12c",
+	"name": "Emergency Interference",
+	"detail": "Additional boats and plane."
   },
   {
-    "code": "3-13c",
-    "name": "Diagonal Elevator",
-    "detail": "Only one hydraulic."
+	"code": "3-13c",
+	"name": "Diagonal Elevator",
+	"detail": "Only one hydraulic."
   },
   {
-    "code": "3-14c",
-    "name": "Low Flyer",
-    "detail": "No static joints."
+	"code": "3-14c",
+	"name": "Low Flyer",
+	"detail": "No static joints."
   },
   {
-    "code": "3-15c",
-    "name": "Looper's Revenge",
-    "detail": "Another car goes backwards."
+	"code": "3-15c",
+	"name": "Looper's Revenge",
+	"detail": "Another car goes backwards."
   },
   {
-    "code": "3-16c",
-    "name": "Monster Truck Rally",
-    "detail": "No Steel & 3 monster trucks."
+	"code": "3-16c",
+	"name": "Monster Truck Rally",
+	"detail": "No Steel & 3 monster trucks."
   },
   {
-    "code": "4-1c",
-    "name": "Edgy",
-    "detail": "Extra boat and only 2 Hydraulics."
+	"code": "4-1c",
+	"name": "Edgy",
+	"detail": "Extra boat and only 2 Hydraulics."
   },
   {
-    "code": "4-02c",
-    "name": "Collision Warning",
-    "detail": "2 more dune buggies."
+	"code": "4-02c",
+	"name": "Collision Warning",
+	"detail": "2 more dune buggies."
   },
   {
-    "code": "4-03c",
-    "name": "Sloped Drawbridge",
-    "detail": "Second Hydraulic phase is removed."
+	"code": "4-03c",
+	"name": "Sloped Drawbridge",
+	"detail": "Second Hydraulic phase is removed."
   },
   {
-    "code": "4-04c",
-    "name": "Trap Door",
-    "detail": "Return cars to start."
+	"code": "4-04c",
+	"name": "Trap Door",
+	"detail": "Return cars to start."
   },
   {
-    "code": "4-05c",
-    "name": "Triple Decker Drawbridge",
-    "detail": "Only 1 Hydraulic."
+	"code": "4-05c",
+	"name": "Triple Decker Drawbridge",
+	"detail": "Only 1 Hydraulic."
   },
   {
-    "code": "4-06c",
-    "name": "Safety Gap",
-    "detail": "Planes added, limited road, and no Springs."
+	"code": "4-06c",
+	"name": "Safety Gap",
+	"detail": "Planes added, limited road, and no Springs."
   },
   {
-    "code": "4-07c",
-    "name": "Big Spender",
-    "detail": "2 Meters longer with same budget."
+	"code": "4-07c",
+	"name": "Big Spender",
+	"detail": "2 Meters longer with same budget."
   },
   {
-    "code": "4-08c",
-    "name": "Thread the Needle",
-    "detail": "No Springs."
+	"code": "4-08c",
+	"name": "Thread the Needle",
+	"detail": "No Springs."
   },
   {
-    "code": "4-09c",
-    "name": "Tipping Tower",
-    "detail": "Return school bus to start."
+	"code": "4-09c",
+	"name": "Tipping Tower",
+	"detail": "Return school bus to start."
   },
   {
-    "code": "4-10c",
-    "name": "Drawbridge In Disguise",
-    "detail": "Extra car, only 1 Hydraulic, and no hydraulic controller."
+	"code": "4-10c",
+	"name": "Drawbridge In Disguise",
+	"detail": "Extra car, only 1 Hydraulic, and no hydraulic controller."
   },
   {
-    "code": "4-11c",
-    "name": "Lean on Me",
-    "detail": "Removed rock in the middle, Increased budget."
+	"code": "4-11c",
+	"name": "Lean on Me",
+	"detail": "Removed rock in the middle, Increased budget."
   },
   {
-    "code": "4-12c",
-    "name": "Trailblazer",
-    "detail": "No Springs."
+	"code": "4-12c",
+	"name": "Trailblazer",
+	"detail": "No Springs."
   },
   {
-    "code": "4-13c",
-    "name": "Diagonal Drawbridge",
-    "detail": "No Hydraulics and budget limited to 60K."
+	"code": "4-13c",
+	"name": "Diagonal Drawbridge",
+	"detail": "No Hydraulics and budget limited to 60K."
   },
   {
-    "code": "4-14c",
-    "name": "Big Rigs",
-    "detail": "No Steel."
+	"code": "4-14c",
+	"name": "Big Rigs",
+	"detail": "No Steel."
   },
   {
-    "code": "4-15c",
-    "name": "Twists and Turns",
-    "detail": "Only 1 Hydraulic."
+	"code": "4-15c",
+	"name": "Twists and Turns",
+	"detail": "Only 1 Hydraulic."
   },
   {
-    "code": "4-16c",
-    "name": "Don't Leave Me",
-    "detail": "Only 1 Hydraulic, extra Hydraulic Phase."
+	"code": "4-16c",
+	"name": "Don't Leave Me",
+	"detail": "Only 1 Hydraulic, extra Hydraulic Phase."
   },
   {
-    "code": "5-1c",
-    "name": "Brake Pad",
-    "detail": "Stopping area is sloped"
+	"code": "5-1c",
+	"name": "Brake Pad",
+	"detail": "Stopping area is sloped"
   },
   {
-    "code": "5-02c",
-    "name": "Sorting",
-    "detail": "Added Plane"
+	"code": "5-02c",
+	"name": "Sorting",
+	"detail": "Added Plane"
   },
   {
-    "code": "5-03c",
-    "name": "Springboard",
-    "detail": "Checkpoint and Flag are higher"
+	"code": "5-03c",
+	"name": "Springboard",
+	"detail": "Checkpoint and Flag are higher"
   },
   {
-    "code": "5-04c",
-    "name": "Leverage",
-    "detail": "Added second Plane"
+	"code": "5-04c",
+	"name": "Leverage",
+	"detail": "Added second Plane"
   },
   {
-    "code": "5-05c",
-    "name": "Truck Way In",
-    "detail": "Larger gap"
+	"code": "5-05c",
+	"name": "Truck Way In",
+	"detail": "Larger gap"
   },
   {
-    "code": "5-06c",
-    "name": "Spring and a Miss",
-    "detail": "Swapped Vans and City Cars"
+	"code": "5-06c",
+	"name": "Spring and a Miss",
+	"detail": "Swapped Vans and City Cars"
   },
   {
-    "code": "5-07c",
-    "name": "Trading Places",
-    "detail": "Sports Cars are slower"
+	"code": "5-07c",
+	"name": "Trading Places",
+	"detail": "Sports Cars are slower"
   },
   {
-    "code": "5-08c",
-    "name": "Passing By",
-    "detail": "Added City Car"
+	"code": "5-08c",
+	"name": "Passing By",
+	"detail": "Added City Car"
   },
   {
-    "code": "5-09c",
-    "name": "Falling Into Place",
-    "detail": "Vehicle order is reversed"
+	"code": "5-09c",
+	"name": "Falling Into Place",
+	"detail": "Vehicle order is reversed"
   },
   {
-    "code": "5-10c",
-    "name": "In Suspense",
-    "detail": "Shorter pillars"
+	"code": "5-10c",
+	"name": "In Suspense",
+	"detail": "Shorter pillars"
   },
   {
-    "code": "5-11c",
-    "name": "All Together Now",
-    "detail": "Platforms are sloped"
+	"code": "5-11c",
+	"name": "All Together Now",
+	"detail": "Platforms are sloped"
   },
   {
-    "code": "5-12c",
-    "name": "Gettin' Loopy",
-    "detail": "Changed Checkpoint positions"
+	"code": "5-12c",
+	"name": "Gettin' Loopy",
+	"detail": "Changed Checkpoint positions"
   },
   {
-    "code": "5-13c",
-    "name": "Crash Course",
-    "detail": "A1 Flag moved below platform"
+	"code": "5-13c",
+	"name": "Crash Course",
+	"detail": "A1 Flag moved below platform"
   },
   {
-    "code": "5-14c",
-    "name": "Bus Routes",
-    "detail": "Added Van"
+	"code": "5-14c",
+	"name": "Bus Routes",
+	"detail": "Added Van"
   },
   {
-    "code": "5-15c",
-    "name": "Acceleration",
-    "detail": "Added centred static joint and a Checkpoint to Dune Buggy A1"
+	"code": "5-15c",
+	"name": "Acceleration",
+	"detail": "Added centred static joint and a Checkpoint to Dune Buggy A1"
   },
   {
-    "code": "5-16c",
-    "name": "Double Duty",
-    "detail": "Added Vespa"
+	"code": "5-16c",
+	"name": "Double Duty",
+	"detail": "Added Vespa"
   }
 ]

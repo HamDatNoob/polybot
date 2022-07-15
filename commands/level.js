@@ -14,7 +14,7 @@ module.exports = {
 		.setDescription('Input a level code, ex: 1-1')
 		.setRequired(true)
 	),
-	async execute(interaction, message, client){
+	async execute(interaction, message){
 		let msg;
 		if(interaction){
 			msg = interaction.options.getString('code').match(/[1-8]-\d[\dc]?c?/gmi);
@@ -61,8 +61,6 @@ module.exports = {
 					}
 
 					sm.then(async botMessage => {
-						await botMessage.react('❌');
-
 						const filter = (reaction, user) => {
 							return ['❌'].includes(reaction.emoji.name);
 						};

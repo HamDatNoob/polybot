@@ -10,11 +10,11 @@ module.exports = {
 		const channel = interaction.channelId;
 	
 		await db.set(`${channel}.paused`, true);
-		await interaction.reply('Temporarily paused resposnses to the level command in this channel for 15 minutes. Responses are still accessible via the /level command');
+		await interaction.reply('Temporarily paused responses to the level command in this channel for 15 minutes. Responses are still accessible via the /level command');
 
-        await sleep(885); // waits 14.75 minutes (short so interaction doesn't expire)
+		await sleep(885); // waits 14.75 minutes (short so interaction doesn't expire)
 
-        await db.set(`${channel}.paused`, false);
+		await db.set(`${channel}.paused`, false);
 		await interaction.followUp('Unpaused level responses in this channel.');
 	}
 }
