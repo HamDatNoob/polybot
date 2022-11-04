@@ -57,7 +57,6 @@ module.exports = {
 			{ name: 'User', value: user },
 			{ name: 'Submitted', value: submitted }
 		)
-		console.log(page)
 
 		let dis;
 		if(page == 1){

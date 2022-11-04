@@ -37,7 +37,7 @@ module.exports = {
 
 			const li1 = w * 15 + l;
 			let li2;
-			if(!c.match(/[1-5]-[01]\dc/gmi)){
+			if(!c.match(/[1-6]-[01]\dc/gmi)){
 			 	li2 = w * 16 + l;
 			}else{
 				li2 = w * 16 + l + 96;
@@ -48,9 +48,9 @@ module.exports = {
 					db.push(`${message.channelId}.cooldown.${c}`, c);
 
 					let sm;
-					if(c.match(/[1-5]-16c/gmi)){
+					if(c.match(/[1-6]-16c/gmi)){
 						sm = message.channel.send(`Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}\nChallenge: ${pb2Levels[li2].detail}`);
-					}else if(c.match(/[1-5]-[01]\dc/gmi)){
+					}else if(c.match(/[1-6]-[01]\dc/gmi)){
 						sm = message.channel.send(`Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}\nChallenge: ${pb2Levels[li2].detail}`);
 					}else if(c.match(/[1-6]-16/gmi)){
 						sm = message.channel.send(`Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}`);
@@ -60,19 +60,21 @@ module.exports = {
 						sm = message.channel.send(`Level Names for \`${c}\`:\nPB1: ${pb1Worlds[w]} - ${pb1Levels[li1].name}`);
 					}
 
-					sm.then(async botMessage => {
-						const filter = (reaction, user) => {
-							return ['❌'].includes(reaction.emoji.name);
-						};
-
-						botMessage.awaitReactions({ filter, max: 1, time: 60000, errors: ['time'] }).then(collected => {
-							const reaction = collected.first();
-
-							if(reaction.emoji.name === '❌'){
-								botMessage.delete(1);
-							}
-						}).catch(collected => {});
-					});
+					if(sm){
+						sm.then(async botMessage => {
+							const filter = (reaction, user) => {
+								return ['❌'].includes(reaction.emoji.name);
+							};
+	
+							botMessage.awaitReactions({ filter, max: 1, time: 60000, errors: ['time'] }).then(collected => {
+								const reaction = collected.first();
+	
+								if(reaction.emoji.name === '❌'){
+									botMessage.delete(1);
+								}
+							}).catch(collected => {});
+						});
+					}
 
 					async function del(){
 						await sleep(300);
@@ -82,9 +84,9 @@ module.exports = {
 					del();
 				}
 			}else{
-				if(c.match(/[1-5]-16c/gmi)){
+				if(c.match(/[1-6]-16c/gmi)){
 					interaction.reply({ content: `Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}\nChallenge: ${pb2Levels[li2].detail}`, ephemeral: true });
-				}else if(c.match(/[1-5]-[01]\dc/gmi)){
+				}else if(c.match(/[1-6]-[01]\dc/gmi)){
 					interaction.reply({ content: `Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}\nChallenge: ${pb2Levels[li2].detail}`, ephemeral: true });
 				}else if(c.match(/[1-6]-16/gmi)){
 					interaction.reply({ content: `Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}`, ephemeral: true });

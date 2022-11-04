@@ -34,7 +34,7 @@ module.exports = {
 		.addNumberOption(option => //option 2
 			option
 			.setName('mode')
-			.setDescription('The mode of the run, defaults to normal, ignore \"both\" if not a f4w or full run')
+			.setDescription('The mode of the run, ignore \"both\" if not a f4w or full run')
 			.addChoices([
 				[ 'normal', 0 ],
 				[ 'challenge', 1 ],
@@ -42,17 +42,17 @@ module.exports = {
 			])
 			.setRequired(true)
 		)
-	)
-	.addSubcommand(subcommand => subcommand
-		.setName('player')
-		.setDescription('View runs by a certain player')
-		.addStringOption(option => //option 0
-			option
-			.setName('user')
-			.setDescription('The specific player to search for (speedrun.com username)')  
-			.setRequired(true)
-		)
 	),
+	// .addSubcommand(subcommand => subcommand
+	// 	.setName('player')
+	// 	.setDescription('View runs by a certain player')
+	// 	.addStringOption(option => //option 0
+	// 		option
+	// 		.setName('user')
+	// 		.setDescription('The specific player to search for (speedrun.com username)')  
+	// 		.setRequired(true)
+	// 	)
+	// ),
 	async execute(interaction){
 		const options = interaction.options._hoistedOptions;
 		const subcommand = interaction.options._subcommand;

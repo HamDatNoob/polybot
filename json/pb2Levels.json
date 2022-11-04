@@ -802,81 +802,161 @@
   {
 	"code": "5-1c",
 	"name": "Brake Pad",
-	"detail": "Stopping area is sloped"
+	"detail": "Stopping area is sloped."
   },
   {
 	"code": "5-02c",
 	"name": "Sorting",
-	"detail": "Added Plane"
+	"detail": "Added Plane."
   },
   {
 	"code": "5-03c",
 	"name": "Springboard",
-	"detail": "Checkpoint and Flag are higher"
+	"detail": "Checkpoint and Flag are higher."
   },
   {
 	"code": "5-04c",
 	"name": "Leverage",
-	"detail": "Added second Plane"
+	"detail": "Added second Plane."
   },
   {
 	"code": "5-05c",
 	"name": "Truck Way In",
-	"detail": "Larger gap"
+	"detail": "Larger gap."
   },
   {
 	"code": "5-06c",
 	"name": "Spring and a Miss",
-	"detail": "Swapped Vans and City Cars"
+	"detail": "Swapped Vans and City Cars."
   },
   {
 	"code": "5-07c",
 	"name": "Trading Places",
-	"detail": "Sports Cars are slower"
+	"detail": "Sports Cars are slower."
   },
   {
 	"code": "5-08c",
 	"name": "Passing By",
-	"detail": "Added City Car"
+	"detail": "Added City Car."
   },
   {
 	"code": "5-09c",
 	"name": "Falling Into Place",
-	"detail": "Vehicle order is reversed"
+	"detail": "Vehicle order is reversed."
   },
   {
 	"code": "5-10c",
 	"name": "In Suspense",
-	"detail": "Shorter pillars"
+	"detail": "Shorter pillars."
   },
   {
 	"code": "5-11c",
 	"name": "All Together Now",
-	"detail": "Platforms are sloped"
+	"detail": "Platforms are sloped."
   },
   {
 	"code": "5-12c",
 	"name": "Gettin' Loopy",
-	"detail": "Changed Checkpoint positions"
+	"detail": "Changed Checkpoint positions."
   },
   {
 	"code": "5-13c",
 	"name": "Crash Course",
-	"detail": "A1 Flag moved below platform"
+	"detail": "A1 Flag moved below platform."
   },
   {
 	"code": "5-14c",
 	"name": "Bus Routes",
-	"detail": "Added Van"
+	"detail": "Added Van."
   },
   {
 	"code": "5-15c",
 	"name": "Acceleration",
-	"detail": "Added centred static joint and a Checkpoint to Dune Buggy A1"
+	"detail": "Added centred static joint and a Checkpoint to Dune Buggy A1."
   },
   {
 	"code": "5-16c",
 	"name": "Double Duty",
-	"detail": "Added Vespa"
+	"detail": "Added Vespa."
+  },
+  {
+	"code": "6-01c",
+	"name": "Earthquake!",
+	"detail": "Added Taxi, amplified earthquake."
+  },
+  {
+	"code": "6-02c",
+	"name": "Canyon Carriage",
+	"detail": "One carriage wheel missing, extra ambulance."
+  },
+  {
+	"code": "6-03c",
+	"name": "Parkade Elevator",
+	"detail": "Parking garage is taller and thinner."
+  },
+  {
+	"code": "6-04c",
+	"name": "Bridgelike Motion",
+	"detail": "Gears raised and Checkpoints added."
+  },
+  {
+	"code": "6-05c",
+	"name": "Edgeworks",
+	"detail": "Checkpoint moved up, extra boats and planes."
+  },
+  {
+	"code": "6-06c",
+	"name": "Spring Loaded",
+	"detail": "City Car replaced with Articulated Bus."
+  },
+  {
+	"code": "6-07c",
+	"name": "Get a Grip",
+	"detail": "Only one static joint, added Stop Checkpoint."
+  },
+  {
+	"code": "6-08c",
+	"name": "How The Turntables",
+	"detail": "Additional \"Turntable\"."
+  },
+  {
+	"code": "6-09c",
+	"name": "Squeeze Through",
+	"detail": "Misaligned the two bridge areas."
+  },
+  {
+	"code": "6-10c",
+	"name": "Bridge-in-a-Box",
+	"detail": "Ramp-in-a-Box."
+  },
+  {
+	"code": "6-11c",
+	"name": "Wall Jumpin'",
+	"detail": "Dune Buggy replaced with Monster Truck."
+  },
+  {
+	"code": "6-12c",
+	"name": "Mind the Gap",
+	"detail": "Extra gap."
+  },
+  {
+	"code": "6-13c",
+	"name": "Pinball",
+	"detail": "Maze replaced with spinning propeller."
+  },
+  {
+	"code": "6-14c",
+	"name": "Spin Cycle",
+	"detail": "Added Checkpoints to middle."
+  },
+  {
+	"code": "6-15c",
+	"name": "Special Delivery",
+	"detail": "\"Flaps\" removed, duplicated boxcar."
+  },
+  {
+	"code": "6-16c",
+	"name": "Rube Goldbridge",
+	"detail": "Marbles dispensed with Vespas inside."
   }
 ]
