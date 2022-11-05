@@ -49,9 +49,9 @@ module.exports = {
 
 					let sm;
 					if(c.match(/[1-6]-16c/gmi)){
-						sm = message.channel.send(`Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}\nChallenge: ${pb2Levels[li2].detail}`);
+						sm = message.channel.send(`Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}\nChallenge: ||${pb2Levels[li2].detail}||`);
 					}else if(c.match(/[1-6]-[01]\dc/gmi)){
-						sm = message.channel.send(`Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}\nChallenge: ${pb2Levels[li2].detail}`);
+						sm = message.channel.send(`Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}\nChallenge: ||${pb2Levels[li2].detail}||`);
 					}else if(c.match(/[1-6]-16/gmi)){
 						sm = message.channel.send(`Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}`);
 					}else if(c.match(/[1-6]-[01]\d/gmi)){
@@ -85,9 +85,9 @@ module.exports = {
 				}
 			}else{
 				if(c.match(/[1-6]-16c/gmi)){
-					interaction.reply({ content: `Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}\nChallenge: ${pb2Levels[li2].detail}`, ephemeral: true });
+					interaction.reply({ content: `Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}\nChallenge: ||${pb2Levels[li2].detail}||`, ephemeral: true });
 				}else if(c.match(/[1-6]-[01]\dc/gmi)){
-					interaction.reply({ content: `Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}\nChallenge: ${pb2Levels[li2].detail}`, ephemeral: true });
+					interaction.reply({ content: `Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}\nChallenge: ||${pb2Levels[li2].detail}||`, ephemeral: true });
 				}else if(c.match(/[1-6]-16/gmi)){
 					interaction.reply({ content: `Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}`, ephemeral: true });
 				}else if(c.match(/[1-6]-[01]\d/gmi)){
