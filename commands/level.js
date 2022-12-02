@@ -24,6 +24,8 @@ module.exports = {
 			console.error(error);
 		}
 
+		let replyNum = 0;
+
 		function levelName(i){
 			let c = msg[i].toLowerCase();
 
@@ -62,16 +64,39 @@ module.exports = {
 
 					if(sm){
 						sm.then(async botMessage => {
+							await botMessage.react('❌');
+							if(i != 0) await botMessage.react('⬅️');
+							if(i < msg.length - 1) await botMessage.react('➡️');
+
 							const filter = (reaction, user) => {
-								return ['❌'].includes(reaction.emoji.name);
+								if(user.bot == true) return;
+								return ['❌', '⬅️', '➡️'].includes(reaction.emoji.name);
 							};
 	
 							botMessage.awaitReactions({ filter, max: 1, time: 60000, errors: ['time'] }).then(collected => {
 								const reaction = collected.first();
-	
-								if(reaction.emoji.name === '❌'){
-									botMessage.delete(1);
+
+								switch(reaction.emoji.name){
+									case '❌':
+										botMessage.delete(1);
+
+										return;
+									case '⬅️':
+										replyNum--;
+
+										db.delete(`${message.channelId}.cooldown.${c}`);
+										botMessage.delete(1);
+										
+										return levelName(replyNum);
+									case '➡️':
+										replyNum++;
+
+										db.delete(`${message.channelId}.cooldown.${c}`);
+										botMessage.delete(1);
+
+										return levelName(replyNum);
 								}
+
 							}).catch(collected => {});
 						});
 					}
@@ -98,6 +123,6 @@ module.exports = {
 			}
 		}
 
-		levelName(0);
+		levelName(replyNum);
 	}
 }
