@@ -18,6 +18,10 @@ Polybot v3, created by ham#5817, with smaller contributions by ashduino101, Conq
 |    /thumbnail    |           \<level\>           | Displays the level thumbnail for any PB2 level.                                                                   |    anyone   |
 |      /world      |           \<number\>          | Displays the level and name of every level in the world of the\<br\>number inputted.                              |    anyone   |
 
+## Discord Server
+
+Join the Poly Bridge Discord Server here: https://discord.gg/PV32enUkHd
+
 ## More
 
 theres nothing more lol just contact me for more info i guess
