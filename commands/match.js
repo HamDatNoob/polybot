@@ -1,6 +1,5 @@
 const { findBestMatch } = require('string-similarity');
-const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageEmbed } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const pb1Levels = require('../json/pb1Levels.json');
 const pb2Levels = require('../json/pb2Levels.json');
 
@@ -29,11 +28,11 @@ module.exports = {
 		if(pb1MatchRating == '00%') pb1MatchRating = '1'.concat(pb1MatchRating);
 		if(pb2MatchRating == '00%') pb2MatchRating = '1'.concat(pb2MatchRating);
 
-		const matchEmbed = new MessageEmbed()
+		const matchEmbed = new EmbedBuilder()
 		.setTitle(`Level matches for '${input}'`)
 		.setColor('#f9db44')
 		.setThumbnail('https://cdn.discordapp.com/attachments/965424891786563654/975932690639511572/icon.png')
-		.setFields(
+		.addFields(
 			{ name: '\u200b', value: `PB1: ${pb1Levels[pb1Index].code}: ${pb1Levels[pb1Index].name}, ${pb1MatchRating} match!` },
 			{ name: '\u200b', value: `PB2: ${pb2Levels[pb2Index].code}: ${pb2Levels[pb2Index].name}, ${pb2MatchRating} match!` }
 		)

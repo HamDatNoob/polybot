@@ -1,4 +1,4 @@
-const { MessageEmbed, MessageActionRow, MessageButton } = require("discord.js");
+const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("discord.js");
 const api = require('../../json/api.json');
 
 module.exports = {
@@ -36,9 +36,12 @@ module.exports = {
 			run = [name, type, mode].join(', ');
 		}
 
+		console.log(data2)
+
+
 		let time = new Date(data1.times.primary_t * 1000).toISOString().slice(11, 23);
 		let comment = data1.comment;
-		let user = data2?.names.international;
+		let user = (data2?.name || data2?.names.international || data2?.names.japanese);
 		let submitted = data1.date;
 
 		if(time == undefined) return interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
@@ -46,11 +49,11 @@ module.exports = {
 		if(user == undefined) user = 'Guest';
 		if(submitted == undefined) submitted = 'No date';
 
-		const recordDataEmbed = new MessageEmbed() 
+		const recordDataEmbed = new EmbedBuilder() 
 		.setTitle(`Recent Runs, Page ${page}`)
 		.setColor('#f9db44')
 		.setThumbnail('https://cdn.discordapp.com/attachments/965424891786563654/975932690639511572/icon.png')
-		.setFields(
+		.addFields(
 			{ name: 'Run', value: run },
 			{ name: 'Time', value: time },
 			{ name: 'Comment', value: comment },
@@ -65,43 +68,43 @@ module.exports = {
 			dis = false;
 		}
 
-		const arrows = new MessageActionRow()
+		const arrows = new ActionRowBuilder()
 		.addComponents(
-			new MessageButton()
+			new ButtonBuilder()
 			.setCustomId('speedrunLeftButton')
 			.setLabel('⬅️')
-			.setStyle('PRIMARY')
+			.setStyle(ButtonStyle.Primary)
 			.setDisabled(dis),
-			new MessageButton()
+			new ButtonBuilder()
 			.setCustomId('speedrunRightButton')
 			.setLabel('➡️')
-			.setStyle('PRIMARY')
+			.setStyle(ButtonStyle.Primary)
 		)
 
 		let videoLinkButton;
 		if(data1.videos?.links[0]?.uri != undefined){
-			videoLinkButton = new MessageActionRow()
+			videoLinkButton = new ActionRowBuilder()
 			.addComponents(
-				new MessageButton()
+				new ButtonBuilder()
 				.setLabel('Video')
-				.setStyle('LINK')
+				.setStyle(ButtonStyle.Link)
 				.setURL(data1.videos?.links[0]?.uri),
-				new MessageButton()
+				new ButtonBuilder()
 				.setLabel('Website')
-				.setStyle('LINK')
+				.setStyle(ButtonStyle.Link)
 				.setURL(data1.weblink)
 			)
 		}else{
-			videoLinkButton = new MessageActionRow()
+			videoLinkButton = new ActionRowBuilder()
 			.addComponents(
-				new MessageButton()
+				new ButtonBuilder()
 				.setLabel('Video')
-				.setStyle('LINK')
+				.setStyle(ButtonStyle.Link)
 				.setURL('https://www.speedrun.com/polybridge2')
 				.setDisabled(true),
-				new MessageButton()
+				new ButtonBuilder()
 				.setLabel('Website')
-				.setStyle('LINK')
+				.setStyle(ButtonStyle.Link)
 				.setURL('https://www.speedrun.com/polybridge2')
 				.setDisabled(true)
 			)

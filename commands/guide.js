@@ -1,5 +1,4 @@
-const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageEmbed, MessageActionRow, MessageButton } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 const { getGuide } = require('../scripts/guideEmbeds.js');
 
 module.exports = {
@@ -11,13 +10,13 @@ module.exports = {
 		.setName('category')
 		.setDescription('Category for the thing help is needed with')
 		.setRequired(true)
-		.addChoices([
-			[ 'Basics', 'basics' ],
-			[ 'Hydraulics', 'hydraulics' ],
-			[ 'Sandbox', 'sandbox' ],
-			[ 'Shortcuts', 'shortcuts' ],
-			[ 'Budgeting', 'budgeting' ]
-		])
+		.addChoices(
+			{ name: 'Basics', value: 'basics' },
+			{ name: 'Hydraulics', value: 'hydraulics' },
+			{ name: 'Sandbox', value: 'sandbox' },
+			{ name: 'Shortcuts', value: 'shortcuts' },
+			{ name: 'Budgeting', value: 'budgeting' }
+		)
 	)
 	.addStringOption(option =>
 		option
@@ -34,7 +33,7 @@ module.exports = {
 
 		let guideEmbed;
 		if(category != 'budgeting'){
-			guideEmbed = new MessageEmbed()
+			guideEmbed = new EmbedBuilder()
 			.setTitle(data.name)
 			.setColor('#f9db44')
 			.setThumbnail('https://cdn.discordapp.com/attachments/965424891786563654/975932690639511572/icon.png')
@@ -43,17 +42,17 @@ module.exports = {
 
 			return interaction.reply({ embeds: [guideEmbed] })
 		}else{
-			guideEmbed = new MessageEmbed()
+			guideEmbed = new EmbedBuilder()
 			.setTitle(data.name)
 			.setColor('#f9db44')
 			.setThumbnail('https://cdn.discordapp.com/attachments/965424891786563654/975932690639511572/icon.png')
 			.setDescription(data.description)
 
-			const link = new MessageActionRow()
+			const link = new ActionRowBuilder()
 			.addComponents(
-				new MessageButton()
+				new ButtonBuilder()
 				.setLabel('Handbook')
-				.setStyle('LINK')
+				.setStyle(ButtonStyle.Link)
 				.setURL('https://docs.google.com/document/d/1NmuRDXXJFX5ayPbg6WuFwQYK7uYn8Aajpt2dA1rDnt8/edit?usp=sharing')
 			)
 			return interaction.reply({ embeds: [guideEmbed], components: [link] })

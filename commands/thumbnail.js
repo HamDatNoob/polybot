@@ -1,5 +1,4 @@
-const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageEmbed, MessageAttachment } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder, AttachmentBuilder } = require('discord.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -15,10 +14,10 @@ module.exports = {
 		option
 		.setName('type')
 		.setDescription('Input a level type, defaults to PB2 levels')
-		.addChoices([
-			[ 'pb1', 'pb1Choice' ],
-			[ 'pb2', 'pb2Choice' ]
-		])
+		.addChoices(
+			{ name: 'pb1', value: 'pb1Choice' },
+			{ name: 'pb2', value: 'pb2Choice' }
+		)
 		.setRequired(false)
 	),
 	async execute(interaction){
@@ -37,9 +36,9 @@ module.exports = {
 
 		//pb1 thumbnails to be implemented later when i get the images
 
-		const thumbnail = new MessageAttachment(`./images/thumbnails/${code}.png`)
+		const thumbnail = new AttachmentBuilder(`./images/thumbnails/${code}.png`)
 
-		const thumbnailEmbed = new MessageEmbed()
+		const thumbnailEmbed = new EmbedBuilder()
 		.setColor('#f9db44')
 		.setTitle(`Thumbnail for ${code}`)
 		.setImage(`attachment://${code}.png`)

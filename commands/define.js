@@ -1,5 +1,4 @@
-const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageEmbed, MessageActionRow, MessageButton } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const { getTerm } = require('../scripts/termEmbeds.js');
 
 module.exports = {
@@ -11,12 +10,12 @@ module.exports = {
 		.setName('category')
 		.setDescription('Category for the thing help is needed with')
 		.setRequired(true)
-		.addChoices([
-			[ 'Exploits', 'exploits' ],
-			[ 'Bugs', 'bugs' ],
-			[ 'Budgeting Techniques', 'bt' ],
-			[ 'Challenges', 'challenges' ]
-		])
+		.addChoices(
+			{ name: 'Exploits', value: 'exploits' },
+			{ name: 'Bugs', value: 'bugs' },
+			{ name: 'Budgeting Techniques', value: 'bt' },
+			{ name: 'Challenges', value: 'challenges' }
+		)
 	)
 	.addStringOption(option =>
 		option
@@ -31,7 +30,7 @@ module.exports = {
 		
 		const data = getTerm(category, group);
 
-		let guideEmbed = new MessageEmbed()
+		let guideEmbed = new EmbedBuilder()
 		.setTitle(data.name)
 		.setColor('#f9db44')
 		.setThumbnail('https://cdn.discordapp.com/attachments/965424891786563654/975932690639511572/icon.png')

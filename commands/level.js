@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require('@discordjs/builders');
+const { SlashCommandBuilder } = require('discord.js');
 const pb1Levels = require('../json/pb1Levels.json');
 const pb2Levels = require('../json/pb2Levels.json');
 const db = require('quick.db');
@@ -72,17 +72,20 @@ module.exports = {
 								if(user.bot == true) return;
 								return ['❌', '⬅️', '➡️'].includes(reaction.emoji.name);
 							};
-	
-							botMessage.awaitReactions({ filter, max: 1, time: 60000, errors: ['time'] }).then(collected => {
+							
+							let cancelReactions = true;
+							await botMessage.awaitReactions({ filter, max: 1, time: 60000, errors: ['time'] }).then(collected => {
 								const reaction = collected.first();
 
 								switch(reaction.emoji.name){
 									case '❌':
 										botMessage.delete(1);
+										cancelReactions = false;
 
 										return;
 									case '⬅️':
 										replyNum--;
+										cancelReactions = false;
 
 										db.delete(`${message.channelId}.cooldown.${c}`);
 										botMessage.delete(1);
@@ -90,14 +93,18 @@ module.exports = {
 										return levelName(replyNum);
 									case '➡️':
 										replyNum++;
+										cancelReactions = false;
 
 										db.delete(`${message.channelId}.cooldown.${c}`);
 										botMessage.delete(1);
 
 										return levelName(replyNum);
 								}
-
-							}).catch(collected => {});
+							}).catch(collected => {}).then(v => {
+								if(cancelReactions == true){
+									botMessage.reactions.removeAll();
+								}
+							}).catch(error => console.error(error));
 						});
 					}
 

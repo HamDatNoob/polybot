@@ -1,5 +1,4 @@
-const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageEmbed, MessageActionRow, MessageButton } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 const api = require('../json/api.json');
 
 module.exports = {
@@ -24,22 +23,22 @@ module.exports = {
 			option
 			.setName('type')
 			.setDescription('The type of run')
-			.addChoices([
-				[ 'any%', 0 ],
-				[ 'any% nma', 1 ],
-				[ '100% nma', 2 ]
-			])
+			.addChoices(
+				{ name: 'any%', value: 0 },
+				{ name: 'any% nma', value: 1 },
+				{ name: '100% nma', value: 2 }
+			)
 			.setRequired(true)
 		)
 		.addNumberOption(option => //option 2
 			option
 			.setName('mode')
 			.setDescription('The mode of the run, ignore \"both\" if not a f4w or full run')
-			.addChoices([
-				[ 'normal', 0 ],
-				[ 'challenge', 1 ],
-				[ 'both', 2 ]
-			])
+			.addChoices(
+				{ name: 'normal', value: 0 },
+				{ name: 'challenge', value: 1 },
+				{ name: 'both', value: 2 }
+			)
 			.setRequired(true)
 		)
 	),
@@ -98,22 +97,22 @@ module.exports = {
 			let thumbnail = data[0].assets.image.uri;
 			if(thumbnail == null || thumbnail == '') thumbnail = 'https://cdn.discordapp.com/attachments/965424891786563654/975932690639511572/icon.png';
 
-			const recordDataEmbed = new MessageEmbed()
+			const recordDataEmbed = new EmbedBuilder()
 			.setTitle(`${data[0].names.international}'s Profile`)
 			.setColor('#f9db44')
 			.setThumbnail(thumbnail)
-			.setFields(
+			.addFields(
 				{ name: 'Pronouns', value: pronouns },
 				{ name: 'World Records', value: wrs },
 				{ name: 'Poly Bridge World Records', value: pbwrs },
 				{ name: 'Joined', value: joined }
 			)
 
-			let weblink = new MessageActionRow()
+			let weblink = new ActionRowBuilder()
 			.addComponents(
-				new MessageButton()
+				new ButtonBuilder()
 				.setLabel('Website')
-				.setStyle('LINK')
+				.setStyle(ButtonStyle.Link)
 				.setURL(data[0].weblink),
 			)
 				
@@ -172,15 +171,15 @@ module.exports = {
 			let submitted = data1.runs[0]?.run.date;
 	
 			if(time == undefined) return interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
-			if(comment == undefined) comment = '';
+			if(comment == undefined) comment = 'No comment provided';
 			if(user == undefined) user = 'Guest';
-			if(submitted == undefined) submitted = '';
+			if(submitted == undefined) submitted = 'No date';
 	
-			const recordDataEmbed = new MessageEmbed()
+			const recordDataEmbed = new EmbedBuilder()
 			.setTitle(`World record for ${name}, ${typeNames[type]}, ${modeNames[mode]}`)
 			.setColor('#f9db44')
 			.setThumbnail('https://cdn.discordapp.com/attachments/965424891786563654/975932690639511572/icon.png')
-			.setFields(
+			.addFields(
 				{ name: 'Time', value: time },
 				{ name: 'Comment', value: comment },
 				{ name: 'User', value: user },
@@ -189,28 +188,28 @@ module.exports = {
 	
 			let videoLinkButton;
 			if(data1.runs[0]?.run.videos?.links[0]?.uri != undefined){
-				videoLinkButton = new MessageActionRow()
+				videoLinkButton = new ActionRowBuilder()
 				.addComponents(
-					new MessageButton()
+					new ButtonBuilder()
 					.setLabel('Video')
-					.setStyle('LINK')
+					.setStyle(ButtonStyle.Link)
 					.setURL(data1.runs[0]?.run.videos?.links[0]?.uri),
-					new MessageButton()
+					new ButtonBuilder()
 					.setLabel('Website')
-					.setStyle('LINK')
+					.setStyle(ButtonStyle.Link)
 					.setURL(data1.runs[0]?.run.weblink)
 				)
 			}else{
-				videoLinkButton = new MessageActionRow()
+				videoLinkButton = new ActionRowBuilder()
 				.addComponents(
-					new MessageButton()
+					new ButtonBuilder()
 					.setLabel('Video')
-					.setStyle('LINK')
+					.setStyle(ButtonStyle.Link)
 					.setURL('https://www.speedrun.com/polybridge2')
 					.setDisabled(true),
-					new MessageButton()
+					new ButtonBuilder()
 					.setLabel('Website')
-					.setStyle('LINK')
+					.setStyle(ButtonStyle.Link)
 					.setURL('https://www.speedrun.com/polybridge2')
 					.setDisabled(true)
 				)
@@ -248,9 +247,11 @@ module.exports = {
 				run = [name, type, mode].join(', ');
 			}
 
+			console.log(data2)
+
 			let time = new Date(data1.times.primary_t * 1000).toISOString().slice(11, 23);
 			let comment = data1.comment;
-			let user = data2?.names.international;
+			let user = (data2?.name || data2?.names?.international || data2?.names.japanese);
 			let submitted = data1.date;
 	
 			if(time == undefined) return interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
@@ -258,11 +259,11 @@ module.exports = {
 			if(user == undefined) user = 'Guest';
 			if(submitted == undefined) submitted = 'No date';
 	
-			const recordDataEmbed = new MessageEmbed() 
+			const recordDataEmbed = new EmbedBuilder() 
 			.setTitle(`Recent Runs, Page 1`)
 			.setColor('#f9db44')
 			.setThumbnail('https://cdn.discordapp.com/attachments/965424891786563654/975932690639511572/icon.png')
-			.setFields(
+			.addFields(
 				{ name: 'Run', value: run },
 				{ name: 'Time', value: time },
 				{ name: 'Comment', value: comment },
@@ -270,43 +271,43 @@ module.exports = {
 				{ name: 'Submitted', value: submitted }
 			)
 
-			const arrows = new MessageActionRow()
+			const arrows = new ActionRowBuilder()
 			.addComponents(
-				new MessageButton()
+				new ButtonBuilder()
 				.setCustomId('speedrunLeftButton')
 				.setLabel('⬅️')
-				.setStyle('PRIMARY')
+				.setStyle(ButtonStyle.Primary)
 				.setDisabled(true),
-				new MessageButton()
+				new ButtonBuilder()
 				.setCustomId('speedrunRightButton')
 				.setLabel('➡️')
-				.setStyle('PRIMARY')
+				.setStyle(ButtonStyle.Primary)
 			)
 	
 			let videoLinkButton;
 			if(data1.videos?.links[0]?.uri != undefined){
-				videoLinkButton = new MessageActionRow()
+				videoLinkButton = new ActionRowBuilder()
 				.addComponents(
-					new MessageButton()
+					new ButtonBuilder()
 					.setLabel('Video')
-					.setStyle('LINK')
+					.setStyle(ButtonStyle.Link)
 					.setURL(data1.videos?.links[0]?.uri),
-					new MessageButton()
+					new ButtonBuilder()
 					.setLabel('Website')
-					.setStyle('LINK')
+					.setStyle(ButtonStyle.Link)
 					.setURL(data1.weblink)
 				)
 			}else{
-				videoLinkButton = new MessageActionRow()
+				videoLinkButton = new ActionRowBuilder()
 				.addComponents(
-					new MessageButton()
+					new ButtonBuilder()
 					.setLabel('Video')
-					.setStyle('LINK')
+					.setStyle(ButtonStyle.Link)
 					.setURL('https://www.speedrun.com/polybridge2')
 					.setDisabled(true),
-					new MessageButton()
+					new ButtonBuilder()
 					.setLabel('Website')
-					.setStyle('LINK')
+					.setStyle(ButtonStyle.Link)
 					.setURL('https://www.speedrun.com/polybridge2')
 					.setDisabled(true)
 				)

@@ -1,5 +1,4 @@
-const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageEmbed, MessageActionRow, MessageButton } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 const pb2Levels = require('../json/pb2Levels.json');
 
 module.exports = {
@@ -10,16 +9,16 @@ module.exports = {
 		option
 		.setName('input')
 		.setDescription('The world to return data of')
-		.addChoices([
-			[ '1', 1 ],
-			[ '2', 2 ],
-			[ '3', 3 ],
-			[ '4', 4 ],
-			[ '5', 5 ],
-			[ '6', 6 ],
-			[ '7', 7 ],
-			[ '8', 8 ]
-		])
+		.addChoices(
+			{ name: '1', value: 1 },
+			{ name: '2', value: 2 },
+			{ name: '3', value: 3 },
+			{ name: '4', value: 4 },
+			{ name: '5', value: 5 },
+			{ name: '6', value: 6 },
+			{ name: '7', value: 7 },
+			{ name: '8', value: 8 }
+		)
 		.setRequired(true)
 	),
 	async execute(interaction){		
@@ -65,20 +64,20 @@ module.exports = {
 			levels.push({ code: pb2Levels[(option - 1) * 16 + i].code, name: pb2Levels[(option - 1) * 16 + i].name });
 		}
 
-		const worldEmbed = new MessageEmbed()
+		const worldEmbed = new EmbedBuilder()
 		.setColor(color)
 		.setTitle(title)
 		.setThumbnail('https://cdn.discordapp.com/attachments/965424891786563654/975932690639511572/icon.png')
-		.setFields(
+		.addFields(
 			{ name: '\u200b', value: `\`${levels[0].code}\`: ${levels[0].name}\n\`${levels[1].code}\`: ${levels[1].name}\n\`${levels[2].code}\`: ${levels[2].name}\n\`${levels[3].code}\`: ${levels[3].name}\n\`${levels[4].code}\`: ${levels[4].name}\n\`${levels[5].code}\`: ${levels[5].name}\n\`${levels[6].code}\`: ${levels[6].name}\n\`${levels[7].code}\`: ${levels[7].name}\n\`${levels[8].code}\`: ${levels[8].name}\n\`${levels[9].code}\`: ${levels[9].name}\n\`${levels[10].code}\`: ${levels[10].name}\n\`${levels[11].code}\`: ${levels[11].name}\n\`${levels[12].code}\`: ${levels[12].name}\n\`${levels[13].code}\`: ${levels[13].name}\n\`${levels[14].code}\`: ${levels[14].name}\n\`${levels[15].code}\`: ${levels[15].name}` }
 		)
 
-		const worldButton = new MessageActionRow()
+		const worldButton = new ActionRowBuilder()
 		.addComponents(
-			new MessageButton()
+			new ButtonBuilder()
 			.setCustomId('worldButton')
 			.setLabel('PB1 World')
-			.setStyle('PRIMARY')
+			.setStyle(ButtonStyle.Primary)
 		)
 
 		await interaction.reply({ embeds: [worldEmbed], components: [worldButton], ephemeral: true });

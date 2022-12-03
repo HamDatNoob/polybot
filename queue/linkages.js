@@ -1,5 +1,4 @@
-const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageEmbed } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const linkages = require('../json/linkages.json');
 
 module.exports = {
@@ -16,7 +15,7 @@ module.exports = {
 	async execute(interaction){
 		const option = interaction.options._hoistedOptions[0].value;
 
-		const embed = new MessageEmbed()
+		const embed = new EmbedBuilder()
 		.setTitle(linkages[option].name)
 		.setDescription(linkages[option].description)
 		.setImage(linkages[option].image)

@@ -14,7 +14,7 @@ module.exports = {
 				console.error(error);
 				return interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
 			}
-		}else if(interaction.isSelectMenu()){ //select menus
+		}else if(interaction.isStringSelectMenu()){ //select menus
 			const selectMenuFiles = fs.readdirSync('./components/selectMenus').filter(file => file.endsWith('.js'));
 			for(const file of selectMenuFiles){
 				const component = require(`../components/selectMenus/${file}`);
