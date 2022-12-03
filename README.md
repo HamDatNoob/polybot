@@ -1,12 +1,23 @@
-Welcome to the polybot source code, written in full by ham with some contributions from ashduino101, conqu3red, hippolippo, and arglin kampling
+# Polybot v3
 
-some things to note:
+Polybot v3, created by ham#5817, with smaller contributions by ashduino101, Conqu3red, hippolippo, and Arglin Kampling.
 
-- this code was based on my own bot framework that hasnt been released yet but i am working on it!
-- the images folder is not cruital to the functionality of the code, its just there for reference*. (oh yeah the thumbnails folder is because i cant be assed to convert all those images to urls)
-- all dependancies are listed in the package.json file.
-- the api.json file in the json folder is a full request from speedrun.com, as this bot has integration with the speedrun.com leaderboards.
-- the bot uses a quick.db sqlite3 database to store level request cooldowns and store what channels have been paused.
-- everything in the thumbnails folder was ripped straight from the game files with permission from the devs.
+## Commands
 
-you are free to rip this code and use some of the stuff in it for your own projects just put my name somewhere in it i dont care if its like on line 394810 of your readme or whatever it would just be appriciated
+|      Command     |           Arguments           | Description                                                                                                       | Permissions |
+|:----------------:|:-----------------------------:|-------------------------------------------------------------------------------------------------------------------|:-----------:|
+|      /clear      |            \<none\>           | Clears all level response cooldowns in all channels.                                                              |     mod+    |
+|      /define     |     \<category\>, \<term\>    | Translates PB lingo to layman's terms for less affluent users.                                                    |    anyone   |
+|      /guide      |     \<category\>, \<term\>    | Displays a embed explaining a certain concept in the game.                                                        |    anyone   |
+|      /level      |           \<level\>           | Displays the corresponding level name to a level code.                                                            |    anyone   |
+|      /match      |           \<string\>          | Searches for the the level with the most similarity to the inputted\<br\>string.                                  |    anyone   |
+|      /pause      |            \<none\>           | Pauses public chat responses to level codes in the current channel.                                               |     mod+    |
+|      /shutup     |            \<none\>           | Pauses public chat responses to level codes in the current channel\<br\>for 15 minutes.                           |   master+   |
+| /speedrun recent |            \<none\>           | Fetches speedrunning information from speedrun.com, and sorts\<br\>the data by the most recently verified runs.   |    anyone   |
+| /speedrun search | \<level\>, \<type\>, \<mode\> | Fetches speedrunning information from speedrun.com, and displays\<br\>the world record for the inputted category. |    anyone   |
+|    /thumbnail    |           \<level\>           | Displays the level thumbnail for any PB2 level.                                                                   |    anyone   |
+|      /world      |           \<number\>          | Displays the level and name of every level in the world of the\<br\>number inputted.                              |    anyone   |
+
+## More
+
+theres nothing more lol just contact me for more info i guess
