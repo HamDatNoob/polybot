@@ -17,11 +17,9 @@ module.exports = {
 	async execute(interaction, message){
 		let msg;
 		if(interaction){
-			msg = interaction.options.getString('code').match(/[1-8]-\d[\dc]?c?/gmi);
+			msg = interaction.options.getString('code').match(/^(?:[1-8]-(?:1[0-5]|0?[1-9]))$|^(?:[1-6]-(?:1[0-6]|0?[1-9]))c?$/gmi);
 		}else if(message){
-			msg = message.content.match(/[1-8]-\d[\dc]?c?/gmi);
-		}else{
-			console.error(error);
+			msg = message.content.match(/^(?:[1-8]-(?:1[0-5]|0?[1-9]))$|^(?:[1-6]-(?:1[0-6]|0?[1-9]))c?$/gmi);
 		}
 
 		let replyNum = 0;
