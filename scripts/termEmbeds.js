@@ -53,7 +53,7 @@ const categories = {
 		sfc: {
 			name: "SFC / Stuck Falling Car",
 			description: "A car falls / gets launched into a piece of road, causing it to gain speed. It is similar to an SFR, but the car falls instead of the road.",
-			image: "https://cdn.discordapp.com/attachments/872600292586303490/985971851564040222/contribute.png?size=4096"
+			image: "https://cdn.discordapp.com/attachments/461344432302587916/1049178661988872223/sfc.gif?size=4096"
 		},
 	},
 	bugs: {
