@@ -88,7 +88,6 @@ module.exports = {
 									case '⬅️':
 										replyNum--;
 										cancelReactions = false;
-										newMsg = false;
 
 										db.delete(`${message.channelId}.cooldown.${c}`);
 										
@@ -96,7 +95,6 @@ module.exports = {
 									case '➡️':
 										replyNum++;
 										cancelReactions = false;
-										newMsg = false;
 
 										db.delete(`${message.channelId}.cooldown.${c}`);
 
