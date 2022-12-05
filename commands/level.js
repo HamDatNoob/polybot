@@ -25,8 +25,6 @@ module.exports = {
 		if(!msg) return;
 
 		let replyNum = 0;
-		let newMsg = true;
-		let sm;
 		function levelName(i){
 			let c = msg[i].toLowerCase();
 
@@ -50,31 +48,19 @@ module.exports = {
 				if(db.get(`${message.channelId}.paused`) == false && db.has(`${message.channelId}.cooldown.${c}`) == false){				
 					db.push(`${message.channelId}.cooldown.${c}`, c);
 
-					if(newMsg){
-						if(c.match(/[1-6]-16c/gmi)){
-							sm = message.channel.send(`Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}\nChallenge: ||${pb2Levels[li2].detail}||`);
-						}else if(c.match(/[1-6]-[01]\dc/gmi)){
-							sm = message.channel.send(`Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}\nChallenge: ||${pb2Levels[li2].detail}||`);
-						}else if(c.match(/[1-6]-16/gmi)){
-							sm = message.channel.send(`Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}`);
-						}else if(c.match(/[1-6]-[01]\d/gmi)){
-							sm = message.channel.send(`Level Names for \`${c}\`:\nPB1: ${pb1Worlds[w]} - ${pb1Levels[li1].name}\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}`);
-						}else if(c.match(/[78]-[01]\d/gmi)){
-							sm = message.channel.send(`Level Names for \`${c}\`:\nPB1: ${pb1Worlds[w]} - ${pb1Levels[li1].name}`);
-						}
-					}else{
-						if(c.match(/[1-6]-16c/gmi)){
-							sm = sm.edit(`Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}\nChallenge: ||${pb2Levels[li2].detail}||`);
-						}else if(c.match(/[1-6]-[01]\dc/gmi)){
-							sm = sm.edit(`Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}\nChallenge: ||${pb2Levels[li2].detail}||`);
-						}else if(c.match(/[1-6]-16/gmi)){
-							sm = sm.edit(`Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}`);
-						}else if(c.match(/[1-6]-[01]\d/gmi)){
-							sm = sm.edit(`Level Names for \`${c}\`:\nPB1: ${pb1Worlds[w]} - ${pb1Levels[li1].name}\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}`);
-						}else if(c.match(/[78]-[01]\d/gmi)){
-							sm = sm.edit(`Level Names for \`${c}\`:\nPB1: ${pb1Worlds[w]} - ${pb1Levels[li1].name}`);
-						}
+					let sm;
+					if(c.match(/[1-6]-16c/gmi)){
+						sm = message.channel.send(`Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}\nChallenge: ||${pb2Levels[li2].detail}||`);
+					}else if(c.match(/[1-6]-[01]\dc/gmi)){
+						sm = message.channel.send(`Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}\nChallenge: ||${pb2Levels[li2].detail}||`);
+					}else if(c.match(/[1-6]-16/gmi)){
+						sm = message.channel.send(`Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}`);
+					}else if(c.match(/[1-6]-[01]\d/gmi)){
+						sm = message.channel.send(`Level Names for \`${c}\`:\nPB1: ${pb1Worlds[w]} - ${pb1Levels[li1].name}\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}`);
+					}else if(c.match(/[78]-[01]\d/gmi)){
+						sm = message.channel.send(`Level Names for \`${c}\`:\nPB1: ${pb1Worlds[w]} - ${pb1Levels[li1].name}`);
 					}
+
 
 					if(sm){
 						sm.then(async botMessage => {
