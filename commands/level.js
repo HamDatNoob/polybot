@@ -82,10 +82,13 @@ module.exports = {
 								switch(reaction.emoji.name){
 									case '❌':
 										botMessage.delete(1);
+
 										cancelReactions = false;
 
 										return;
 									case '⬅️':
+										botMessage.delete(1);
+
 										replyNum--;
 										cancelReactions = false;
 
@@ -93,6 +96,8 @@ module.exports = {
 										
 										return levelName(replyNum);
 									case '➡️':
+										botMessage.delete(1);
+										
 										replyNum++;
 										cancelReactions = false;
 
