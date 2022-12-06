@@ -25,6 +25,8 @@ module.exports = {
 		if(!msg) return;
 
 		let replyNum = 0;
+		let first = true;
+		let botMsg;
 		function levelName(i){
 			let c = msg[i].toLowerCase();
 
@@ -48,69 +50,72 @@ module.exports = {
 				if(db.get(`${message.channelId}.paused`) == false && db.has(`${message.channelId}.cooldown.${c}`) == false){				
 					db.push(`${message.channelId}.cooldown.${c}`, c);
 
-					let sm;
+					let resp;
 					if(c.match(/[1-6]-16c/gmi)){
-						sm = message.channel.send(`Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}\nChallenge: ||${pb2Levels[li2].detail}||`);
+						resp = `Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}\nChallenge: ||${pb2Levels[li2].detail}||`;
 					}else if(c.match(/[1-6]-[01]\dc/gmi)){
-						sm = message.channel.send(`Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}\nChallenge: ||${pb2Levels[li2].detail}||`);
+						resp = `Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}\nChallenge: ||${pb2Levels[li2].detail}||`;
 					}else if(c.match(/[1-6]-16/gmi)){
-						sm = message.channel.send(`Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}`);
+						resp = `Level Names for \`${c}\`:\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}`;
 					}else if(c.match(/[1-6]-[01]\d/gmi)){
-						sm = message.channel.send(`Level Names for \`${c}\`:\nPB1: ${pb1Worlds[w]} - ${pb1Levels[li1].name}\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}`);
+						resp = `Level Names for \`${c}\`:\nPB1: ${pb1Worlds[w]} - ${pb1Levels[li1].name}\nPB2: ${pb2Worlds[w]} - ${pb2Levels[li2].name}`;
 					}else if(c.match(/[78]-[01]\d/gmi)){
-						sm = message.channel.send(`Level Names for \`${c}\`:\nPB1: ${pb1Worlds[w]} - ${pb1Levels[li1].name}`);
+						resp = `Level Names for \`${c}\`:\nPB1: ${pb1Worlds[w]} - ${pb1Levels[li1].name}`;
 					}
 
+					async function reactions(botMessage){
+						botMsg = botMessage;
 
-					if(sm){
-						sm.then(async botMessage => {
-							await botMessage.react('❌');
-							if(i != 0) await botMessage.react('⬅️');
-							if(i < msg.length - 1) await botMessage.react('➡️');
+						botMessage.react('❌');
+						if(i != 0) await botMessage.react('⬅️');
+						if(i < msg.length - 1) await botMessage.react('➡️');
 
-							const filter = (reaction, user) => {
-								if(user.bot == true) return;
-								if(user.id != message.author) return;
+						const filter = (reaction, user) => {
+							if(user.bot == true) return;
+							if(user.id != message.author) return;
 
-								return ['❌', '⬅️', '➡️'].includes(reaction.emoji.name);
-							};
-							
-							let cancelReactions = true;
-							await botMessage.awaitReactions({ filter, max: 1, time: 60000, errors: ['time'] }).then(collected => {
-								const reaction = collected.first();
+							return ['❌', '⬅️', '➡️'].includes(reaction.emoji.name);
+						};
+						
+						let cancelReactions = true;
+						await botMessage.awaitReactions({ filter, max: 1, time: 60000, errors: ['time'] }).then(collected => {
+							const reaction = collected.first();
 
-								switch(reaction.emoji.name){
-									case '❌':
-										botMessage.delete(1);
+							switch(reaction.emoji.name){
+								case '❌':
+									botMessage.delete(1);
 
-										cancelReactions = false;
+									cancelReactions = false;
 
-										return;
-									case '⬅️':
-										botMessage.delete(1);
-
-										replyNum--;
-										cancelReactions = false;
-
-										db.delete(`${message.channelId}.cooldown.${c}`);
-										
-										return levelName(replyNum);
-									case '➡️':
-										botMessage.delete(1);
-										
-										replyNum++;
-										cancelReactions = false;
-
-										db.delete(`${message.channelId}.cooldown.${c}`);
-
-										return levelName(replyNum);
-								}
-							}).catch(collected => {}).then(v => {
-								if(cancelReactions == true){
+									return;
+								case '⬅️':
 									botMessage.reactions.removeAll();
-								}
-							}).catch(error => console.error(error));
-						});
+
+									replyNum--;
+									cancelReactions = false;
+									first = false;
+
+									db.delete(`${message.channelId}.cooldown.${c}`);
+									
+									return levelName(replyNum);
+								case '➡️':				
+									botMessage.reactions.removeAll();
+								
+									replyNum++;
+									cancelReactions = false;
+									first = false;
+
+									db.delete(`${message.channelId}.cooldown.${c}`);
+
+									return levelName(replyNum);
+							}
+						}).catch(collected => {});
+					}
+
+					if(first){
+						message.channel.send(resp).then(bm => reactions(bm));
+					}else{
+						botMsg.edit(resp).then(bm => reactions(bm));
 					}
 
 					async function del(){
