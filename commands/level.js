@@ -110,7 +110,9 @@ module.exports = {
 
 									return levelName(replyNum);
 							}
-						}).catch(collected => {});
+						}).catch(collected => {}).then(v => {
+							botMessage.reactions.removeAll();
+						}).catch(err => console.error(err));
 					}
 
 					if(first){
