@@ -15,25 +15,26 @@ module.exports = {
 		.setRequired(true)
 	),
 	async execute(interaction, message){
-		let msg;
+		let msgArray;
 		if(interaction){
-			msg = interaction.options.getString('code').match(/(?:[1-6]-(?:(?!1[7-9])1[0-6]|(?![1-9]\d)0?[1-9])c?|[78]-(?:(?!1[6-9])1[0-5]|0?[1-9]))/gmi);
+			msgArray = interaction.options.getString('code').match(/(?:[1-6]-(?:(?!1[7-9])1[0-6]|(?![1-9]\d)0?[1-9])c?|[78]-(?:(?!1[6-9])1[0-5]|0?[1-9]))/gmi);
 		}else if(message){
-			msg = message.content.match(/(?:[1-6]-(?:(?!1[7-9])1[0-6]|(?![1-9]\d)0?[1-9])c?|[78]-(?:(?!1[6-9])1[0-5]|0?[1-9]))/gmi);
+			msgArray = message.content.match(/(?:[1-6]-(?:(?!1[7-9])1[0-6]|(?![1-9]\d)0?[1-9])c?|[78]-(?:(?!1[6-9])1[0-5]|0?[1-9]))/gmi);
 		}
 
-		if(!msg) return;
+		if(!msgArray) return;
+		msgArray = [...new Set(msgArray)]; // removes duplicates
 
 		let replyNum = 0;
 		let first = true;
-		let botMsg;
+		let botMsgArray;
 		function levelName(i){
-			let c = msg[i].toLowerCase();
+			let c = msgArray[i].toLowerCase();
 
 			const pb1Worlds = ["Alpine Meadows", "Desert Winds", "Snow Drift", "Ancient Ruins", "80s Fun Land", "Zen Gardens", "Tropical Paradise", "Area 52"];
 			const pb2Worlds = ["Pine Mountains", "Glowing Gorge", "Tranquil Oasis", "Sanguine Gulch", "Serenity Valley", "Steamtown"];
 
-			c = c.replace(/^([1-8]-)([1-9]c?)$/gmi, `$10$2`);  //adds extra 0
+			c = c.replace(/^([1-8]-)([1-9]c?)$/gmi, `$10$2`);  // adds extra 0
 
 			const w = c.slice(0, 1) - 1;
 			const l = parseInt(c.slice(2, 4), 10) - 1;
@@ -64,11 +65,11 @@ module.exports = {
 					}
 
 					async function reactions(botMessage){
-						botMsg = botMessage;
+						botMsgArray = botMessage;
 
 						botMessage.react('❌');
 						if(i != 0) await botMessage.react('⬅️');
-						if(i < msg.length - 1) await botMessage.react('➡️');
+						if(i < msgArray.length - 1) await botMessage.react('➡️');
 
 						const filter = (reaction, user) => {
 							if(user.bot == true) return;
@@ -115,7 +116,7 @@ module.exports = {
 					if(first){
 						message.channel.send(resp).then(bm => reactions(bm));
 					}else{
-						botMsg.edit(resp).then(bm => reactions(bm));
+						botMsgArray.edit(resp).then(bm => reactions(bm));
 					}
 
 					async function del(){
