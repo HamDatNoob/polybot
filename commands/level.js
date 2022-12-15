@@ -27,7 +27,7 @@ module.exports = {
 
 		let replyNum = 0;
 		let first = true;
-		let botMsgArray;
+		let botMsg;
 		function levelName(i){
 			let c = msgArray[i].toLowerCase();
 
@@ -65,7 +65,7 @@ module.exports = {
 					}
 
 					async function reactions(botMessage){
-						botMsgArray = botMessage;
+						botMsg = botMessage;
 
 						botMessage.react('❌');
 						if(i != 0) await botMessage.react('⬅️');
@@ -77,8 +77,15 @@ module.exports = {
 
 							return ['❌', '⬅️', '➡️'].includes(reaction.emoji.name);
 						};
+
+						function checkDeletion(){
+							sleep(60);
+							return false;
+						}
 						
 						let cancelReactions = true;
+
+						let deleted = checkDeletion();
 						await botMessage.awaitReactions({ filter, max: 1, time: 60000, errors: ['time'] }).then(collected => {
 							const reaction = collected.first();
 
@@ -110,15 +117,17 @@ module.exports = {
 
 									return levelName(replyNum);
 							}
-						}).catch(collected => {}).then(v => {
-							botMessage.reactions.removeAll();
-						}).catch(err => console.error(err));
+						}).catch(collected => {});
+
+						if(deleted == false){
+							botMessage.reactions.removeAll()
+						}
 					}
 
 					if(first){
-						message.channel.send(resp).then(bm => reactions(bm));
+						message.reply(resp).then(bm => reactions(bm));
 					}else{
-						botMsgArray.edit(resp).then(bm => reactions(bm));
+						botMsg.edit(resp).then(bm => reactions(bm));
 					}
 
 					async function del(){
