@@ -130,10 +130,14 @@ const categories = {
 			image: "https://cdn.discordapp.com/attachments/872600292586303490/986111135046570026/toothpick.png?size=4096"
 		}
 	},
-	challenges: {
+	other: {
 		rws: {
 			name: "RWS / Road Wood Steel",
 			description: "A player-made challenge of beating the game with only road, wood, and steel."
+		},
+		ll: {
+			name: "Looming Level",
+			description: "A complex level primarily focusing on one type of linkage, popularized by the level creator Looming. The term has grown to be an all-encompassing term for all complex levels similar to it."
 		}
 	}
 }

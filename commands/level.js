@@ -77,15 +77,9 @@ module.exports = {
 
 							return ['❌', '⬅️', '➡️'].includes(reaction.emoji.name);
 						};
-
-						function checkDeletion(){
-							sleep(60);
-							return false;
-						}
 						
 						let cancelReactions = true;
 
-						let deleted = checkDeletion();
 						await botMessage.awaitReactions({ filter, max: 1, time: 60000, errors: ['time'] }).then(collected => {
 							const reaction = collected.first();
 
@@ -119,7 +113,7 @@ module.exports = {
 							}
 						}).catch(collected => {});
 
-						if(deleted == false){
+						if(botMessage.createdTimestamp + 60000 <= Date.now()){
 							botMessage.reactions.removeAll()
 						}
 					}

@@ -42,9 +42,10 @@ module.exports = {
 			];
 
 			return interaction.respond(categories);
-		}else if(category == 'challenges'){
+		}else if(category == 'other'){
 			let categories = [
-				{ name: 'RWS / Road Wood Steel', value: 'rws' }
+				{ name: 'RWS / Road Wood Steel', value: 'rws' },
+				{ name: 'Looming Level', value: 'll'}
 			];
 
 			return interaction.respond(categories);
