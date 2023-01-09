@@ -6,16 +6,15 @@ module.exports = {
 	.setName('clear')
 	.setDescription('Clears all current cooldowns, useful if the bot goes down'),
 	async execute(interaction){
-		//if(['767933568940638248', '880330557014294631', '461683459484549121', '875943961146032158'].some(v => interaction.member._roles.includes(v))){ // mod, supermod, dev, robotics
-			let channel = interaction.channelId;
+		if(['767933568940638248', '880330557014294631', '461683459484549121', '875943961146032158', '891386997271298069'].some(v => interaction.member._roles.includes(v))){ // mod, supermod, dev, robotics
+			const channels = Array.from(interaction.guild.channels.cache.filter(v => ![2, 4].includes(v.type)), ([id, value]) => ({ id, value }));
 
-			let state = db.get(`${channel}.paused`);
-			db.delete(channel);
-			db.set(`${channel}.paused`, state);
-
-			await interaction.reply({ content: 'Cleared all level command cooldowns in all channels', ephemeral: true });
-		//}else{
-		//	return interaction.reply({ content: 'You do not have the adequate permissions to perform this action!', ephemeral: true });
-		//}
+			for(let i in channels){
+				db.delete(`${channels[i].id}.cooldown`);
+			}
+			await interaction.reply({ content: `Cleared cooldowns from ${channels.length} channels.`, ephemeral: true });
+		}else{
+			return interaction.reply({ content: 'You do not have the adequate permissions to perform this action!', ephemeral: true });
+		}
 	}
 }

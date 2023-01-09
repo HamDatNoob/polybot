@@ -247,8 +247,6 @@ module.exports = {
 				run = [name, type, mode].join(', ');
 			}
 
-			console.log(data2)
-
 			let time = new Date(data1.times.primary_t * 1000).toISOString().slice(11, 23);
 			let comment = data1.comment;
 			let user = (data2?.name || data2?.names?.international || data2?.names.japanese);

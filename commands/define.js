@@ -9,7 +9,7 @@ module.exports = {
 		option
 		.setName('category')
 		.setDescription('Category for the thing help is needed with')
-		.setRequired(true)
+		.setRequired(true) 
 		.addChoices(
 			{ name: 'Exploits', value: 'exploits' },
 			{ name: 'Bugs', value: 'bugs' },
