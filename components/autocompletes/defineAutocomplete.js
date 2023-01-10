@@ -14,7 +14,8 @@ module.exports = {
 				{ name: 'The', value: 'the' },
 				{ name: 'SPY / Stuck Platform Yeet', value: 'spy' },
 				{ name: 'SCY / Stuck Car Yeet', value: 'scy' },
-				{ name: 'SFC / Stuck Falling Car', value: 'sfc' }
+				{ name: 'SFC / Stuck Falling Car', value: 'sfc' },
+				{ name: 'SHR / Stuck Hydraulic Car', value: 'shr' }
 			];
 
 			return interaction.respond(categories);

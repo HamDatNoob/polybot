@@ -55,6 +55,11 @@ const categories = {
 			description: "A car falls / gets launched into a piece of road, causing it to gain speed. It is similar to an SFR, but the car falls instead of the road.",
 			image: "https://cdn.discordapp.com/attachments/461344432302587916/1049178661988872223/sfc.gif?size=4096"
 		},
+		shr: {
+			name: "SHR / Stuck Hydraulic Road",
+			description: "Hydraulics force a road into a car's hitbox, causing it to gain lift and be launched",
+			image: "https://cdn.discordapp.com/attachments/965424891786563654/1062513078811496600/shr.gif?size=4096"
+		}
 	},
 	bugs: {
 		mw: {
