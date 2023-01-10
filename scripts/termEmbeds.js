@@ -57,7 +57,7 @@ const categories = {
 		},
 		shr: {
 			name: "SHR / Stuck Hydraulic Road",
-			description: "Hydraulics force a road into a car's hitbox, causing it to gain lift and be launched",
+			description: "Hydraulics force 2 or more roads into a car's hitbox, causing it to gain lift and be launched.",
 			image: "https://cdn.discordapp.com/attachments/965424891786563654/1062513078811496600/shr.gif?size=4096"
 		}
 	},
