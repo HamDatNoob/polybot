@@ -1,5 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
-const { getTerm } = require('../scripts/termEmbeds.js');
+const { getDefinition } = require('../scripts/defineEmbeds.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -19,7 +19,7 @@ module.exports = {
 	)
 	.addStringOption(option =>
 		option
-		.setName('term')
+		.setName('definition')
 		.setDescription('The specific thing help is needed with')
 		.setRequired(true)
 		.setAutocomplete(true)
@@ -28,7 +28,7 @@ module.exports = {
 		const category = interaction.options._hoistedOptions[0].value;
 		const group = interaction.options._hoistedOptions[1].value;
 		
-		const data = getTerm(category, group);
+		const data = getDefinition(category, group);
 
 		let guideEmbed = new EmbedBuilder()
 		.setTitle(data.name)

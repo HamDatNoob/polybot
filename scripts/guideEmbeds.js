@@ -101,8 +101,8 @@ const categories = {
 	}
 };
 
-function getGuide(category, term){
-	return categories[category][term];
+function getGuide(category, definition){
+	return categories[category][definition];
 }
 
 module.exports = { getGuide };

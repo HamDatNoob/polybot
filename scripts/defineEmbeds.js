@@ -145,10 +145,10 @@ const categories = {
 			description: "A complex level primarily focusing on one type of linkage, popularized by the level creator Looming. The term has grown to be an all-encompassing term for all complex levels similar to it."
 		}
 	}
+};
+
+function getDefinition(category, definition){
+	return categories[category][definition];
 }
 
-function getTerm(category, term){
-	return categories[category][term];
-}
-
-module.exports = { getTerm };
+module.exports = { getDefinition };

@@ -15,6 +15,8 @@ module.exports = {
 		.setRequired(true)
 	),
 	async execute(interaction, message){
+		console.log(message)
+
 		let msgArray;
 		if(interaction){
 			msgArray = interaction.options.getString('code').match(/(?:[1-6]-(?:(?!1[7-9])1[0-6]|(?![1-9]\d)0?[1-9])c?|[78]-(?:(?!1[6-9])1[0-5]|0?[1-9]))/gmi);
@@ -67,19 +69,17 @@ module.exports = {
 					async function reactions(botMessage){
 						botMsg = botMessage;
 
-						botMessage.react('❌');
+						await botMessage.react('❌');
 						if(i != 0) await botMessage.react('⬅️');
 						if(i < msgArray.length - 1) await botMessage.react('➡️');
 
 						const filter = (reaction, user) => {
 							if(user.bot == true) return;
-							if(user.id != message.author) return;
+							if(user.id != message.author.id && message.author.roles.cache.some(v => !['767933568940638248', '880330557014294631', '461683459484549121', '875943961146032158', '891386997271298069'].includes(v.id))) return;
 
 							return ['❌', '⬅️', '➡️'].includes(reaction.emoji.name);
 						};
 						
-						let cancelReactions = true;
-
 						await botMessage.awaitReactions({ filter, max: 1, time: 60000, errors: ['time'] }).then(collected => {
 							const reaction = collected.first();
 
@@ -87,14 +87,11 @@ module.exports = {
 								case '❌':
 									botMessage.delete(1);
 
-									cancelReactions = false;
-
 									return;
 								case '⬅️':
 									botMessage.reactions.removeAll();
 
 									replyNum--;
-									cancelReactions = false;
 									first = false;
 
 									db.delete(`${message.channelId}.cooldown.${c}`);
@@ -104,7 +101,6 @@ module.exports = {
 									botMessage.reactions.removeAll();
 								
 									replyNum++;
-									cancelReactions = false;
 									first = false;
 
 									db.delete(`${message.channelId}.cooldown.${c}`);
@@ -114,7 +110,7 @@ module.exports = {
 						}).catch(collected => {});
 
 						if(botMessage.createdTimestamp + 60000 <= Date.now()){
-							botMessage.reactions.removeAll()
+							botMessage.reactions.removeAll();
 						}
 					}
 
