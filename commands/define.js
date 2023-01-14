@@ -31,11 +31,11 @@ module.exports = {
 		const data = getDefinition(category, group);
 
 		let guideEmbed = new EmbedBuilder()
-		.setTitle(data.name)
-		.setColor('#f9db44')
-		.setThumbnail('https://cdn.discordapp.com/attachments/965424891786563654/975932690639511572/icon.png')
-		.setDescription(data.description)
-		.setImage(data.image)
+			.setTitle(data.name)
+			.setColor('#f9db44')
+			.setThumbnail('https://cdn.discordapp.com/attachments/965424891786563654/975932690639511572/icon.png')
+			.setDescription(data.description)
+			.setImage(data.image)
 
 		return interaction.reply({ embeds: [guideEmbed] });
 	}

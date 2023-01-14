@@ -57,7 +57,7 @@ const categories = {
 		},
 		shr: {
 			name: "SHR / Stuck Hydraulic Road",
-			description: "Hydraulics force 2 or more roads into a car's hitbox, causing it to gain lift and be launched.",
+			description: "Hydraulics force two or more roads into a car's hitbox, causing it to gain lift and be launched.",
 			image: "https://cdn.discordapp.com/attachments/965424891786563654/1062513078811496600/shr.gif?size=4096"
 		}
 	},
@@ -133,6 +133,11 @@ const categories = {
 			name: "Toothpick",
 			description: "A long and skinny, usually wooden, pole used to stabilize structures, similar to a muscle.",
 			image: "https://cdn.discordapp.com/attachments/872600292586303490/986111135046570026/toothpick.png?size=4096"
+		},
+		trapdoor: {
+			name: "Trapdoor",
+			description: "A method of merging two layers of cars into one using a rope or cable and a rotating road.",
+			image: "https://cdn.discordapp.com/attachments/461344432302587916/1063666391162564639/trapdoor.gif?size=4096"
 		}
 	},
 	other: {
@@ -143,6 +148,11 @@ const categories = {
 		ll: {
 			name: "Looming Level",
 			description: "A complex level primarily focusing on one type of linkage, popularized by the level creator Looming. The term has grown to be an all-encompassing term for all complex levels similar to it."
+		},
+		pt: {
+			name: "PolyTech",
+			description: "A group of Poly Bridge players dedicated to creating insane contraptions and modding. Link: https://discord.gg/QdyC6EA",
+			image: "https://cdn.discordapp.com/attachments/754824436561084486/1063673166133743708/Picture2.png"
 		}
 	}
 };

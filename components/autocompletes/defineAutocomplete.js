@@ -39,14 +39,16 @@ module.exports = {
 				{ name: 'Muscle Fractals / Arglin Diamonds', value: 'mf' },
 				{ name: 'Chain / Wood Rope', value: 'wr' },
 				{ name: 'Land Bracing / Wall Bracing', value: 'lb' },
-				{ name: 'Toothpick', value: 'toothpick' }
+				{ name: 'Toothpick', value: 'toothpick' },
+				{ name: 'Trapdoor', value: 'trapdoor' }
 			];
 
 			return interaction.respond(categories);
 		}else if(category == 'other'){
 			let categories = [
 				{ name: 'RWS / Road Wood Steel', value: 'rws' },
-				{ name: 'Looming Level', value: 'll'}
+				{ name: 'Looming Level', value: 'll'},
+				{ name: 'PolyTech', value: 'pt' }
 			];
 
 			return interaction.respond(categories);
