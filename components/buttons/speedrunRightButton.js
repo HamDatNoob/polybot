@@ -57,6 +57,7 @@ module.exports = {
 			{ name: 'User', value: user },
 			{ name: 'Submitted', value: submitted }
 		)
+		.setFooter({ text: `Used: /speedrun recent` })
 
 		const arrows = new ActionRowBuilder()
 		.addComponents(

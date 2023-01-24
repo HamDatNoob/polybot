@@ -37,6 +37,6 @@ module.exports = {
 			{ name: '\u200b', value: `PB2: ${pb2Levels[pb2Index].code}: ${pb2Levels[pb2Index].name}, ${pb2MatchRating} match!` }
 		)
 
-		await interaction.reply({ embeds: [matchEmbed], ephemeral: true })
+		await interaction.reply({ embeds: [matchEmbed] })
 	}
 }

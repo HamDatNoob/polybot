@@ -75,7 +75,7 @@ module.exports = {
 
 						const filter = (reaction, user) => {
 							if(user.bot == true) return;
-							if(user.id != message.author.id && message.author.roles.cache.some(v => !['767933568940638248', '880330557014294631', '461683459484549121', '875943961146032158', '891386997271298069'].includes(v.id))) return;
+							if(user.id != message.author.id && message.author?.roles.cache.some(v => !['767933568940638248', '880330557014294631', '461683459484549121', '875943961146032158', '891386997271298069'].includes(v.id))) return;
 
 							return ['❌', '⬅️', '➡️'].includes(reaction.emoji.name);
 						};

@@ -43,6 +43,6 @@ module.exports = {
 		.setTitle(`Thumbnail for ${code}`)
 		.setImage(`attachment://${code}.png`)
 
-		await interaction.reply({ embeds: [thumbnailEmbed], files: [thumbnail], ephemeral: true })
+		await interaction.reply({ embeds: [thumbnailEmbed], files: [thumbnail] })
 	}
 }

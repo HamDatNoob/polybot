@@ -107,6 +107,7 @@ module.exports = {
 				{ name: 'Poly Bridge World Records', value: pbwrs },
 				{ name: 'Joined', value: joined }
 			)
+			.setFooter({ text: `Used: /speedrun player ${options[0].value}` })
 
 			let weblink = new ActionRowBuilder()
 			.addComponents(
@@ -185,6 +186,7 @@ module.exports = {
 				{ name: 'User', value: user },
 				{ name: 'Submitted', value: submitted }
 			)
+			.setFooter({ text: `Used: /speedrun search ${options[0].value} ${options[1].value} ${options[2].value}` })
 	
 			let videoLinkButton;
 			if(data1.runs[0]?.run.videos?.links[0]?.uri != undefined){
@@ -268,6 +270,7 @@ module.exports = {
 				{ name: 'User', value: user },
 				{ name: 'Submitted', value: submitted }
 			)
+			.setFooter({ text: `Used: /speedrun recent` })
 
 			const arrows = new ActionRowBuilder()
 			.addComponents(

@@ -83,7 +83,7 @@ const categories = {
 			image: "https://cdn.discordapp.com/attachments/872600292586303490/985736303498903653/slr.gif?size=4096"
 		},
 	},
-	techniques: {
+	bt: {
 		dangle: {
 			name: "Dangling Bridge",
 			description: "A loose-hanging, arced road that supports itself.",
@@ -151,7 +151,7 @@ const categories = {
 		},
 		pt: {
 			name: "PolyTech",
-			description: "A group of Poly Bridge players dedicated to creating insane contraptions and modding. Link: https://discord.gg/QdyC6EA",
+			description: "A group of Poly Bridge players dedicated to creating insane contraptions and modding.\n\nLink: https://discord.gg/QdyC6EA",
 			image: "https://cdn.discordapp.com/attachments/754824436561084486/1063673166133743708/Picture2.png"
 		}
 	}

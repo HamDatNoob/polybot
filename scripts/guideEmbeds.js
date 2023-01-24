@@ -64,10 +64,10 @@ const categories = {
 			description: 'A common issue that people have is not being able to make split joints/hydraulics move in sandbox mode. This is intentional! Refer to the gif below for instructions.',
 			image: 'https://cdn.discordapp.com/attachments/754824436561084486/981744504140857394/sandbox.hydraulicphases.gif?size=4096'
 		},
-		submitting: {
+		workshop: {
 			name: 'Sandbox: Submitting to Workshop',
 			description: 'Once you\'ve made your impeccable and ingenious level, you may want to upload it to the workshop for others to play. Access the sandbox mode and click on the \"Upload to workshop\" button to begin the uploading process. Further instruction continues in the gif below.',
-			image: 'https://cdn.discordapp.com/attachments/965424891786563654/981745541044125746/sandbox.submitting.gif?size=4096'
+			image: 'https://cdn.discordapp.com/attachments/96542489178656365node key4/981745541044125746/sandbox.submitting.gif?size=4096'
 		},
 		eventeditor: {
 			name: "Sandbox: Event Editor",

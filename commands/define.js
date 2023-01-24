@@ -36,6 +36,7 @@ module.exports = {
 			.setThumbnail('https://cdn.discordapp.com/attachments/965424891786563654/975932690639511572/icon.png')
 			.setDescription(data.description)
 			.setImage(data.image)
+			.setFooter({ text: `Used: /define ${category} ${group}` })
 
 		return interaction.reply({ embeds: [guideEmbed] });
 	}

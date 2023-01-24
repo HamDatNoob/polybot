@@ -28,8 +28,10 @@ module.exports = {
 	async execute(interaction){
 		const category = interaction.options._hoistedOptions[0].value;
 		const group = interaction.options._hoistedOptions[1].value;
+
+		console.log(category, group)
 		
-		const data = getGuide(category, group);
+		const data = await getGuide(category, group);
 
 		let guideEmbed;
 		if(category != 'budgeting'){
@@ -39,6 +41,7 @@ module.exports = {
 			.setThumbnail('https://cdn.discordapp.com/attachments/965424891786563654/975932690639511572/icon.png')
 			.setDescription(data.description)
 			.setImage(data.image)
+			.setFooter({ text: `Used: /guide ${category} ${group}` })
 
 			return interaction.reply({ embeds: [guideEmbed] })
 		}else{
@@ -47,6 +50,7 @@ module.exports = {
 			.setColor('#f9db44')
 			.setThumbnail('https://cdn.discordapp.com/attachments/965424891786563654/975932690639511572/icon.png')
 			.setDescription(data.description)
+			.setFooter({ text: `Used: /guide ${category} ${group}` })
 
 			const link = new ActionRowBuilder()
 			.addComponents(

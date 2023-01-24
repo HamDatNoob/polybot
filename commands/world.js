@@ -80,6 +80,6 @@ module.exports = {
 			.setStyle(ButtonStyle.Primary)
 		)
 
-		await interaction.reply({ embeds: [worldEmbed], components: [worldButton], ephemeral: true });
+		await interaction.reply({ embeds: [worldEmbed], components: [worldButton] });
 	}
 }

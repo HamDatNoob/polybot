@@ -57,6 +57,8 @@ module.exports = {
 			{ name: 'User', value: user },
 			{ name: 'Submitted', value: submitted }
 		)
+		.setFooter({ text: `Used: /speedrun recent` })
+
 
 		let dis;
 		if(page == 1){

@@ -1,0 +1,293 @@
+[
+    {
+        "name": "Core Mechanisms and Essential Constructions",
+        "values": {
+            "90 Degree Mechanism 1": 0,
+            "90 Degree Mechanism 2": 1,
+            "90 Degree Mechanism 3 (Easy 90)": 2,
+            "4 Bar Parallelogram Linkage": 3,
+            "4 Bar Parallelogram Linkage - Bracing": 4,
+            "4 Bar Contraparallelogram / Antiparallelogram Linkage": 5,
+            "4 Bar Contraparallelogram / Antiparallelogram Linkage - Bracing 1": 6,
+            "4 Bar Contraparallelogram / Antiparallelogram Linkage - Bracing 2": 7,
+            "4 Bar Deltoid Linkage": 8,
+            "4 Bar Deltoid Linkage - Bracing 1": 9,
+            "4 Bar Deltoid Linkage - Bracing 2": 10,
+            "4 Bar Deltoid Linkage - Bracing 3": 11,
+            "Pythagorean Triples Right Triangle Construction": 12,
+            "Isometric Grid Construction": 13,
+            "Bisection Methods": 14
+        }
+    },
+    {
+        "name": "More Rotational Mechanisms",
+        "values": {
+            "LazyComet 180 Degree Mechanism 1 (LC180)": 0,
+            "LazyComet 180 Degree Mechanism 2 (LC180-2)": 1,
+            "Popcorniosaurus 180 Degree Mechanism 1 (P180)": 2,
+            "Popcorniosaurus 180 Degree Mechanism 2 (P180-2)": 3,
+            "180 Degree using Peaucellier-Lipkin Inversor (PL180)": 4,
+            "180 Degree using Deltoid": 5,
+            "Easy 180 Mechanism": 6,
+            "LazyComet 270 Degree Mechanism (LC270)": 7,
+            "Popcorniosaurus 270 Degree Mechanism (P270)": 8,
+            "Shmojelfed 270 Degree Mechanism (S270)": 9,
+            "Kampling 270 Mechanism (K270)": 10,
+            "Contraparallelogram 270 Degree Mechanism (Contra 270)": 11,
+            "270 Degree Mechanism Using an Inversor (Inversor 270)": 12,
+            "270 Degree Mechanism Using an Inversor 2": 13,
+            "Easy 270 Degree Mechanism": 14,
+            "Gajiro 270 Degree Mechanism": 15,
+            "Popcorniosaurus 360 Degree Mechanism - Deltoid (Deltoid 360)": 16,
+            "Popcorniosaurus 360 Degree Mechanism - Deltoid 2 (Deltoid 360-2)": 17,
+            "Popcorniosaurus 360 Degree Mechanism - Double 180 (P360)": 18,
+            "Easy 360 Mechanism": 19,
+            "45 Degree Mechanism - Simple Ongrid Positions 1 and 2 (Grid45)": 20,
+            "45 Degree Mechanism - Simple Ongrid Positions 3 and 4 (Grid45)": 21,
+            "45 Degree Mechanism using Peaucellier-Lipkin Inversor 1 (PL45)": 22,
+            "45 Degree Mechanism using Peaucellier-Lipkin Inversor 2 (PL45-2)": 23,
+            "45 Degree Mechanism using Peaucellier-Lipkin Inversor 3 (PL45-3)": 24,
+            "45 Degree Mechanism using Prismatic Joint (PJ45)": 25,
+            "45 Degree Mechanism using Bricard Inversor / Scott Russell Link": 26,
+            "(SR45 / B45)": 27,
+            "45 Degree and 90 Degree Mechanism using Half Pantograph (HP45-90)": 28,
+            "135 Degree Mechanism - Simple On-grid Position (Grid135)": 29,
+            "Easy 45 Mechanisms": 30,
+            "Easy 135 Mechanisms": 31,
+            "30, 60, 120, and 150 Degree Mechanisms - Simple On-grid Positions (Grid30, Grid60, Grid120, Grid150)": 32,
+            "240 Degree Mechanisms - Simple On-grid Positions (Grid240)": 33,
+            "Easy 60 Mechanisms": 34,
+            "Easy 15, 30, 75, 120 Mechanisms": 35,
+            "90 Degree Reverser": 36,
+            "N Degree Reverser": 37
+        }
+    },
+    {
+        "name": "Approximate Linear Linkages and Walker Linkages",
+        "values": {
+            "Watt’s Linkage": 0,
+            "Watt’s Parallel Motion": 1,
+            "Grasshopper Linkage / Evans Linkage": 2,
+            "Chebyshev Linkage 1": 3,
+            "Chebyshev Linkage 2 (Chebyshev Lambda Linkage)": 4,
+            "Chebyshev Linkage 3": 5,
+            "Chebyshev Table Linkage 1": 6,
+            "Chebyshev Table Linkage 2": 7,
+            "Roberts Linkage": 8,
+            "Piccolo Linkage": 9,
+            "Hoecken Linkage": 10,
+            "Jansen’s Linkage / Strandbeest Linkage": 11,
+            "Trotbot Linkage": 12,
+            "Strider Linkage": 13,
+            "Ghassaei Linkage": 14,
+            "Klann Linkage ": 15
+        }
+    },
+    {
+        "name": "Exact Linear Linkages",
+        "values": {
+            "Bolt986 Scissoring Mechanism": 0,
+            "Peaucellier-Lipkin Inversor (Common)": 1,
+            "Peaucellier-Lipkin Inversor (Inverse)": 2,
+            "Peaucellier-Lipkin Inversor (Addendum)": 3,
+            "Scott Russell Linkage": 4,
+            "Bricard Inversor": 5,
+            "Hart Contraparallelogram Inversor": 6,
+            "Perrolatz Inversor": 7,
+            "Kampling Inversor": 8,
+            "Hart A-Frame Inversor 1a": 9,
+            "Hart A-Frame Inversor 1b": 10,
+            "Hart A-Frame Inversor 2": 11,
+            "Hart A-Frame Inversor - Fractal Behavior": 12,
+            "Li-Schicho-Schröcker Linkage 1": 13,
+            "Li-Schicho-Schröcker Linkage 2a": 14,
+            "Li-Schicho-Schröcker Linkage 2b": 15,
+            "Kempe Kite Linkages": {
+                "Kempe Kite Linkage 1": {
+                    "Main Configuration": 16
+                },
+                "Kempe Kite Linkage 2": {
+                    "Configuration A1 and A2": 17,
+                    "Configuration B": 18
+                },
+                "Kempe Kite Linkage 3": {
+                    "Configuration A1 and B1": 19,
+                    "Configuration B2": 20,
+                    "Configuration A3 and B3": 21,
+                    "Configuration A4 and B4": 22,
+                    "Configuration A5": 23
+                },
+                "Kempe Kite Linkage 4A and 4B": 24,
+                "FestiveBook’s Nested Deltoids Generalization": {
+                    "FestiveBook-Kampling Nested Deltoids Grid Generalization": 25
+                }
+            },
+            "Quadruplanar Inversors": {
+                "Sylvester-Kempe Quadruplanar Inversors": {
+                    "Variant 1": 26,
+                    "Variant 2": 27,
+                    "Variant 3": 28,
+                    "Variant 4": 29
+                },
+                "Kumara-Kampling Quadruplanar Inversors": {
+                    "Variant 1": 30,
+                    "Variant 2": 31,
+                    "Variant 3": 32
+                },
+                "Generation of More Quadruplanar Inversors": 33
+            }
+        }
+    },
+    {
+        "name": "Linkages for Dilation, Amplification / Reduction",
+        "values": {
+            "Linkages for Dilation, Amplification / Reduction": 0,
+            "Pantograph": 1,
+            "Watt-styled Pantograph": 2,
+            "Ediograph": 3,
+            "Scissoring Mechanism": 4,
+            "Pantograph Linear Adder": 5,
+            "Double Pantograph Reverser": 6,
+            "Double Peaucellier-Lipkin Reverser": 7,
+            "Kempe Reverser 1a": 8,
+            "Kempe Reverser 1b": 9,
+            "Kempe Reverser 1c": 10,
+            "Kempe Reverser 2": 11,
+            "Rhombic Reverser 1": 12,
+            "Contraparallelogram Reverser": 13,
+            "Single Pantograph Reverser": 14,
+            "Rhombic Reverser 2": 15,
+            "Deltoid Reverser": 16,
+            "Stratzenblitz-Vaigg Reverser": 17,
+            "Stratzenblitz-Arglin Reverser": 18,
+            "Inversor Cell Reverser": 19,
+            "Stratzenblitz-Vaigg-Palfly Balanced Reverser": 20,
+            "Stratzenblitz-Arglin-Kila Balanced Reverser": 21,
+            "Inversor Cell Balanced Reverser": 22,
+            "Generalization for Doublers": 23,
+            "Angle Bisector - A Generalization on all Angle Reversers and Doublers": 24,
+            "Generalization for 1:N Converters - Triplet Jumping": 25,
+            "Mechanical Rotation Adder": 26,
+            "Kempe Multiplicator 1": 27,
+            "Kempe Multiplicator 2": 28
+        }
+    },
+    {
+        "name": "Dwell Linkages",
+        "values": {
+            "Single Arc Dwell Linkage 1": 0,
+            "Single Arc Dwell Linkage 2": 1,
+            "Single Arc Dwell Linkage 3": 2,
+            "Single Linear Dwell Linkage": 3,
+            "Double Linear Dwell Linkage using Booth Curve": 4,
+            "Double Dwell Linkage 1a": 5,
+            "Double Dwell Linkage 1b": 6,
+            "Double Dwell Linkage 1c": 7,
+            "Double Dwell Linkage 2a": 8,
+            "Double Dwell Linkage 2b": 9,
+            "Spring Dwell Linkage": 10,
+            "Cable + Gravity Dwell Linkage": 11
+        }
+    },
+    {
+        "name": "Advanced Engines",
+        "values": {
+            "Complex Hydraulics": {
+                "Hydraulic Engines with a Single Axis of Symmetry": {
+                    "E-SAS Grasshopper Linkage": 0,
+                    "E-SAS Peaucellier-Lipkin Linkage": 1,
+                    "E-SAS Hart A-frame": 2
+                },
+                "Hydraulic Engines with Two Axes of Symmetry": {
+                    "E-DAS Grasshoppers": 3,
+                    "E-DAS Pantograph 1": 4,
+                    "E-DAS Pantograph 2 (Scott Russell)": 5,
+                    "E-DAS Rhombus": 6
+                },
+                "Hydraulic Engines with Oscillating Hydraulics": {
+                    "180 Degree OHE": 7,
+                    "0 Degree Centered OHE": 8,
+                    "90 Degree Centered OHE": 9,
+                    "90 Degree Centered OHE 2": 10,
+                    "180 Degree Centered OHE": 11,
+                    "270 Degree Centered OHE": 12,
+                    "360 Degree Centered OHE": 13
+                },
+                "Hydraulic Engines with Cycling Hydraulics": {
+                    "90 Degree CHE": 14,
+                    "180 Degree CHE": 15
+                }
+            },
+            "Stepper Motors": {
+                "Stepper Motor Input 1a": 16,
+                "Stepper Motor Input 1b - Scotch Yoke": 16,
+                "Stepper Motor Input 2": 17,
+                "90 Degree Stepper Motor 1 (4-stage)": 18,
+                "90 Degree Stepper Motor 2 (4-stage)": 18,
+                "60 Degree Stepper Motor (6-stage)": 19,
+                "Generalization of Simple Polygon-based Stepper Motor (360/N-stage)": 21,
+                "180 Degree Stepper Motor 1a (2-stage)": 21,
+                "180 Degree Stepper Motor 1b (2-stage)": 21,
+                "180 Degree Stepper Motor 2 (2-stage)": 22,
+                "180 Degree Stepper Motor 3a (2-stage) (No Hydraulic Controller)": 24,
+                "180 Degree Stepper Motor 3b (2-stage) (No Hydraulic Controller)": 25,
+                "180:270 or 180:-90 Degree Coaxial Stepper Motors (4-stage)": 26,
+                "360 Degree Stepper Motor": 27
+            },
+            "Perpetual Motion Machines": {
+                "Spring Sliding Box": 29,
+                "Spring Compression Wheel": 29,
+                "Spring Tension Wheel": 30,
+                "Hydraulic Warp Engine": 31,
+                "PMM Engine": 32
+            }
+        }
+    },
+    {
+        "name": "Miscellaneous Linkages and Constructions",
+        "values": {
+            "Prismatic Joint Mimicker": 0,
+            "Contraparallelogram Lemnsicate Linkage": 1,
+            "Deltoid-Evans Lemniscate Linkage": 2,
+            "Gogousis Lemniscate Linkage": 3,
+            "Drawing Lemniscate with Smooth Motion": 4,
+            "Approximate Stadium using Booth Curve 1": 5,
+            "Approximate Stadium using Booth Curve 2": 6,
+            "Approximate Stadium using Booth Curve 3": 7,
+            "Mechanisms for Drawing a Circle": {
+                "Parallelogram": 8,
+                "Pantograph, Ediograph, and other Similar Mechanical Amplifiers": 9,
+                "Inversor Cell": 10,
+                "Gogousis’s Linkage": 11
+            },
+            "Musashikoganei Sharin / Square Wheel (武蔵小金井 車輪)": 12,
+            "Wittgenstein’s Rod": 13,
+            "Ueki Heart Linkage": 14,
+            "Akagami Heart Linkage": 15,
+            "Akagami Heart Linkage 2": 16,
+            "Arglin Heart Linkage 1": 17,
+            "Arglin Heart Linkage 2": 18,
+            "Projection of a Point onto a Line": 19,
+            "Projection of a Point onto Two Lines": 20,
+            "Overcenter Linkages": {
+                "Collinear Position of 90 Degree Linkage": 21,
+                "Collinear Positions of 180 Degree Linkage": 22,
+                "Using a Prismatic Joint": 23
+            }
+        }
+    },
+    {
+        "name": "Polygonal Constructions",
+        "values": {
+            "Integer Interior Angles and Even-sided Polygons": 0,
+            "Integer Interior Angles and Odd-sided Polygons": 1,
+            "Heptagon - Vanilla Approximation": 2,
+            "All Regular Polygons - Modded Construction": {
+                "Calculating the Angle": 3,
+                "Spring Pressure-Forming": 4,
+                "Gravitational Pressure-Forming": 5,
+                "Kempe Multiplicator": 6
+            }
+        }
+    }
+]

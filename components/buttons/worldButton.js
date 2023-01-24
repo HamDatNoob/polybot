@@ -64,7 +64,7 @@ module.exports = {
 					{ name: '\u200b', value: `\`${levels[0].code}\`: ${levels[0].name}\n\`${levels[1].code}\`: ${levels[1].name}\n\`${levels[2].code}\`: ${levels[2].name}\n\`${levels[3].code}\`: ${levels[3].name}\n\`${levels[4].code}\`: ${levels[4].name}\n\`${levels[5].code}\`: ${levels[5].name}\n\`${levels[6].code}\`: ${levels[6].name}\n\`${levels[7].code}\`: ${levels[7].name}\n\`${levels[8].code}\`: ${levels[8].name}\n\`${levels[9].code}\`: ${levels[9].name}` }
 				)
 
-				return interaction.reply({ embeds: [w8Embed], ephemeral: true });
+				return interaction.reply({ embeds: [w8Embed] });
 		}
 
 		let levels = [];
@@ -81,7 +81,7 @@ module.exports = {
 		)
 		
 		if(option == 7){
-			await interaction.reply({ embeds: [worldEmbedEdit], ephemeral: true });
+			await interaction.reply({ embeds: [worldEmbedEdit] });
 		}else{
 			await interaction.update({ embeds: [worldEmbedEdit], components: [] });
 		}

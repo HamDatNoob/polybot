@@ -74,7 +74,7 @@ module.exports = {
                 .setThumbnail('https://cdn.discordapp.com/attachments/965424891786563654/975932690639511572/icon.png')
                 .setDescription(data[num].description)
                 .setImage(data[num].image)
-                .setFooter({ text: `[${num + 1}/${data.length}]` });
+                .setFooter({ text: `Used: /help ${level} ${num} | [${num + 1}/${data.length}]` });
 
             if(first){
                 interaction.reply({ embeds: [helpEmbed], fetchReply: true }).then(bm => reactions(bm));

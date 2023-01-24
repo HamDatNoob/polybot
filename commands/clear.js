@@ -12,7 +12,7 @@ module.exports = {
 			for(let i in channels){
 				db.delete(`${channels[i].id}.cooldown`);
 			}
-			await interaction.reply({ content: `Cleared cooldowns from ${channels.length} channels.`, ephemeral: true });
+			await interaction.reply({ content: `Cleared cooldowns from ${channels.length} channels.` });
 		}else{
 			return interaction.reply({ content: 'You do not have the adequate permissions to perform this action!', ephemeral: true });
 		}
