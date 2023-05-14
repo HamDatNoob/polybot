@@ -6,7 +6,7 @@ module.exports = {
 	.setName('pause')
 	.setDescription('Pauses public chat responses to level codes in the current channel'),
 	async execute(interaction){
-		if(['767933568940638248', '880330557014294631', '461683459484549121', '875943961146032158'].some(v => interaction.member._roles.includes(v))){ // mod, supermod, dev, robotics
+		if(['767933568940638248', '880330557014294631', '461683459484549121', '875943961146032158', '891386997271298069'].some(v => interaction.member._roles.includes(v))){ // mod, supermod, dev, robotics
 			const channel = interaction.channelId;
 			
 			if(await db.get(`${channel}.paused`) == false){
