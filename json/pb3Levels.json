@@ -1,0 +1,776 @@
+{
+    "CR": {
+        "01": {
+            "code": "CR-01",
+            "name": "Abridged",
+            "detail": ""
+        },
+        "02": {
+            "code": "CR-02",
+            "name": "Unabridged",
+            "detail": ""
+        },
+        "03": {
+            "code": "CR-03",
+            "name": "On the Rocks",
+            "detail": ""
+        },
+        "04": {
+            "code": "CR-04",
+            "name": "Industrial Metal",
+            "detail": ""
+        },
+        "05": {
+            "code": "CR-05",
+            "name": "Mixed Materials",
+            "detail": ""
+        },
+        "06": {
+            "code": "CR-06",
+            "name": "Two Bridges",
+            "detail": ""
+        },
+        "07": {
+            "code": "CR-07",
+            "name": "Under Plane",
+            "detail": ""
+        },
+        "08": {
+            "code": "CR-08",
+            "name": "Over the Boat",
+            "detail": ""
+        },
+        "09": {
+            "code": "CR-09",
+            "name": "Rock Star",
+            "detail": ""
+        },
+        "10": {
+            "code": "CR-10",
+            "name": "Go for the Gold",
+            "detail": ""
+        }
+    },
+    "MM": {
+        "01": {
+            "code": "MM-01",
+            "name": "Learn the Ropes",
+            "detail": ""
+        },
+        "02": {
+            "code": "MM-02",
+            "name": "Cable Stayed",
+            "detail": ""
+        },
+        "03": {
+            "code": "MM-03",
+            "name": "Jumping Off Point",
+            "detail": ""
+        },
+        "04": {
+            "code": "MM-04",
+            "name": "Quantum Leap",
+            "detail": ""
+        },
+        "05": {
+            "code": "MM-05",
+            "name": "Perched Path",
+            "detail": ""
+        },
+        "06": {
+            "code": "MM-06",
+            "name": "Cliff Brace",
+            "detail": ""
+        },
+        "07": {
+            "code": "MM-07",
+            "name": "On Your Own",
+            "detail": ""
+        },
+        "08": {
+            "code": "MM-08",
+            "name": "Don't Copy Me",
+            "detail": ""
+        },
+        "09": {
+            "code": "MM-09",
+            "name": "Offside",
+            "detail": ""
+        },
+        "10": {
+            "code": "MM-10",
+            "name": "Laying Foundations",
+            "detail": ""
+        },
+        "11": {
+            "code": "MM-11",
+            "name": "Long Haul",
+            "detail": ""
+        }
+    },
+    "BB": {
+        "01": {
+            "code": "BB-01",
+            "name": "Forced Drawbridge",
+            "detail": ""
+        },
+        "02": {
+            "code": "BB-02",
+            "name": "Joint Work",
+            "detail": ""
+        },
+        "03": {
+            "code": "BB-03",
+            "name": "Raisin' Bridge",
+            "detail": ""
+        },
+        "04": {
+            "code": "BB-04",
+            "name": "Return to Sender",
+            "detail": ""
+        },
+        "05": {
+            "code": "BB-05",
+            "name": "Start it Up",
+            "detail": ""
+        },
+        "06": {
+            "code": "BB-06",
+            "name": "Total Control",
+            "detail": ""
+        },
+        "07": {
+            "code": "BB-07",
+            "name": "Check Your Staging",
+            "detail": ""
+        },
+        "08": {
+            "code": "BB-08",
+            "name": "Down and Around",
+            "detail": ""
+        },
+        "09": {
+            "code": "BB-09",
+            "name": "Drawn-Out Bridge",
+            "detail": ""
+        },
+        "10": {
+            "code": "BB-10",
+            "name": "Drawing Oblique",
+            "detail": ""
+        },
+        "11": {
+            "code": "BB-11",
+            "name": "Swales and Sales",
+            "detail": ""
+        },
+        "12": {
+            "code": "BB-12",
+            "name": "Flip Switch",
+            "detail": ""
+        }
+    },
+    "RB": {
+        "01": {
+            "code": "RB-01",
+            "name": "Preplanned",
+            "detail": ""
+        },
+        "02": {
+            "code": "RB-02",
+            "name": "Diamond in the Rock",
+            "detail": ""
+        },
+        "03": {
+            "code": "RB-03",
+            "name": "On the Ropes",
+            "detail": ""
+        },
+        "04": {
+            "code": "RB-04",
+            "name": "Rerouting...",
+            "detail": ""
+        },
+        "05": {
+            "code": "RB-05",
+            "name": "Faulty Foundation",
+            "detail": ""
+        },
+        "06": {
+            "code": "RB-06",
+            "name": "Under Tension",
+            "detail": ""
+        },
+        "07": {
+            "code": "RB-07",
+            "name": "Waveform",
+            "detail": ""
+        },
+        "08": {
+            "code": "RB-08",
+            "name": "Smooth Roads",
+            "detail": ""
+        },
+        "09": {
+            "code": "RB-09",
+            "name": "Meet Me in the Middle",
+            "detail": ""
+        },
+        "10": {
+            "code": "RB-10",
+            "name": "Dangling Roads",
+            "detail": ""
+        },
+        "11": {
+            "code": "RB-11",
+            "name": "Smooth Landing",
+            "detail": ""
+        },
+        "12": {
+            "code": "RB-12",
+            "name": "Checkbox",
+            "detail": ""
+        },
+        "13": {
+            "code": "RB-13",
+            "name": "Rolling Start",
+            "detail": ""
+        }
+    },
+    "VT": {
+        "01": {
+            "code": "VT-01",
+            "name": "First Hurdle",
+            "detail": ""
+        },
+        "02": {
+            "code": "VT-02",
+            "name": "New Heights",
+            "detail": ""
+        },
+        "03": {
+            "code": "VT-03",
+            "name": "Wooden Rope",
+            "detail": ""
+        },
+        "04": {
+            "code": "VT-04",
+            "name": "Skipper",
+            "detail": ""
+        },
+        "05": {
+            "code": "VT-05",
+            "name": "Risky Business",
+            "detail": ""
+        },
+        "06": {
+            "code": "VT-06",
+            "name": "Airspace Infringement",
+            "detail": ""
+        },
+        "07": {
+            "code": "VT-07",
+            "name": "Crossing Streams",
+            "detail": ""
+        },
+        "08": {
+            "code": "VT-08",
+            "name": "Power Line",
+            "detail": ""
+        },
+        "09": {
+            "code": "VT-09",
+            "name": "U-Turn",
+            "detail": ""
+        },
+        "10": {
+            "code": "VT-10",
+            "name": "Arch Support",
+            "detail": ""
+        },
+        "11": {
+            "code": "VT-11",
+            "name": "Layers",
+            "detail": ""
+        },
+        "12": {
+            "code": "VT-12",
+            "name": "Tower Bridge",
+            "detail": ""
+        },
+        "13": {
+            "code": "VT-13",
+            "name": "Near Miss",
+            "detail": ""
+        }
+    },
+    "LL": {
+        "01": {
+            "code": "LL-01",
+            "name": "Make Ends Meet",
+            "detail": ""
+        },
+        "02": {
+            "code": "LL-02",
+            "name": "Anchors Asway",
+            "detail": ""
+        },
+        "03": {
+            "code": "LL-03",
+            "name": "Wavy Way",
+            "detail": ""
+        },
+        "04": {
+            "code": "LL-04",
+            "name": "Cramped Quarters",
+            "detail": ""
+        },
+        "05": {
+            "code": "LL-05",
+            "name": "Head Space",
+            "detail": ""
+        },
+        "06": {
+            "code": "LL-06",
+            "name": "Speed is Key",
+            "detail": ""
+        },
+        "07": {
+            "code": "LL-07",
+            "name": "Fit to Form",
+            "detail": ""
+        },
+        "08": {
+            "code": "LL-08",
+            "name": "Go Your Own Way",
+            "detail": ""
+        },
+        "09": {
+            "code": "LL-09",
+            "name": "Big Boat",
+            "detail": ""
+        },
+        "10": {
+            "code": "LL-10",
+            "name": "Lonely Island",
+            "detail": ""
+        },
+        "11": {
+            "code": "LL-11",
+            "name": "Over Under",
+            "detail": ""
+        },
+        "12": {
+            "code": "LL-12",
+            "name": "Back to Foundations",
+            "detail": ""
+        },
+        "13": {
+            "code": "LL-13",
+            "name": "Tri-Line",
+            "detail": ""
+        }
+    },
+    "RMT": {
+        "01": {
+            "code": "RMT-01",
+            "name": "Waste Disposal",
+            "detail": ""
+        },
+        "02": {
+            "code": "RMT-02",
+            "name": "Bucket Scoop",
+            "detail": ""
+        },
+        "03": {
+            "code": "RMT-03",
+            "name": "Hanging in the Balance",
+            "detail": ""
+        },
+        "04": {
+            "code": "RMT-04",
+            "name": "Construction Askew",
+            "detail": ""
+        },
+        "05": {
+            "code": "RMT-05",
+            "name": "Spiked",
+            "detail": ""
+        },
+        "06": {
+            "code": "RMT-06",
+            "name": "Sunk Cost",
+            "detail": ""
+        },
+        "07": {
+            "code": "RMT-07",
+            "name": "Out Of Time",
+            "detail": ""
+        },
+        "08": {
+            "code": "RMT-08",
+            "name": "Proceed with Caution",
+            "detail": ""
+        },
+        "09": {
+            "code": "RMT-09",
+            "name": "Rally Rollover",
+            "detail": ""
+        },
+        "10": {
+            "code": "RMT-10",
+            "name": "Seasaw",
+            "detail": ""
+        },
+        "11": {
+            "code": "RMT-11",
+            "name": "Controlled Demolition",
+            "detail": ""
+        },
+        "12": {
+            "code": "RMT-12",
+            "name": "Scaled Up",
+            "detail": ""
+        }
+    },
+    "SC": {
+        "01": {
+            "code": "SC-01",
+            "name": "Braces",
+            "detail": ""
+        },
+        "02": {
+            "code": "SC-02",
+            "name": "Double Back",
+            "detail": ""
+        },
+        "03": {
+            "code": "SC-03",
+            "name": "Just Passing Through",
+            "detail": ""
+        },
+        "04": {
+            "code": "SC-04",
+            "name": "Scraping By",
+            "detail": ""
+        },
+        "05": {
+            "code": "SC-05",
+            "name": "Skip Swing Skip",
+            "detail": ""
+        },
+        "06": {
+            "code": "SC-06",
+            "name": "Shipping Lane",
+            "detail": ""
+        },
+        "07": {
+            "code": "SC-07",
+            "name": "Looper Rising",
+            "detail": ""
+        },
+        "08": {
+            "code": "SC-08",
+            "name": "Batteries Included",
+            "detail": ""
+        },
+        "09": {
+            "code": "SC-09",
+            "name": "Two at a Time",
+            "detail": ""
+        },
+        "10": {
+            "code": "SC-10",
+            "name": "Out of Order",
+            "detail": ""
+        },
+        "11": {
+            "code": "SC-11",
+            "name": "Middle of Nowhere",
+            "detail": ""
+        },
+        "12": {
+            "code": "SC-12",
+            "name": "It's a Trap... Door",
+            "detail": ""
+        },
+        "13": {
+            "code": "SC-13",
+            "name": "Drag Race",
+            "detail": ""
+        },
+        "14": {
+            "code": "SC-14",
+            "name": "Byte Sized",
+            "detail": ""
+        }
+    },
+    "DS": {
+        "01": {
+            "code": "DS-01",
+            "name": "Skipping Stone",
+            "detail": ""
+        },
+        "02": {
+            "code": "DS-02",
+            "name": "Stretch Bridge",
+            "detail": ""
+        },
+        "03": {
+            "code": "DS-03",
+            "name": "Spash Down",
+            "detail": ""
+        },
+        "04": {
+            "code": "DS-04",
+            "name": "Cushion",
+            "detail": ""
+        },
+        "05": {
+            "code": "DS-05",
+            "name": "Flex Gap",
+            "detail": ""
+        },
+        "06": {
+            "code": "DS-06",
+            "name": "Collapsing Column",
+            "detail": ""
+        },
+        "07": {
+            "code": "DS-07",
+            "name": "Soft Landing",
+            "detail": ""
+        },
+        "08": {
+            "code": "DS-08",
+            "name": "Splitting Pressure",
+            "detail": ""
+        },
+        "09": {
+            "code": "DS-09",
+            "name": "Backflip",
+            "detail": ""
+        },
+        "10": {
+            "code": "DS-10",
+            "name": "Zoning Laws",
+            "detail": ""
+        },
+        "11": {
+            "code": "DS-11",
+            "name": "Overstretch",
+            "detail": ""
+        },
+        "12": {
+            "code": "DS-12",
+            "name": "Feather Falling",
+            "detail": ""
+        }
+    },
+    "TT": {
+        "01": {
+            "code": "TT-01",
+            "name": "Bully Bus",
+            "detail": ""
+        },
+        "02": {
+            "code": "TT-02",
+            "name": "Just a Phase",
+            "detail": ""
+        },
+        "03": {
+            "code": "TT-03",
+            "name": "Unfolding",
+            "detail": ""
+        },
+        "04": {
+            "code": "TT-04",
+            "name": "It Takes All Sorts",
+            "detail": ""
+        },
+        "05": {
+            "code": "TT-05",
+            "name": "Locked in a Box",
+            "detail": ""
+        },
+        "06": {
+            "code": "TT-06",
+            "name": "Transfer of Power",
+            "detail": ""
+        },
+        "07": {
+            "code": "TT-07",
+            "name": "Switching Sides",
+            "detail": ""
+        },
+        "08": {
+            "code": "TT-08",
+            "name": "Fetch Quest",
+            "detail": ""
+        },
+        "09": {
+            "code": "TT-09",
+            "name": "Get a Lift",
+            "detail": ""
+        },
+        "10": {
+            "code": "TT-10",
+            "name": "Elevated Highway",
+            "detail": ""
+        },
+        "11": {
+            "code": "TT-11",
+            "name": "Free Expansion",
+            "detail": ""
+        },
+        "12": {
+            "code": "TT-12",
+            "name": "Lift and Twist",
+            "detail": ""
+        },
+        "13": {
+            "code": "TT-13",
+            "name": "Eye-Draulic",
+            "detail": ""
+        }
+    },
+    "AT": {
+        "01": {
+            "code": "AT-01",
+            "name": "Steer Clear",
+            "detail": ""
+        },
+        "02": {
+            "code": "AT-02",
+            "name": "Skipping Traffic",
+            "detail": ""
+        },
+        "03": {
+            "code": "AT-03",
+            "name": "Dropped Camo",
+            "detail": ""
+        },
+        "04": {
+            "code": "AT-04",
+            "name": "Ski Jump",
+            "detail": ""
+        },
+        "05": {
+            "code": "AT-05",
+            "name": "Divide and Slide",
+            "detail": ""
+        },
+        "06": {
+            "code": "AT-06",
+            "name": "No Wrong Way",
+            "detail": ""
+        },
+        "07": {
+            "code": "AT-07",
+            "name": "Rolling By",
+            "detail": ""
+        },
+        "08": {
+            "code": "AT-08",
+            "name": "Turbulent Tethers",
+            "detail": ""
+        },
+        "09": {
+            "code": "AT-09",
+            "name": "Splitting Lanes",
+            "detail": ""
+        },
+        "10": {
+            "code": "AT-10",
+            "name": "Bus Barrier",
+            "detail": ""
+        },
+        "11": {
+            "code": "AT-11",
+            "name": "Helping Hand",
+            "detail": ""
+        },
+        "12": {
+            "code": "AT-12",
+            "name": "Cross Country",
+            "detail": ""
+        },
+        "13": {
+            "code": "AT-13",
+            "name": "Coast Uphill",
+            "detail": ""
+        },
+        "14": {
+            "code": "AT-14",
+            "name": "Dredging",
+            "detail": ""
+        }
+    },
+    "FR": {
+        "01": {
+            "code": "FR-01",
+            "name": "Interlaced",
+            "detail": ""
+        },
+        "02": {
+            "code": "FR-02",
+            "name": "Smash Course",
+            "detail": ""
+        },
+        "03": {
+            "code": "FR-03",
+            "name": "Aroundward Tube",
+            "detail": ""
+        },
+        "04": {
+            "code": "FR-04",
+            "name": "Bridge is a Box",
+            "detail": ""
+        },
+        "05": {
+            "code": "FR-05",
+            "name": "Bustin' Through",
+            "detail": ""
+        },
+        "06": {
+            "code": "FR-06",
+            "name": "Falling Roads",
+            "detail": ""
+        },
+        "07": {
+            "code": "FR-07",
+            "name": "Zig Zag",
+            "detail": ""
+        },
+        "08": {
+            "code": "FR-08",
+            "name": "Both Sides",
+            "detail": ""
+        },
+        "09": {
+            "code": "FR-09",
+            "name": "Cat Flaps",
+            "detail": ""
+        },
+        "10": {
+            "code": "FR-10",
+            "name": "Rampin' Up",
+            "detail": ""
+        },
+        "11": {
+            "code": "FR-11",
+            "name": "Under Dump",
+            "detail": ""
+        },
+        "12": {
+            "code": "FR-12",
+            "name": "Forbidden Checkpoint",
+            "detail": ""
+        },
+        "13": {
+            "code": "FR-13",
+            "name": "Warped Reflection",
+            "detail": ""
+        }
+    }
+}
