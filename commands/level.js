@@ -64,9 +64,13 @@ module.exports = {
 				if(pb1Levels[fixedMatch[0][0]][fixedMatch[0][1]] != undefined){
 					res = res.concat("PB1: ${pb1Worlds[fixedMatch[0][0]]} - ${pb1Levels[fixedMatch[0][0]][fixedMatch[0][1]].name}\\n");
 				}
+			}catch(err){}
+			try{
 				if(pb2Levels[fixedMatch[0][0]][fixedMatch[0][1]] != undefined){
 					res = res.concat("PB2: ${pb2Worlds[fixedMatch[0][0]]} - ${pb2Levels[fixedMatch[0][0]][fixedMatch[0][1]].name}\\n");
 				}
+			}catch(err){}
+			try{
 				if(fixedMatch[0][1].charAt(2) == "c"){
 					res = res.concat("Challenge: ||${pb2Levels[fixedMatch[0][0]][fixedMatch[0][1]].detail}||");
 				}
