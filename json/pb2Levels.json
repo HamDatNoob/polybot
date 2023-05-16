@@ -970,5 +970,169 @@
             "name":"Rube Goldbridge",
             "detail":"Marbles dispensed with Vespas inside."
         }
+	},
+	"B1": {
+		"01": {
+			"code": "B1-01",
+			"name": "Don't Look Down",
+			"detail": ""
+		},
+		"02": {
+			"code": "B1-02",
+			"name": "Turn Around",
+			"detail": ""
+		},
+		"03": {
+			"code": "B1-03",
+			"name": "Flip N' Slide",
+			"detail": ""
+		},
+		"04": {
+			"code": "B1-04",
+			"name": "On Tilt",
+			"detail": ""
+		},
+		"05": {
+			"code": "B1-05",
+			"name": "Last Resort",
+			"detail": ""
+		},
+		"06": {
+			"code": "B1-06",
+			"name": "Pushback",
+			"detail": ""
+		},
+		"07": {
+			"code": "B1-07",
+			"name": "Make Waves",
+			"detail": ""
+		},
+		"08": {
+			"code": "B1-08",
+			"name": "Hop, Skip, & Jump",
+			"detail": ""
+		},
+		"09": {
+			"code": "B1-09",
+			"name": "Flexible",
+			"detail": ""
+		},
+		"10": {
+			"code": "B1-10",
+			"name": "Jump Ship",
+			"detail": ""
+		},
+		"11": {
+			"code": "B1-11",
+			"name": "Spring Back",
+			"detail": ""
+		},
+		"12": {
+			"code": "B1-12",
+			"name": "Reverse Course",
+			"detail": ""
+		},
+		"13": {
+			"code": "B1-13",
+			"name": "Deep Trouble",
+			"detail": ""
+		},
+		"14": {
+			"code": "B1-14",
+			"name": "Piggyback",
+			"detail": ""
+		},
+		"15": {
+			"code": "B1-15",
+			"name": "Star Get",
+			"detail": ""
+		},
+		"16": {
+			"code": "B1-16",
+			"name": "Plinko",
+			"detail": ""
+		}
+	},
+	"B2": {
+		"01": {
+			"code": "B2-01",
+			"name": "Hang On",
+			"detail": ""
+		},
+		"02": {
+			"code": "B2-02",
+			"name": "Seesaw",
+			"detail": ""
+		},
+		"03": {
+			"code": "B2-03",
+			"name": "Stunt Doubles",
+			"detail": ""
+		},
+		"04": {
+			"code": "B2-04",
+			"name": "Stuck in the Middle",
+			"detail": ""
+		},
+		"05": {
+			"code": "B2-05",
+			"name": "Well-Timed",
+			"detail": ""
+		},
+		"06": {
+			"code": "B2-06",
+			"name": "Out of Gas",
+			"detail": ""
+		},
+		"07": {
+			"code": "B2-07",
+			"name": "Cross Roads",
+			"detail": ""
+		},
+		"08": {
+			"code": "B2-08",
+			"name": "Let Down",
+			"detail": ""
+		},
+		"09": {
+			"code": "B2-09",
+			"name": "Up in the Air",
+			"detail": ""
+		},
+		"10": {
+			"code": "B2-10",
+			"name": "Holdin' Me Back",
+			"detail": ""
+		},
+		"11": {
+			"code": "B2-11",
+			"name": "Carried Away",
+			"detail": ""
+		},
+		"12": {
+			"code": "B2-12",
+			"name": "First, Aid",
+			"detail": ""
+		},
+		"13": {
+			"code": "B2-13",
+			"name": "Let it Slide",
+			"detail": ""
+		},
+		"14": {
+			"code": "B2-14",
+			"name": "Back & Forth",
+			"detail": ""
+		},
+		"15": {
+			"code": "B2-15",
+			"name": "Fallback",
+			"detail": ""
+		},
+		"16": {
+			"code": "B2-16",
+			"name": "Delayed Release",
+			"detail": ""
+		}
 	}
 }
