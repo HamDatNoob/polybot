@@ -47,30 +47,26 @@ module.exports = {
 			if(interaction) return interaction.reply({ content: `Invalid level code! Examples: 1-1, 4-08, CR-7\n\nYou entered: \`${msg}\``, ephemeral: true });
 		}
 
-		const pb1Worlds = { 1: "Alpine Meadows", 2: "Desert Winds", 3: "Snow Drift", 4: "Ancient Ruins", 5: "80s Fun Land", 6: "Zen Gardens", 7: "Tropical Paradise", 8: "Area 52" };
-		const pb2Worlds = { 1: "Pine Mountains", 2: "Glowing Gorge", 3: "Tranquil Oasis", 4: "Sanguine Gulch", 5: "Serenity Valley", 6: "Steamtown", B1: "Glittering Gorge", B2: "Gleamtown" };
+		const pb1Worlds = { 1: "Alpine Meadows", 2: "Desert Winds", 3: "Snow Drift", 4: "Ancient Ruins", 5: "80s Fun Land", 6: "Zen Gardens", 7: "Tropical Paradise", 8: "Area 52"};
+		const pb2Worlds = { 1: "Pine Mountains", 2: "Glowing Gorge", 3: "Tranquil Oasis", 4: "Sanguine Gulch", 5: "Serenity Valley", 6: "Steamtown"};
 		const pb3Worlds = { CR: "Classic Rock", MM: "Miner Mountains", BB: "Bifrost Bend", RB: "Rustic Barrens", VT: "Vaulty Towers", LL: "Lava Lagoon", RMT: "Radical Melt-Town", SC: "Serene Cyclades", DS: "Desert Springs", TT: "Twisted Turnpike", AT: "Arctic Tundra", FR: "Forgotten Realm" }
 
 		let res = "";
 
 		if(interaction) res = res.concat("interaction.reply({ content: ");
-		if(message) res = res.concat("message.reply(");
+		if(message) res = res.concat("message.channel.send(");
 		res = res.concat("\`Level Names for \\\`${fixedMatch[0].join(\"-\")}\\\`\\n");
 		
-		if(isNaN(fixedMatch[0][0].charAt(1))){ // checks for whether or not the world code is numeric, distinguishing pb1 and 2 from 3, ignoring the first character cause bonus worlds
+		if(isNaN(fixedMatch[0][0])){ // checks for whether or not the world code is numeric, distinguishing pb1 and 2 from 3
 			res = res.concat("PB3: ${pb3Worlds[fixedMatch[0][0]]} - ${pb3Levels[fixedMatch[0][0]][fixedMatch[0][1]].name}")
 		}else{
 			try{
 				if(pb1Levels[fixedMatch[0][0]][fixedMatch[0][1]] != undefined){
 					res = res.concat("PB1: ${pb1Worlds[fixedMatch[0][0]]} - ${pb1Levels[fixedMatch[0][0]][fixedMatch[0][1]].name}\\n");
 				}
-			}catch(err){}
-			try{
 				if(pb2Levels[fixedMatch[0][0]][fixedMatch[0][1]] != undefined){
 					res = res.concat("PB2: ${pb2Worlds[fixedMatch[0][0]]} - ${pb2Levels[fixedMatch[0][0]][fixedMatch[0][1]].name}\\n");
 				}
-			}catch(err){}
-			try{
 				if(fixedMatch[0][1].charAt(2) == "c"){
 					res = res.concat("Challenge: ||${pb2Levels[fixedMatch[0][0]][fixedMatch[0][1]].detail}||");
 				}

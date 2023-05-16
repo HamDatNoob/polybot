@@ -1,5 +1,5 @@
 {
-  "name": "polybot lite",
+  "name": "polybot-lite",
   "version": "3.3.0",
   "description": "offical discord bot for the poly bridge discord server",
   "main": "main.js",
