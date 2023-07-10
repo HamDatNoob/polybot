@@ -19,46 +19,51 @@ module.exports = {
 	async execute(interaction, message){
 		const msg = (interaction?.options._hoistedOptions[0].value || message.content);
 
-		const match = msg.match(/(?:(?<=\s)|^)(?:[1-6]-(?:[1-9]|1[0-6]|0[1-9])c?|[78]-(?:[1-9]|1[0-5]|0[1-9])|[a-z]{2,3}-(?:[1-9]|1[0-4]|0[1-9])|b[12]-(?:[1-9]|1[0-6]|0[1-9]))(?:(?=\s)|$)/gmi);
+		const match = msg.match(/(?:(?<=\s)|^|,)(?:[1-6]-(?:[1-9]|1[0-6]|0[1-9])c?|[78]-(?:[1-9]|1[0-5]|0[1-9])|[a-z]{2,3}-(?:[1-9]|1[0-4]|0[1-9])|b[12]-(?:[1-9]|1[0-6]|0[1-9]))(?:(?=\s)|$|,)/gmi); // finds level codes in messages
 
 		if(!match){
 			if(message) return;
 			if(interaction) return interaction.reply({ content: `Invalid level code! Examples: 1-1, 4-08, CR-7\n\nYou entered: \`${msg}\``, ephemeral: true });
 		}
 
-		const fixedMatch = [];
+		const fixedMatch = []; // fixes the level code into a usable string
 		for(let i in match){
+			match[i] = match[i].replace(/(,)/gmi, '');
 			fixedMatch.push(match[i].split("-"));
 			fixedMatch[i][0] = fixedMatch[i][0].toUpperCase();
 			fixedMatch[i][1] = fixedMatch[i][1].toLowerCase();
 			if(fixedMatch[i][1].length == 1 || fixedMatch[i][1].charAt(1) == "c") fixedMatch[i][1] = "0".concat(fixedMatch[i][1]);
-		}
+		} // ---------\
 
 		let first = true;
 		let reply;
 
 		async function getCode(l){
+			if(l > match.length - 1) return reply.reactions.removeAll();
+			if(l < 0) return reply.reactions.removeAll();
+
 			const code = fixedMatch[l].join("-");
 
-			if(message && first){
+			if(message && first){ // does cooldowns
 				if(db.has(`${message.channelId}.cooldown.${code}`) || db.get(`${message.channelId}.paused`)) return;
 	
 				db.push(`${message.channelId}.cooldown.${code}`, code);
-			}
-	
+			} // -------
+
 			if(!codes.includes(code)){
 				if(message) return;
 				if(interaction) return interaction.reply({ content: `Invalid level code! Examples: 1-1, 4-08, CR-7\n\nYou entered: \`${msg}\``, ephemeral: true });
 			}
 	
+
 			const pb1Worlds = { 1: "Alpine Meadows", 2: "Desert Winds", 3: "Snow Drift", 4: "Ancient Ruins", 5: "80s Fun Land", 6: "Zen Gardens", 7: "Tropical Paradise", 8: "Area 52"};
 			const pb2Worlds = { 1: "Pine Mountains", 2: "Glowing Gorge", 3: "Tranquil Oasis", 4: "Sanguine Gulch", 5: "Serenity Valley", 6: "Steamtown"};
 			const pb3Worlds = { CR: "Classic Rock", MM: "Miner Mountains", BB: "Bifrost Bend", RB: "Rustic Barrens", VT: "Vaulty Towers", LL: "Lava Lagoon", RMT: "Radical Melt-Town", SC: "Serene Cyclades", DS: "Desert Springs", TT: "Twisted Turnpike", AT: "Arctic Tundra", FR: "Forgotten Realm" }
 	
-			let res = "";
+			let res = ""; // creates the reply --------
 	
 			if(interaction) res = res.concat("interaction.reply({ content: ");
-			if(message && first) res = res.concat("message.channel.send(");
+			if(message && first) res = res.concat("message.reply(");
 			if(!first) res = res.concat("reply.edit(");
 			res = res.concat("\`Level Names for \\\`${fixedMatch[l].join(\"-\")}\\\`\\n");
 			
@@ -83,21 +88,21 @@ module.exports = {
 			}
 	
 			if(message) res = res.concat("\`);");
-			if(interaction) res = res.concat("\`, ephemeral: true });");
+			if(interaction) res = res.concat("\`, ephemeral: true });"); // ----------
 	
 			reply = await eval(res); // dont hurt me its in a controlled env
 
+			if(interaction) return;
+
 			if(first){
-				sleep(30).then(() => {
+				sleep(300).then(() => {
 					db.delete(`${message.channelId}.cooldown.${code}`);
 				});
 			}
 
 			first = false;
 
-			if(interaction) return;
-
-			try{
+			try{ // sets up reactions to remove and cycle responses if there are more than 1 -----------
 				await reply.react('❌');
 				if(l > 0) await reply.react('⬅️');
 				if(fixedMatch.length > l + 1) await reply.react('➡️');
@@ -118,15 +123,14 @@ module.exports = {
 						reply.reactions.removeAll();
 						getCode(l - 1);
 					}
-				})
-				.catch(() => {
+				}).catch(() => {
 					reply.reactions.removeAll();
 				});
 			}catch(err){
 				console.error(err);
-			}
+			} // -----------
 		}
 
 		getCode(0);
 	}
-}
+}  

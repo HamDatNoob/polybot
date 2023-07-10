@@ -18,5 +18,9 @@ module.exports = {
 		}
 
 		console.log(`Cleared cooldowns from ${channels.length} channels.`);
+
+		require('../scripts/weeklyReoccuring.js').execute(client); // starts weekly
+
+		console.log('Refreshed weekly challenges.');
 	},
 };
