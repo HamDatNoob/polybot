@@ -706,6 +706,78 @@
             "detail": ""
         }
     },
+    "RTA": {
+        "01": {
+            "code": "RTA-01",
+            "name": "Plenty of Pavement",
+            "detail": ""
+        },
+        "02": {
+            "code": "RTA-02",
+            "name": "Aerial Acrobatics",
+            "detail": ""
+        },
+        "03": {
+            "code": "RTA-03",
+            "name": "Indestructible",
+            "detail": ""
+        },
+        "04": {
+            "code": "RTA-04",
+            "name": "Bouncy Bridge",
+            "detail": ""
+        },
+        "05": {
+            "code": "RTA-05",
+            "name": "Nowhere and Back",
+            "detail": ""
+        },
+        "06": {
+            "code": "RTA-06",
+            "name": "Draw and Discard",
+            "detail": ""
+        },
+        "07": {
+            "code": "RTA-07",
+            "name": "The Long Way",
+            "detail": ""
+        },
+        "08": {
+            "code": "RTA-08",
+            "name": "This End Up",
+            "detail": ""
+        },
+        "09": {
+            "code": "RTA-09",
+            "name": "Switchbacks",
+            "detail": ""
+        },
+        "10": {
+            "code": "RTA-10",
+            "name": "Tip of the Hat",
+            "detail": ""
+        },
+        "11": {
+            "code": "RTA-11",
+            "name": "Help From Above",
+            "detail": ""
+        },
+        "12": {
+            "code": "RTA-12",
+            "name": "Unstoppable Force",
+            "detail": ""
+        },
+        "13": {
+            "code": "RTA-13",
+            "name": "Pillars of Strength",
+            "detail": ""
+        },
+        "14": {
+            "code": "RTA-14",
+            "name": "Counter Weight",
+            "detail": ""
+        }
+    },
     "FR": {
         "01": {
             "code": "FR-01",

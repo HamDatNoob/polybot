@@ -19,7 +19,19 @@ module.exports = {
 	async execute(interaction, message){
 		const msg = (interaction?.options._hoistedOptions[0].value || message.content);
 
-		const match = msg.match(/(?:(?<=\s)|^|,)(?:[1-6]-(?:[1-9]|1[0-6]|0[1-9])c?|[78]-(?:[1-9]|1[0-5]|0[1-9])|[a-z]{2,3}-(?:[1-9]|1[0-4]|0[1-9])|b[12]-(?:[1-9]|1[0-6]|0[1-9]))(?:(?=\s)|$|,)/gmi); // finds level codes in messages
+		const regex = /(?:(?<=\s)|^|,|\.)(?:[1-6]-(?:[1-9]|1[0-6]|0[1-9])c?|[78]-(?:[1-9]|1[0-5]|0[1-9])|[a-z]{2,3}-(?:[1-9]|1[0-4]|0[1-9])|b[12]-(?:[1-9]|1[0-6]|0[1-9]))(?:(?=\s)|$|,|\.)/gmi;
+
+		let match = msg.match(regex) || []; // finds level codes in messages
+
+		if(message){
+			const videoCodes = message.attachments.map(v => v.name)[0]?.split('_')[0]?.match(regex);
+
+			if(videoCodes){
+				for(let i in videoCodes){
+					match.push(videoCodes[i]);
+				}
+			}
+		}
 
 		if(!match){
 			if(message) return;
@@ -28,19 +40,18 @@ module.exports = {
 
 		const fixedMatch = []; // fixes the level code into a usable string
 		for(let i in match){
-			match[i] = match[i].replace(/(,)/gmi, '');
+			match[i] = match[i].replace(/(,|\.)/gmi, '');
 			fixedMatch.push(match[i].split("-"));
 			fixedMatch[i][0] = fixedMatch[i][0].toUpperCase();
 			fixedMatch[i][1] = fixedMatch[i][1].toLowerCase();
 			if(fixedMatch[i][1].length == 1 || fixedMatch[i][1].charAt(1) == "c") fixedMatch[i][1] = "0".concat(fixedMatch[i][1]);
-		} // ---------\
+		} // ---------
 
 		let first = true;
 		let reply;
 
 		async function getCode(l){
-			if(l > match.length - 1) return reply.reactions.removeAll();
-			if(l < 0) return reply.reactions.removeAll();
+			if(l > match.length - 1 || l < 0) return reply.reactions.removeAll();
 
 			const code = fixedMatch[l].join("-");
 
@@ -54,20 +65,20 @@ module.exports = {
 				if(message) return;
 				if(interaction) return interaction.reply({ content: `Invalid level code! Examples: 1-1, 4-08, CR-7\n\nYou entered: \`${msg}\``, ephemeral: true });
 			}
-	
 
-			const pb1Worlds = { 1: "Alpine Meadows", 2: "Desert Winds", 3: "Snow Drift", 4: "Ancient Ruins", 5: "80s Fun Land", 6: "Zen Gardens", 7: "Tropical Paradise", 8: "Area 52"};
-			const pb2Worlds = { 1: "Pine Mountains", 2: "Glowing Gorge", 3: "Tranquil Oasis", 4: "Sanguine Gulch", 5: "Serenity Valley", 6: "Steamtown"};
-			const pb3Worlds = { CR: "Classic Rock", MM: "Miner Mountains", BB: "Bifrost Bend", RB: "Rustic Barrens", VT: "Vaulty Towers", LL: "Lava Lagoon", RMT: "Radical Melt-Town", SC: "Serene Cyclades", DS: "Desert Springs", TT: "Twisted Turnpike", AT: "Arctic Tundra", FR: "Forgotten Realm" }
+			const pb1Worlds = { 1: "Alpine Meadows", 2: "Desert Winds", 3: "Snow Drift", 4: "Ancient Ruins", 5: "80s Fun Land", 6: "Zen Gardens", 7: "Tropical Paradise", 8: "Area 52" };
+			const pb2Worlds = { 1: "Pine Mountains", 2: "Glowing Gorge", 3: "Tranquil Oasis", 4: "Sanguine Gulch", 5: "Serenity Valley", 6: "Steamtown", B1: "Glittering Gorge", B2: "Gleamtown" };
+			const pb3Worlds = { CR: "Classic Rock", MM: "Miner Mountains", BB: "Bifrost Bend", RB: "Rustic Barrens", VT: "Vaulty Towers", LL: "Lava Lagoon", RMT: "Radical Melt-Town", SC: "Serene Cyclades", DS: "Desert Springs", TT: "Twisted Turnpike", RTA: "Roll Top Avenue", AT: "Arctic Tundra", FR: "Forgotten Realm" };
 	
 			let res = ""; // creates the reply --------
 	
 			if(interaction) res = res.concat("interaction.reply({ content: ");
 			if(message && first) res = res.concat("message.reply(");
 			if(!first) res = res.concat("reply.edit(");
+			
 			res = res.concat("\`Level Names for \\\`${fixedMatch[l].join(\"-\")}\\\`\\n");
 			
-			if(isNaN(fixedMatch[l][0])){ // checks for whether or not the world code is numeric, distinguishing pb1 and 2 from 3
+			if(["CR", "MM", "BB", "RB", "VT", "LL", "RMT", "SC", "DS", "TT", "AT", "RTA", "FR"].includes(fixedMatch[l][0])){ // checks for whether or not the world code is numeric, distinguishing pb1 and 2 from 3
 				res = res.concat("PB3: ${pb3Worlds[fixedMatch[l][0]]} - ${pb3Levels[fixedMatch[l][0]][fixedMatch[l][1]].name}")
 			}else{
 				try{
@@ -124,13 +135,13 @@ module.exports = {
 						getCode(l - 1);
 					}
 				}).catch(() => {
-					reply.reactions.removeAll();
+					reply.reactions.removeAll().catch(err => null);
 				});
 			}catch(err){
-				console.error(err);
+				console.error(err)
 			} // -----------
 		}
 
 		getCode(0);
 	}
-}  
+} 

@@ -1,6 +1,6 @@
 {
   "name": "polybot-lite",
-  "version": "1.1.0L",
+  "version": "1.2.0L",
   "description": "offical discord bot for the poly bridge discord server",
   "main": "main.js",
   "scripts": {
@@ -19,6 +19,7 @@
   "dependencies": {
     "better-sqlite3": "^7.5.1",
     "discord.js": "^14.7.1",
+    "node-schedule": "^2.1.1",
     "puppeteer": "^20.7.4",
     "quick.db": "^7.1.3"
   }

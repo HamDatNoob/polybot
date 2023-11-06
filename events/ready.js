@@ -22,5 +22,7 @@ module.exports = {
 		require('../scripts/weeklyReoccuring.js').execute(client); // starts weekly
 
 		console.log('Refreshed weekly challenges.');
+
+		// client.channels.cache.get('channel').send("") // memeing
 	},
-};
+}; 

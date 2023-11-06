@@ -1,26 +1,42 @@
-const fs = require('fs');
-const weeklies = require('../json/weeklies.json');
 const package = require('../package.json');
 const puppeteer = require('puppeteer');
 const { EmbedBuilder } = require('discord.js');
+const { steamKey } = require('../config.json');
+const schedule = require('node-schedule');
+const db = require('quick.db');
 
 module.exports = {
     async execute(client){
-        async function doWeekly(){
+        const rule = new schedule.RecurrenceRule();
+        rule.dayOfWeek = 1;
+        rule.hour = 0;
+        rule.minute = 0;
+        rule.tz = 'Etc/UTC';
+
+        const job = schedule.scheduleJob(rule, async function(){
             await fetch('https://pb3game.s3.us-east-2.amazonaws.com/weeklies/manifest').then(res => { // refreshes weekly json file
                 return res.arrayBuffer();
             }).then(buffer => {
                 let arr = Buffer.from(buffer).toString().split('\n');
-                arr.pop()
-            
-                let weeks = [];
+                
                 for(let i in arr){
-                    weeks.push(arr[i].split('\t'));
+                    arr[i] = arr[i].split('\t');
                 }
-            
-                fs.writeFileSync('./json/weeklies.json', JSON.stringify(weeks));
+
+                arr.pop();
+
+                let currentWeek = parseInt(arr.shift());
+                let weeks = arr.sort((a, b) => a[2] - b[2]);
+
+                db.set(`currentWeek`, currentWeek);
+                for(let i in weeks){
+                    db.set(`${weeks[i][2]}.level`, weeks[i][0]);
+                    db.set(`${weeks[i][2]}.user`, weeks[i][1]);
+                }
             }); // ----------
             
+            weekIndex = await db.get('currentWeek');
+
             async function scrape(url, url2){
                 const browser = await puppeteer.launch({ headless: "new" });
                 const page = await browser.newPage();
@@ -37,15 +53,18 @@ module.exports = {
                 const [e3] = await page.$x('//*[@id="highlightContent"]');
                 const desc = await e3.getProperty('textContent');
                 const rawDesc = await desc.jsonValue();
-        
-                await page.goto(url2);
-        
-                const [e4] = await page.$x('/html/body/div[1]/div[7]/div[6]/div[1]/div[1]/div/div/div/div[1]/div[1]/span[1]');
-                const user = await e4.getProperty('textContent');
-                const rawUser = await user.jsonValue();
-            
+
                 browser.close();
-                
+
+                let rawUser;
+                await fetch(url2).then(res => {
+                    return res.arrayBuffer();
+                }).then(buffer => {
+                    let user = JSON.parse(Buffer.from(buffer).toString());
+
+                    rawUser = user.response.players[0].personaname;
+                });
+                    
                 return { rawSrc, rawTitle, rawDesc, rawUser };
             }
 
@@ -62,58 +81,71 @@ module.exports = {
                 return output;
             }
             
-            const steam = await scrape(`https://steamcommunity.com/sharedfiles/filedetails/?id=${weeklies.at(-1)[0]}`, `https://steamcommunity.com/profiles/${weeklies.at(-1)[1]}`); // scrapes steam workshop and user profile
+            let steam;
+            try{
+                steam = await scrape(`https://steamcommunity.com/sharedfiles/filedetails/?id=${await db.get(`${weekIndex}.level`)}`, `http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${steamKey}&steamids=${await db.get(`${weekIndex}.user`)}`); // scrapes steam workshop and user profile
+            }catch(err){
+                console.error(err);
+                return client.channels.cache.get('1127479241689272340').send({ content: "Something went wrong while displaying the Weekly Challenge!" });
+            }
         
+            let v2;
+            if(steam.rawDesc.split(',')[0] == 'v2'){
+                v2 = true;
+                steam.rawDesc.replace(/v2,/gmi, '');
+            }else{
+                v2 = false;
+            }
+            
             const image = steam.rawSrc; // converts object into usable strings --------
             const title = steam.rawTitle.replace(/<.+?>/gmi, '');
             const mats = steam.rawDesc.split('_')[0].split(',');
-            const desc = convertFormatting(steam.rawDesc.split('_')[1]);
+            let desc = convertFormatting(steam.rawDesc.split('_')[1]);
             const user = steam.rawUser.replace(/<.+?>/gmi, ''); // ---------
 
-            return { image, title, mats, desc, user };
-        }
+            const weekNum = weekIndex - 1;
 
-        async function interval(){
-            const now = new Date; // finds date of next weekly --------
-            let day = now.getUTCDay();
-            let today = now.getUTCDate();
-            let nextWeeklyDay = today + (7 - day) - 1; // days until next weekly
-            let timeOfNextWeekly = new Date(now.getUTCFullYear(), now.getUTCMonth(), nextWeeklyDay, 20, 1, 10, 0); // 12am sunday utc
-            let timeUntilNextWeekly = timeOfNextWeekly.getTime() - now.getTime(); // ---------
+            for(let i in mats){
+                if(mats[i] == 1 && v2 == false){
+                    mats[i] = '✅';
+                }else if(mats[i] == 0){
+                    mats[i] = '❌';
+                }else if(mats[i] == 100){
+                    mats[i] = '∞';
+                }
+            }
 
-            console.log(timeOfNextWeekly)
-    
-            setTimeout(async () => {
-                const data = await doWeekly();
-                const weekNum = weeklies.at(-1)[2] - 1;
-    
-                for(let i in data.mats){ // remove when v2 metadata --------
-                    if(data.mats[i] == 1){
-                        data.mats[i] = '✅';
-                    }else{
-                        data.mats[i] = '❌';
-                    }
-                } // ----------
+            let budget;
+            let fixedMats;
+            if(v2 == true){
+                budget = `$${mats[1].replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+                fixedMats = `<:road:1125659532547334214>: ${mats[2]} | <:wood:1125659581356445696>: ${mats[3]} | <:steel:1125659535865032714>: ${mats[4]} | <:hydraulic:1125659530651512963>: ${mats[5]}\n<:rope:1125659534304747641>: ${mats[6]} | <:cable:1125659528021676043>: ${mats[7]} | <:spring:1125659535072313395>: ${mats[8]} | <:foundation:1125659529762324542>: ${mats[9]}`;
+            }else{
+                budget = `$${mats[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+                fixedMats = `<:road:1125659532547334214>: ${mats[1]} | <:wood:1125659581356445696>: ${mats[2]} | <:steel:1125659535865032714>: ${mats[3]} | <:hydraulic:1125659530651512963>: ${mats[4]}\n<:rope:1125659534304747641>: ${mats[5]} | <:cable:1125659528021676043>: ${mats[6]} | <:spring:1125659535072313395>: ${mats[7]} | <:foundation:1125659529762324542>: ${mats[8]}`
+            }
 
-    
-                let embed = new EmbedBuilder()
-                .setTitle(`Weekly Challenge: Season ${Math.floor(weekNum / 10) + 1}, Week ${weekNum % 10 + 1}`)
-                .setColor('#9BAEFE')
-                .setFooter({ text: `Polybot v${package.version}, by @ha_m`, iconURL: 'https://cdn.discordapp.com/attachments/1054531526030799038/1125659991957844038/icon.png' })
-                .setImage(data.image)
-                .addFields(
-                    { name: data.title, value: data.desc },
-                    { name: 'Budget', value: `$${data.mats[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`, inline: true },
-                    { name: 'Author', value: data.user, inline: true },
-                    { name: 'Allowed Materials', value: `<:road:1125659532547334214>: ${data.mats[1]} | <:wood:1125659581356445696>: ${data.mats[2]} | <:steel:1125659535865032714>: ${data.mats[3]} | <:hydraulic:1125659530651512963>: ${data.mats[4]}\n<:rope:1125659534304747641>: ${data.mats[5]} | <:cable:1125659528021676043>: ${data.mats[6]} | <:spring:1125659535072313395>: ${data.mats[7]} | <:foundation:1125659529762324542>: ${data.mats[8]}`}
-                );
-                
-                client.channels.cache.get('1127479241689272340').send({ embeds: [embed] }); // sends to weekly channel *******UNCOMMMENT WHEN CLOSER TO RELEASE***********
+            if(desc === ''){
+                desc = 'No description.';
+            }
 
-                interval(); // now do it again
-            }, timeUntilNextWeekly ); // wait for weekly drop
-        }
+            let embed = new EmbedBuilder()
+            .setTitle(`Weekly Challenge: Season ${Math.floor(weekNum / 10) + 1}, Week ${weekNum % 10 + 1}`)
+            .setColor('#9BAEFE')
+            .setFooter({ text: `Polybot v${package.version}, by @ha_m | Note: Some Weeklies may still use metadata v1, which limits material count visibility.`, iconURL: 'https://cdn.discordapp.com/attachments/1054531526030799038/1125659991957844038/icon.png' })
+            .setImage(image)
+            .addFields(
+                { name: title, value: desc },
+                { name: 'Budget', value: budget, inline: true },
+                { name: 'Author', value: user, inline: true },
+                { name: 'Allowed Materials', value: fixedMats }
+            );
 
-        interval();
+            client.channels.cache.get('1127479241689272340').send({ content: "A new Weekly Challenge has begun!", embeds: [embed] }); // sends to weekly channel
+        });
+
+        console.log(job.nextInvocation());
     }
 }
+
+        

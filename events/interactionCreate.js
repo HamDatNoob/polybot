@@ -4,15 +4,26 @@ module.exports = {
 	name: 'interactionCreate',
 	async execute(interaction){
 		if(interaction.isCommand()){ //commands
-			const command = interaction.client.commands.get(interaction.commandName);
+			let command = interaction.client.commands.get(interaction.commandName);
 
 			if(!command) return;
 
-			try{
-				await command.execute(interaction);
-			}catch(error){
-				console.error(error);
-				return interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
+			if(interaction.options.getSubcommand(false)){
+				try{
+					const subcommand = interaction.options.getSubcommand();
+					
+					await require(`../commands/subcommands/${interaction.commandName}_${subcommand}`).execute(interaction);
+				}catch(error){
+					console.error(error);
+					return interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
+				}
+			}else{
+				try{
+					await command.execute(interaction);
+				}catch(error){
+					console.error(error);
+					return interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
+				}
 			}
 		}else if(interaction.isStringSelectMenu()){ //select menus
 			const selectMenuFiles = fs.readdirSync('./components/selectMenus').filter(file => file.endsWith('.js'));
@@ -47,7 +58,7 @@ module.exports = {
 			for(const file of autocompleteFiles){
 				const component = require(`../components/autocompletes/${file}`);
 
-				if(component.name != interaction.commandName.concat('Autocomplete')) continue;
+				if(component.name != interaction.commandName.concat('_autocomplete')) continue;
 
 				try{
 					await component.execute(interaction);

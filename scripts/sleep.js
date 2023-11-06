@@ -5,4 +5,4 @@ async function sleep(time){
 	});
 }
 
-module.exports = {sleep};
+module.exports = { sleep };
