@@ -10,7 +10,7 @@ module.exports = {
 
 			if(interaction.options.getSubcommand(false)){
 				try{
-					const subcommand = interaction.options.getSubcommand();
+					const subcommand = interaction.options.getSubcommand(); 
 					
 					await require(`../commands/subcommands/${interaction.commandName}_${subcommand}`).execute(interaction);
 				}catch(error){

@@ -10,7 +10,7 @@ module.exports = {
 
         await interaction.deferReply();
 
-        if(await check(interaction, nomId)) return;
+        if(await check(interaction, nomId)) return; 
 
         if(db.has(`nominations.${nomId}`)){
             return interaction.followUp({ content: `\`${nomId}\` has already been suggested!` });
@@ -33,6 +33,8 @@ module.exports = {
         let date = new Date();
 
         await db.set(`nominations.${nomId}.title`, rawTitle);
+        await db.set(`nominations.${nomId}.id`, nomId);
+        await db.set(`nominations.${nomId}.link`, `https://steamcommunity.com/sharedfiles/filedetails/?id=${nomId}`);
         return db.set(`nominations.${nomId}.date`, date.getTime());
 	}
 }

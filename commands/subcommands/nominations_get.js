@@ -15,6 +15,6 @@ module.exports = {
             return interaction.followUp({ content: `The status of \`${nomId}\` is \`${value}\`!` });
         }else{
             return interaction.followUp({ content: `\`${nomId}\` has not been suggested!` });
-        }
+        } 
     }
 }

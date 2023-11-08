@@ -13,11 +13,11 @@ module.exports = {
 
             if(value == 'weekly-'){
                 value = value.concat(parseInt(await db.get('currentWeek') + 1));
-            }
+            } 
 
             if(db.has(`nominations.${nomId}`)){
                 await db.set(`nominations.${nomId}.status`, value);
-
+ 
                 return interaction.followUp({ content: `The status of \`${nomId}\` has been changed to \`${value}\`!` });
             }else{
                 return interaction.followUp({ content: `\`${nomId}\` has not been suggested!` });
