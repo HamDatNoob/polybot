@@ -67,6 +67,15 @@ module.exports = {
 					return;
 				}
 			}
+		}else if(interaction.isModalSubmit()){
+			try{
+				const customId = interaction.customId; 
+				
+				await require(`../components/modals/${customId}`).execute(interaction);
+			}catch(error){
+				console.error(error);
+				return interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
+			}
 		}else{ //nothing found
 			return await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
 		}

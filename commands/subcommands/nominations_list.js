@@ -5,8 +5,9 @@ const package = require('../../package.json');
 module.exports = {
 	async execute(interaction){
         const noms = Object.values(await db.get("nominations"));
+        noms.sort((a, b) => b.date - a.date);
 
-        function list(page){
+        async function list(page){
             let set = noms.slice(page * 5, Math.min(page * 5 + 5, noms.length));
 
             const linkButtons = [];
@@ -23,7 +24,7 @@ module.exports = {
 
                 embedFields.push({
                     name: `${levelNum}: ${set[i].title} - ${set[i].id}`, 
-                    value: `Status: \`${set[i].status}\`` 
+                    value: `Status: \`${set[i].status}\`, Suggested on: <t:${Math.round(set[i].date / 1000)}:f>` 
                 });
             }
 
@@ -85,9 +86,9 @@ module.exports = {
                     .addComponents(navButtons)
             );
                 
-            interaction.reply({ embeds: embed, components: rows });
+            return interaction.reply({ embeds: embed, components: rows });
         }
 
-        list(0)
+        list(0);
     }
-} 
+}

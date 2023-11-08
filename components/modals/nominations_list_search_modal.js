@@ -3,12 +3,14 @@ const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('
 const package = require('../../package.json');
 
 module.exports = {
-    name: 'nomintations_list_backward_button',
     async execute(interaction){
         const noms = Object.values(await db.get("nominations"));
         noms.sort((a, b) => b.date - a.date);
 
-        const pg = parseInt(interaction.message.embeds[0].title.slice(25)) - 1;
+        let pg = parseInt(interaction.fields.getTextInputValue('nominations_list_search_modal_pageInput')) - 1;
+
+        if(pg > Math.floor(noms.length / 5)) pg = Math.floor(noms.length / 5);
+        if(pg < 0) pg = 0;
         
         async function list(page){
             let set = noms.slice(page * 5, Math.min(page * 5 + 5, noms.length));
@@ -92,6 +94,6 @@ module.exports = {
             return interaction.update({ embeds: embed, components: rows });
         }
 
-        list(pg - 1);
+        list(pg);
     }
 }
