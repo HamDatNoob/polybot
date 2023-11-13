@@ -1,6 +1,6 @@
 {
   "name": "polybot-lite",
-  "version": "1.2.0L",
+  "version": "1.2.1L",
   "description": "offical discord bot for the poly bridge discord server",
   "main": "main.js",
   "scripts": {

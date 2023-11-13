@@ -71,8 +71,10 @@ module.exports = {
             const rawTitle = await title.jsonValue();
         
             const [e3] = await page.$x('//*[@id="highlightContent"]');
-            const desc = await e3.getProperty('textContent');
+            const desc = await e3.getProperty('innerHTML');
             const rawDesc = await desc.jsonValue();
+            console.log(rawDesc)
+
 
             browser.close();
 
@@ -89,16 +91,17 @@ module.exports = {
         }
 
         function convertFormatting(input){
-            let output = input;
-        
-            if(input.match(/<i>(.+?)<\/i>/gmi)) output = output.replace(/<i>(.+?)<\/i>/gmi, '*$1*'); // italic
-            if(input.match(/<b>(.+?)<\/b>/gmi)) output = output.replace(/<b>(.+?)<\/b>/gmi, '**$1**'); // bold
-            if(input.match(/<u>(.+?)<\/u>/gmi)) output = output.replace(/<u>(.+?)<\/u>/gmi, '__$1__'); // underline/w
-            if(input.match(/<s>(.+?)<\/s>/gmi)) output = output.replace(/<s>(.+?)<\/s>/gmi, '~~$1~~'); // striketrough
+            input = input.replace(/&lt;(\/?.+?)&gt;/gmi, '<$1>'); // converts /&lt;&gt; to <>
+
+            input = input.replace(/<br>/gmi, '\n'); // line break
+            input = input.replace(/<i>(.+?)<\/i>/gmi, '*$1*'); // italic
+            input = input.replace(/<b>(.+?)<\/b>/gmi, '**$1**'); // bold
+            input = input.replace(/<u>(.+?)<\/u>/gmi, '__$1__'); // underline
+            input = input.replace(/<s>(.+?)<\/s>/gmi, '~~$1~~'); // striketrough
             
-            output = output.replace(/<.+?>/gmi, ''); // remove other tags
+            input = input.replace(/<.+?>/gmi, ''); // remove other tags
             
-            return output;
+            return input;
         }
 
         let steam;
@@ -152,7 +155,7 @@ module.exports = {
         let embed = new EmbedBuilder()
         .setTitle(`Weekly Challenge: Season ${Math.floor(weekNum / 10) + 1}, Week ${weekNum % 10 + 1}`)
         .setColor('#9BAEFE')
-        .setFooter({ text: `Polybot v${package.version}, by @ha_m  | Note: Some Weeklies may still use metadata v1, which limits material count visibility.`, iconURL: 'https://cdn.discordapp.com/attachments/1054531526030799038/1125659991957844038/icon.png' })
+        .setFooter({ text: `Polybot v${package.version}, by @ha_m | Use \"/nominations add\" to nominate a level!`, iconURL: 'https://cdn.discordapp.com/attachments/1054531526030799038/1125659991957844038/icon.png' })
         .setImage(image)
         .addFields(
             { name: title, value: desc },

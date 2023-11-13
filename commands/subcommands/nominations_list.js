@@ -23,7 +23,7 @@ module.exports = {
                 );
 
                 embedFields.push({
-                    name: `${levelNum}: ${set[i].title} - ${set[i].id}`, 
+                name: `${levelNum}: ${set[i].title} - \`${set[i].id}\` | Suggested \`${set[i].count}\` times`, 
                     value: `Status: \`${set[i].status}\`, Suggested on: <t:${Math.round(set[i].date / 1000)}:f>` 
                 });
             }
@@ -32,6 +32,7 @@ module.exports = {
             const embed = [
                 new EmbedBuilder()
                     .setTitle(`Weekly Nominations: Page ${page + 1}`)
+                    .setDescription('Nominate levels for the Weekly Challenge with \`/nominations add\`!')
                     .setColor('#9BAEFE')
                     .setFooter({ text: `Polybot v${package.version}, by @ha_m  | Use \"/nominations add\" to nominate a level!`, iconURL: 'https://cdn.discordapp.com/attachments/1054531526030799038/1125659991957844038/icon.png' })
                     .addFields(embedFields)

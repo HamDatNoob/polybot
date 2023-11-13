@@ -12,11 +12,16 @@ module.exports = {
 
         if(await check(interaction, nomId)) return; 
 
-        if(db.has(`nominations.${nomId}`)){
-            return interaction.followUp({ content: `\`${nomId}\` has already been suggested!` });
-        }
+        let date = new Date();
 
-        await db.set(`nominations.${nomId}.status`, 'suggested');
+        if(db.has(`nominations.${nomId}`)){
+            db.add(`nominations.${nomId}.count`, 1);
+            db.push(`nominations.${nomId}.users`, interaction.user.username);
+            db.set(`nominations.${nomId}.date`, date.getTime());
+
+
+            return interaction.followUp({ content: `\`${nomId}\` was added to the nominations!` });
+        }
 
         await interaction.followUp({ content: `\`${nomId}\` was added to the nominations!` });
 
@@ -30,11 +35,12 @@ module.exports = {
 
         browser.close();
 
-        let date = new Date();
-
+        await db.set(`nominations.${nomId}.status`, 'suggested');
         await db.set(`nominations.${nomId}.title`, rawTitle);
         await db.set(`nominations.${nomId}.id`, nomId);
         await db.set(`nominations.${nomId}.link`, `https://steamcommunity.com/sharedfiles/filedetails/?id=${nomId}`);
-        return db.set(`nominations.${nomId}.date`, date.getTime());
+        await db.set(`nominations.${nomId}.date`, date.getTime());
+        await db.add(`nominations.${nomId}.count`, 1);
+        return db.push(`nominations.${nomId}.users`, interaction.user.username);
 	}
 }
