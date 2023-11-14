@@ -18,8 +18,8 @@ module.exports = {
             if(res.count != 1) s = 's';
 
             const embedField = [{
-                name: `${set[i].title} - \`${set[i].id}\` | Suggested \`${set[i].count}\` time${s}`, 
-                value: `Status: \`${set[i].status}\`, Suggested on: <t:${Math.round(set[i].date / 1000)}:f>` 
+                name: `${res.title} - \`${res.id}\` | Suggested \`${res.count}\` time${s}`, 
+                value: `Status: \`${res.status}\`, Suggested on: <t:${Math.round(res.date / 1000)}:f>` 
             }];
 
             const embed = [
