@@ -6,7 +6,7 @@ Polybot LITE v3, created by ha_m.
 
 |      Command     |           Arguments           | Description                                                                                                    | Permissions |
 |:----------------:|:-----------------------------:|----------------------------------------------------------------------------------------------------------------|:-----------:|
-|      /clear      |                               | Clears all level response cooldowns in all channels.                                                           |     mod+    |
+|      /clear      |         \<clear noms?\>       | Clears all level response cooldowns in all channels and nominations, defaults to only clearing cooldowns.      |     mod+    |
 |      /level      |            \<level\>          | Displays the corresponding level name to a level code.                                                         |    anyone   |
 |      /pause      |                               | Pauses public chat responses to level codes in the current channel.                                            |     mod+    |
 |      /shutup     |                               | Pauses public chat responses to level codes in the current channel for 15 minutes.                             |   master+   |
