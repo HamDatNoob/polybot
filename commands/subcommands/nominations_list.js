@@ -15,6 +15,8 @@ module.exports = {
             const embedFields = [];
             for(let i in set){
                 let levelNum = noms.indexOf(set[i]) + 1;
+                let s = '';
+                if(set[i].count != 1) s = 's';
 
                 linkButtons.push(new ButtonBuilder()
                     .setLabel(`${levelNum}`)
@@ -23,7 +25,7 @@ module.exports = {
                 );
 
                 embedFields.push({
-                name: `${levelNum}: ${set[i].title} - \`${set[i].id}\` | Suggested \`${set[i].count}\` times`, 
+                name: `${levelNum}: ${set[i].title} - \`${set[i].id}\` | Suggested \`${set[i].count}\` time${s}`, 
                     value: `Status: \`${set[i].status}\`, Suggested on: <t:${Math.round(set[i].date / 1000)}:f>` 
                 });
             }

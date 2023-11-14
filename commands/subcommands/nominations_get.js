@@ -14,9 +14,12 @@ module.exports = {
         if(db.has(`nominations.${nomId}`)){
             const res = await db.get(`nominations.${nomId}`);
 
+            let s = '';
+            if(res.count != 1) s = 's';
+
             const embedField = [{
-                name: `${res.title} - \`${res.id}\` | Suggested \`${res.count}\` times`, 
-                value: `Status: \`${res.status}\`, Suggested on: <t:${Math.round(res.date / 1000)}:f>` 
+                name: `${set[i].title} - \`${set[i].id}\` | Suggested \`${set[i].count}\` time${s}`, 
+                value: `Status: \`${set[i].status}\`, Suggested on: <t:${Math.round(set[i].date / 1000)}:f>` 
             }];
 
             const embed = [
