@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer');
 
 async function check(interaction, id){
     try{
-        const browser = await puppeteer.launch({ headless: "new" });
+        const browser = await puppeteer.launch({ headless: "new", executablePath: '/bin/chromium-browser', args: ['--no-sandbox', '--disable-setuid-sandbox'] }); // extra for pi; remove executable path and args for windows
         const page = await browser.newPage();
         const response = await page.goto(`https://steamcommunity.com/sharedfiles/filedetails/?id=${id}`);
 

@@ -9,7 +9,7 @@ module.exports = {
         if(id[0] == '`') id = id.replace(/(?:(?<=\s)|^)`?(\d{10})`?(?:(?=\s)|$)/gmi, '$1');
 
         try{
-            const browser = await puppeteer.launch({ headless: "new" });
+            const browser = await puppeteer.launch({ headless: "new", executablePath: '/bin/chromium-browser', args: ['--no-sandbox', '--disable-setuid-sandbox'] }); // extra for pi; remove executable path and args for windows
             const page = await browser.newPage();
             const response = await page.goto(`https://steamcommunity.com/sharedfiles/filedetails/?id=${id}`);
     

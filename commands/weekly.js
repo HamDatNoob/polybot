@@ -58,7 +58,7 @@ module.exports = {
         if(weekIndex > await db.get('currentWeek')) return interaction.followUp({ content: `Season ${season}, Week ${week} does not exist.` });
 
         async function scrape(url, url2){
-            const browser = await puppeteer.launch({ headless: "new" });
+            const browser = await puppeteer.launch({ headless: "new", executablePath: '/bin/chromium-browser', args: ['--no-sandbox', '--disable-setuid-sandbox'] }); // extra for pi; remove executable path and args for windows
             const page = await browser.newPage();
             await page.goto(url);
         
@@ -73,8 +73,6 @@ module.exports = {
             const [e3] = await page.$x('//*[@id="highlightContent"]');
             const desc = await e3.getProperty('innerHTML');
             const rawDesc = await desc.jsonValue();
-            console.log(rawDesc)
-
 
             browser.close();
 
@@ -91,7 +89,7 @@ module.exports = {
         }
 
         function convertFormatting(input){
-            input = input.replace(/&lt;(\/?.+?)&gt;/gmi, '<$1>'); // converts /&lt;&gt; to <>
+            input = input.replace(/&lt;(\/?.+?)&gt;/gmi, '<$1>'); // converts &lt;&gt; to <>
 
             input = input.replace(/<br>/gmi, '\n'); // line break
             input = input.replace(/<i>(.+?)<\/i>/gmi, '*$1*'); // italic

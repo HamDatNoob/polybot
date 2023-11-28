@@ -38,7 +38,7 @@ module.exports = {
             weekIndex = await db.get('currentWeek');
 
             async function scrape(url, url2){
-                const browser = await puppeteer.launch({ headless: "new" });
+                const browser = await puppeteer.launch({ headless: "new", executablePath: '/bin/chromium-browser', args: ['--no-sandbox', '--disable-setuid-sandbox'] }); // extra for pi; remove executable path and args for windows
                 const page = await browser.newPage();
                 await page.goto(url);
             
