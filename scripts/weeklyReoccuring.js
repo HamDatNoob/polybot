@@ -46,7 +46,7 @@ module.exports = {
                 const src = await e.getProperty('src');
                 const rawSrc = await src.jsonValue();
             
-                const [e2] = await page.$x('/html/body/div[1]/div[7]/div[5]/div[1]/div[4]/div[5]/div[2]');
+                const [e2] = await page.$x('/html/body/div[1]/div[7]/div[4]/div[1]/div[4]/div[5]/div[2]');
                 const title = await e2.getProperty('textContent');
                 const rawTitle = await title.jsonValue();
             
