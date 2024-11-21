@@ -58,18 +58,21 @@ module.exports = {
         if(weekIndex > await db.get('currentWeek')) return interaction.followUp({ content: `Season ${season}, Week ${week} does not exist.` });
 
         async function scrape(url, url2){
-            const browser = await puppeteer.launch({ headless: "new", executablePath: '/bin/chromium-browser', args: ['--no-sandbox', '--disable-setuid-sandbox'] }); // extra for pi; remove executable path and args for windows
+            const browser = await puppeteer.launch({ headless: "new"/*, executablePath: '/bin/chromium-browser', args: ['--no-sandbox', '--disable-setuid-sandbox'] */}); // extra for pi; remove executable path and args for windows
             const page = await browser.newPage();
             await page.goto(url);
         
+            await page.waitForXPath('//*[@id="previewImage"]');
             const [e] = await page.$x('//*[@id="previewImage"]');
             const src = await e.getProperty('src');
             const rawSrc = await src.jsonValue();
         
-            const [e2] = await page.$x('/html/body/div[1]/div[7]/div[4]/div[1]/div[4]/div[5]/div[2]');
+            await page.waitForXPath('/html/body/div[1]/div[7]/div[4]/div[1]/div[4]/div[3]/div[2]');
+            const [e2] = await page.$x('/html/body/div[1]/div[7]/div[4]/div[1]/div[4]/div[3]/div[2]');
             const title = await e2.getProperty('textContent');
             const rawTitle = await title.jsonValue();
         
+            await page.waitForXPath('//*[@id="highlightContent"]');
             const [e3] = await page.$x('//*[@id="highlightContent"]');
             const desc = await e3.getProperty('innerHTML');
             const rawDesc = await desc.jsonValue();

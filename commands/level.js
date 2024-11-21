@@ -68,7 +68,7 @@ module.exports = {
 
 			const pb1Worlds = { 1: "Alpine Meadows", 2: "Desert Winds", 3: "Snow Drift", 4: "Ancient Ruins", 5: "80s Fun Land", 6: "Zen Gardens", 7: "Tropical Paradise", 8: "Area 52" };
 			const pb2Worlds = { 1: "Pine Mountains", 2: "Glowing Gorge", 3: "Tranquil Oasis", 4: "Sanguine Gulch", 5: "Serenity Valley", 6: "Steamtown", B1: "Glittering Gorge", B2: "Gleamtown" };
-			const pb3Worlds = { CR: "Classic Rock", MM: "Miner Mountains", BB: "Bifrost Bend", RB: "Rustic Barrens", VT: "Vaulty Towers", LL: "Lava Lagoon", RMT: "Radical Melt-Town", SC: "Serene Cyclades", DS: "Desert Springs", TT: "Twisted Turnpike", RTA: "Roll Top Avenue", AT: "Arctic Tundra", FR: "Forgotten Realm" };
+			const pb3Worlds = { CR: "Classic Rock", MM: "Miner Mountains", BB: "Bifrost Bend", RB: "Rustic Barrens", VT: "Vaulty Towers", LL: "Lava Lagoon", RMT: "Radical Melt-Town", FD: "Faulty Drive", SC: "Serene Cyclades", DS: "Desert Springs", TT: "Twisted Turnpike", RTA: "Roll Top Avenue", AT: "Arctic Tundra", FR: "Forgotten Realm" };
 	
 			let res = ""; // creates the reply --------
 	
@@ -78,7 +78,7 @@ module.exports = {
 			
 			res = res.concat("\`Level Names for \\\`${fixedMatch[l].join(\"-\")}\\\`\\n");
 			
-			if(["CR", "MM", "BB", "RB", "VT", "LL", "RMT", "SC", "DS", "TT", "AT", "RTA", "FR"].includes(fixedMatch[l][0])){ // checks for whether or not the world code is numeric, distinguishing pb1 and 2 from 3
+			if(["CR", "MM", "BB", "RB", "VT", "LL", "RMT", "FD", "SC", "DS", "TT", "AT", "RTA", "FR"].includes(fixedMatch[l][0])){ // checks for whether or not the world code is numeric, distinguishing pb1 and 2 from 3
 				res = res.concat("PB3: ${pb3Worlds[fixedMatch[l][0]]} - ${pb3Levels[fixedMatch[l][0]][fixedMatch[l][1]].name}")
 			}else{
 				try{

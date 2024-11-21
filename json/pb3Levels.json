@@ -433,6 +433,68 @@
             "detail": ""
         }
     },
+    "FD": {
+        "01": {
+            "code": "FD-01",
+            "name": "Air Handling",
+            "detail": ""
+        },
+        "02": {
+            "code": "FD-02",
+            "name": "Scale Issue",
+            "detail": ""
+        },
+        "03": {
+            "code": "FD-03",
+            "name": "plainLevel.bridge",
+            "detail": ""
+        },
+        "04": {
+            "code": "FD-04",
+            "name": "Mass Affect",
+            "detail": ""
+        },
+        "05": {
+            "code": "FD-05",
+            "name": "Void Return()",
+            "detail": ""
+        },
+        "06": {
+            "code": "FD-06",
+            "name": "Hard Stop",
+            "detail": ""
+        },
+        "07": {
+            "code": "FD-07",
+            "name": "Invalid Anchor",
+            "detail": ""
+        },
+        "08": {
+            "code": "FD-08",
+            "name": "Free Up Space",
+            "detail": ""
+        },
+        "09": {
+            "code": "FD-09",
+            "name": "Crash On Launch",
+            "detail": ""
+        },
+        "10": {
+            "code": "FD-10",
+            "name": "Going Online",
+            "detail": ""
+        },
+        "11": {
+            "code": "FD-11",
+            "name": "Access Denied",
+            "detail": ""
+        },
+        "12": {
+            "code": "FD-12",
+            "name": "Jump the Shark",
+            "detail": ""
+        }
+    },
     "SC": {
         "01": {
             "code": "SC-01",
